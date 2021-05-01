@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<link  rel="stylesheet" type="text/css" href="{{ url_for('static',filename='pace.css')}}?u={{ last_updated }}" />
+
+<div class="frame">
+
+  <div class="plan basic" onclick="void(0);">
+        <div class="title">5 Year Loan</div>
+        <div class="price">$1233<span>Per Year</span></div>
+        <div class="lines">
+            <div class="line" style="width: 69px;"></div>
+            <div class="line" style="width: 59px;"></div>
+            <div class="line" style="width: 66px;"></div>
+            <div class="line" style="width: 46px;"></div>
+        </div>
+  </div>
+
+    <div class="plan pro" onclick="void(0);">
+        <div class="title">10 Year Loan</div>
+        <div class="price">$687<span>Per Year</span></div>
+        <div class="lines">
+            <div class="line" style="width: 69px;"></div>
+            <div class="line" style="width: 59px;"></div>
+            <div class="line" style="width: 66px;"></div>
+            <div class="line" style="width: 46px;"></div>
+        </div>
+  </div>
+
+    <div class="plan premium" onclick="void(0);">
+        <div class="title">15 Year Loan</div>
+        <div class="price">$324<span>Per Year</span></div>
+        <div class="lines">
+            <div class="line" style="width: 69px;"></div>
+            <div class="line" style="width: 59px;"></div>
+            <div class="line" style="width: 66px;"></div>
+            <div class="line" style="width: 46px;"></div>
+        </div>
+  </div>
+
+    <div class="datas">
+
+        <div class="data users">
+            <div class="text">
+                <span class="left">Total Energy Savings</span>
+                <span class="right">$3420</span>
+            </div>
+            <div class="line">
+                <div class="fill"></div>
+            </div>
+        </div>
+
+        <div class="data gb">
+            <div class="text">
+                <span class="left">Total Interest Paid</span>
+                <span class="right">$587</span>
+            </div>
+            <div class="line">
+                <div class="fill"></div>
+            </div>
+        </div>
+
+        <div class="data projects">
+            <div class="text">
+                <span class="left">Total Amount Paid</span>
+                <span class="right">$5432</span>
+            </div>
+            <div class="line">
+                <div class="fill"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

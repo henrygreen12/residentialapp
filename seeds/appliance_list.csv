@@ -1,0 +1,144 @@
+Appliance Name,Category,Power
+answering machine,General,2
+alarm clock,General,2
+burglar alarm,General,6.6
+cd player,General,17.6
+clock,General,1
+ceiling fan,General,35
+cloths dryer,General,3000
+cloths washer,General,500
+curling iron,General,150
+dishwasher,General,800
+dryer,General,3000
+electric blanket,General,200
+edger,General,960
+drill,General,720
+fan,General,82
+guitar,General,40
+keyboard,General,12.5
+pencil sharpener,General,100
+fan,General,82
+fax machine,General,500
+fire alarm,General,5
+flatscreen tv,General,100
+garage door,General,725
+garbage disposal,General,812
+hood,General,20
+cooker hood,Kitchen,20
+range hood,Kitchen,30
+iron,General,1000
+printer,General,700
+percolator,General,1000
+radio,General,9
+record player,General,30
+scale,General,33
+scanner,General,18
+smoke detector,General,2
+stereo,General,120
+stove,General,2000
+sewing machine,General,75
+telephone,General,4
+home phone,General,2
+television,General,100
+trimmer,General,400
+tv,General,100
+vacuum cleaner,General,578
+vacuum,General,578
+video camera,General,40
+vcr,General,40
+washing machine,General,400
+water heater,General,3000
+sump pump,General,300
+treadmill,General,470
+workout bike,General,400
+air fryer,Cooking/Kitchen,1500
+mini oven,Cooking/Kitchen,1000
+bread machine,Cooking/Kitchen,450
+cheesemelter,Cooking/Kitchen,300
+combi steamer,Cooking/Kitchen,300
+convection oven,Cooking/Kitchen,1000
+crepe maker,Cooking/Kitchen,1000
+deep fryer,Cooking/Kitchen,1000
+espresso maker,Cooking/Kitchen,1400
+flattop grill,Cooking/Kitchen,500
+food steamer,Cooking/Kitchen,500
+griddle,Cooking/Kitchen,1000
+halogen oven,Cooking/Kitchen,400
+hot plate,Cooking/Kitchen,1200
+instant pot,Cooking/Kitchen,1200
+multicooker,Cooking/Kitchen,700
+popcorn maker,Cooking/Kitchen,1230
+pressure cooker,Cooking/Kitchen,1000
+pressure fryer,Cooking/Kitchen,1000
+remoska,Cooking/Kitchen,400
+rice cooker,Cooking/Kitchen,600
+rice polisher,Cooking/Kitchen,300
+rotisserie,Cooking/Kitchen,1600
+rotimatic,Cooking/Kitchen,1800
+sandwich toaster,Cooking/Kitchen,750
+slow cooker,Cooking/Kitchen,250
+sous-vide cooker,Cooking/Kitchen,900
+soy milk maker,Cooking/Kitchen,850
+toaster,Cooking/Kitchen,1200
+waffle iron,Cooking/Kitchen,500
+coffee maker,Cooking/Kitchen,1200
+electric water boiler,Cooking/Kitchen,400
+instant hot water dispensor,Cooking/Kitchen,1200
+hand mixer,Cooking/Kitchen,300
+chest freezer,Cooking/Kitchen,19
+deep freezer ,Cooking/Kitchen,19
+food processor,Cooking/Kitchen,340
+juicer,Cooking/Kitchen,311
+wine refridgerator,Cooking/Kitchen,83
+wine cooler,Cooking/Kitchen,83
+standup mixer,Cooking/Kitchen,250
+blender,Cooking/Kitchen,300
+can opener,Cooking/Kitchen,100
+crock-pot,Cooking/Kitchen,120
+refrigerator,Cooking/Kitchen,250
+fridge,Cooking/Kitchen,250
+juicer,Cooking/Kitchen,800
+coffee grinder,Cooking/Kitchen,1240
+coffee maker,Cooking/Kitchen,1240
+food processor,Cooking/Kitchen,350
+hair dryer,Bathroom,2000
+electric razor,Bathroom,200
+hair iron,Bathroom,200
+curling iron,Bathroom,200
+blow dryer,Bathroom,2000
+hair clippers,Bathroom,50
+electric razor,Bathroom,10
+electric toothbrush,Bathroom,10
+computer,Office,300
+copier,Office,400
+laptop,Office,75
+fireplace,HVAC,999
+heater,HVAC,1500
+humidifier,HVAC,35
+electric heater,HVAC,1500
+dehumidifier,HVAC,200
+playstation 2,Entertainment,85
+playstation 3,Entertainment,85
+playstation 4,Entertainment,85
+wii,Entertainment,125
+xbox,Entertainment,50
+xbox 360,Entertainment,50
+xbox one,Entertainment,50
+nintendo switch,Entertainment,50
+gamecube,Entertainment,50
+kettle,Cooking/Kitchen,1200
+phone charger,General,5
+projector,Office,240
+chromecast,Entertainment,2
+computer screen,Office,30
+computer monitor,Office,30
+aquarium,General,25
+garage door opener,General,350
+guitar amplifier,General,25
+router,Office,10
+iron,General,1000
+cloths iron,General,1000
+paper shredder,General,215
+water dispenser,General,100
+wifi booster,Office,2
+microwave,Cooking/Kitchen,900

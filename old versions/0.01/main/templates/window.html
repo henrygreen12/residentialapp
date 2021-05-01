@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% set active_page = "window" %}
+{% block content %}
+
+
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Balsamiq+Sans&famil
+y=Orienta&family=PT+Sans+Caption&family=Palanquin&family=Prompt&family=Volkhov&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<style type="text/css">
+  body{
+    background: #DFDFDF;
+  }
+  .card-body{
+    background:white;
+  }
+  .card{
+    background: white!important;
+  }
+  .row{
+    background:white;
+  }
+  .form-control{
+    background: white!important;
+
+    border-top:1px solid!important;
+    border-left:1px solid!important;
+    border-right:1px solid!important;
+    border-radius:.25rem!important;
+        border-color:#34A755!important;
+  }
+  .btn-red{
+    background:#FBBE08;
+  }
+
+  .grey{
+    background:#DFDFDF!important;
+  }
+  .btn-blue{
+    background: #4385F5;
+  }
+  .btn-green{
+    background: #34A755;
+  }
+</style>
+<div class="row grey justify-content-center mt-2">
+  <h3>Add your Home's Windows</h3>
+
+</div>
+<div class="container">
+
+            <form
+              id="msform"
+              method="POST"
+              form="form1"
+              enctype="multipart/form-data">
+              {{ form.csrf_token }}
+              <div id="dynamic-form" style="background:#DFDFDF">
+                <button id="add_field" class="btn btn-blue">Add Field</button>
+                <button type="submit" class="btn btn-green">Done</button>
+
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+              <div id="dynamic-form">
+                <button id="add_field">Add Field</button><br /><br />
+                <button type="submit">Submit</button>
+              </div>
+              <template id="form-template">
+                <div class="form-group">
+                  <div class="form-card">
+                    <div class="card">
+                <div class="card-content">
+                <div class="card-body">
+                    <div class="row justify-content-between">
+                      <div class="col-6">
+                    <input type="hidden" name="windows-1-id" value="new" />
+                    <input type="number" name="length" class="form-control mb-1" placeholder="Length (inches)" />
+                  </div>
+                  <div class="col-6">
+                    <input type="number"name="height" class="form-control mb-1" placeholder="Height (inches)" />
+                  </div>
+                </div>
+                <div class="row justify-content-between">
+                  <div class="col-12">
+                    <div class="input-group mb-1">
+                    <select name="location" class="custom-select">
+                      <option value="First Floor">First Floor</option>
+                      <option value="Main Floor">Main Floor</option>
+                      <option value="Basement">Basement</option>
+                    </select>
+                  </div>
+                  <div class="input-group mb-1">
+                    <select name="room_type" class="custom-select">
+                      <option value="Kitchen">Kitchen</option>
+                      <option value="Living Room">Living Room</option>
+                      <option value="Bedroom">Bedroom</option>
+                      <option value="Bathroom">Bathroom</option>
+                    </select>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                    <button class="remove btn btn-red">Remove</button>
+                  </div>
+                </div>
+              </template>
+            </form>
+</div>
+{% endblock content %}
+ {% block scripts %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='dynamic_form.js') }}?u={{ last_updated }}"
+></script>
+{% endblock scripts %}

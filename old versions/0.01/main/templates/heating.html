@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+{% set active_page = "heating" %}
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Balsamiq+Sans&famil
+y=Orienta&family=PT+Sans+Caption&family=Palanquin&family=Prompt&family=Volkhov&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+<style type="text/css">
+
+  .bg-red{
+    background-color: #E94234;
+  }
+      .dial {
+font-size: 30px !important;
+}
+.grey-bg {
+    background-color: #DFDFDF;
+}
+.cardsSection{
+font-family: 'Orienta', sans-serif!important;
+}
+.text-uppercase{
+  font-family: 'Orienta', sans-serif!important;
+}
+.media-body{
+   font-family: 'Orienta', sans-serif!important;}
+.material-icons.blue { color: #4385F5; }
+.material-icons.green { color: #34A755; }
+.material-icons.yellow { color: #FBBE08; }
+.material-icons.red { color: #FBBE08; }
+.material-icons.white { color: #FFFFFF; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<div class="grey-bg container-fluid">
+
+                                                                                   <div>
+                                            <br />
+<div style="
+ align-self: center;text-align: center;justify-content: center"
+                height=600%; width=100% >
+                                            <input
+                                            type="text"
+                                            id = "setPoint"
+                                            value="23"
+                                            class="dial"
+                                            name="setPoint"
+                                            data-min="15"
+                                            data-max="35"
+                                            data-width="200"
+                                            data-fgColor="#E94234"
+                                            data-skin="tron"
+                                            data-thickness=".3"
+                                            data-angleOffset=-105
+                                            data-angleArc=210
+                                            data-linecap=round>
+</div>
+
+<div class="row justify-content-center" style="margin-top:-75px">
+                                                                      <div style="display: inline-block">
+                                    {{ temperature }}°C
+                                     <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png">
+                                    {{ current_condition }}
+
+
+                                </div>
+                            </div>
+
+                                            <script type="text/javascript">
+                                              $(function() {
+                                                $(".dial").knob({
+                                                'format' : function (value) {
+                                                     return value + '°C' ;
+                                                  },
+
+                                                'release' : function(v) {
+                                                var setPoint = v
+                                                var currentTemp = {{current_temp}};
+                                                var furnaceOutput = {{furnace_output}};
+                                                var currentRegress = 1- ((currentTemp + 45)/(setPoint+45));
+                                                var output = (furnaceOutput*currentRegress*(1/0.8)/947817);
+
+                                                var UA_walls_loss = ({{UA_walls}}/947817)*(((setPoint*9/5)+32)-(currentTemp*9/5)+32);
+
+                                                var UA_doors_loss = ({{UA_doors}}/947817)*(((setPoint*9/5)+32)-(currentTemp*9/5)+32);
+                                                var UA_roof_loss = ({{UA_roof}}/947817)*(((setPoint*9/5)+32)-(currentTemp*9/5)+32);
+                                                var UA_windows_loss = output-UA_doors_loss-UA_roof_loss-UA_walls_loss;
+                                                var output_cost = output
+                                                var UA_windows_cost = UA_windows_loss
+                                                var UA_doors_cost = UA_doors_loss
+                                                var UA_roof_cost = UA_roof_loss
+                                                var UA_walls_cost = UA_walls_loss
+
+                                                var heatpump_energy = 5000
+                                                var heatpump_cost_savings = output*0.7*4.50
+                                                var furnace_energy = 4500
+                                                var furnace_cost_savings = output*0.5*4.50
+                                                var insulation_energy = 2000
+                                                var insulation_cost_savings = output*0.4*4.50
+                                                var thermostat_energy = 300
+                                                var thermostat_cost_savings = output*0.3*4.50
+                                                console.log(output);
+                                                console.log(currentTemp);
+                                                document.getElementById('Output').innerHTML = output.toFixed(2);
+
+
+                                                document.getElementById('UA_walls_cost').innerHTML = UA_walls_cost.toFixed(2);
+                                                document.getElementById('UA_windows_cost').innerHTML = UA_windows_cost.toFixed(2);
+                                                document.getElementById('UA_doors_cost').innerHTML = UA_doors_cost.toFixed(2);
+                                                document.getElementById('UA_roof_cost').innerHTML = UA_roof_cost.toFixed(2);
+
+
+
+                                                document.getElementById('heatpump_energy').innerHTML = heatpump_energy.toFixed(2);
+                                                document.getElementById('furnace_energy').innerHTML = furnace_energy.toFixed(2);
+                                                document.getElementById('insulation_energy').innerHTML = insulation_energy.toFixed(2);
+                                                document.getElementById('thermostat_energy').innerHTML = thermostat_energy.toFixed(2);
+
+                                                document.getElementById('heatpump_cost_savings').innerHTML = heatpump_cost_savings.toFixed(2);
+                                                document.getElementById('furnace_cost_savings').innerHTML = furnace_cost_savings.toFixed(2);
+                                                document.getElementById('insulation_cost_savings').innerHTML = insulation_cost_savings.toFixed(2);
+                                                document.getElementById('thermostat_cost_savings').innerHTML = thermostat_cost_savings.toFixed(2);
+
+
+$(document).ready(function() {
+            CanvasJS.addColorSet("pollen",
+                [//colorSet Array
+
+                "#FBBE08",
+                "#4385F5",
+                "#E94234",
+                "#34A755"
+                ]);
+
+var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    backgroundColor: "#DFDFDF",
+    fontFamily:'Orienta',
+    colorSet: "pollen",
+
+    title:{
+        fontFamily:'Orienta',
+        text: "Breakdown of Your Home's Heat Loss",
+        horizontalAlign: "center",
+        fontColor: "#404E67"
+
+    },
+    data: [{
+        type: "doughnut",
+        startAngle: 60,
+        //innerRadius: 60,
+        indexLabelFontSize: 12,
+        radius: "90%",
+        fontFamily:'Orienta',
+        indexLabelWrap: true,
+        fontColor: "#404E67",
+        indexLabel: "{label} - {y} GJ",
+        toolTipContent: "{label}: {y} (GJ)",
+        dataPoints: [
+            { y: UA_walls_loss, label: "Walls" },
+            { y: UA_windows_loss, label: "Windows" },
+            { y: UA_doors_loss, label: "Doors" },
+            { y: UA_roof_loss, label: "Roof" }
+
+        ]
+    }]
+});
+chart.render();
+
+});
+                                            }
+
+                                                });
+
+                                            });
+                                            </script>
+
+                                <div class="text-center">
+
+
+
+
+<div id="chartContainer" style="height: 370px; width: 100%;background: #DFDFDF">Adjust the thermostat to calculate your home's energy usage</div>
+
+                                </div>
+
+<div class="row justify-content-center">
+  <div class="col-xl-3 col-sm-6 col-12">
+    <div class="card">
+      <div class="card-content">
+        <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons font-large-2 float-left">fireplace</i>
+                </div>
+                <div class="media-body text-right">
+                  <span>Furnace Usage:</span>
+                  <h3><output id="Output"></output> GJ</h3>
+                                    <span>For a more accurate estiamte:</span>
+                  <h3><a href="/heatinginfo">Add Your Furnace</a></h3>
+
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+  <section id="minimal-statistics" class="cardsSection" style="font-family: 'Orienta', sans-serif!important">
+    <div class="row">
+      <div class="col-12 mt-3 mb-1">
+        <h4 class="text-uppercase">Heat Loss for the Current Hour</h4>
+        <p>Heat is lost in your home this hour:</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons red font-large-2 float-left">house_siding</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>$<output id="UA_walls_cost"></output></h3>
+                  <span>Walls</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons blue font-large-2 float-left">border_all</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>$<output id="UA_windows_cost"></output></h3>
+                  <span>Windows</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons yellow font-large-2 float-left">sensor_door</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>$<output id="UA_doors_cost"></output></h3>
+                  <span>Doors</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons green font-large-2 float-left">roofing</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>$<output id="UA_roof_cost"></output></h3>
+                  <span>Roof</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section id="stats-subtitle">
+  <div class="row">
+    <div class="col-12 mt-3 mb-1">
+      <h4 class="text-uppercase">Home Heating Upgrades</h4>
+      <p>Upgrades are available to heat your home more efficiently and save money</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-6 col-md-12">
+      <div class="card overflow-hidden">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <i class="material-icons yellow font-large-2 mr-2">attach_money</i>
+              </div>
+              <div class="media-body">
+                <h4>Heat Pump</h4>
+                <span>Estimated Upgrade Cost</span>
+              </div>
+              <div class="align-self-center">
+                <h1>$<output id="heatpump_energy"></output></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <h1 class="mr-2">$<output id="heatpump_cost_savings"></output></h1>
+              </div>
+              <div class="media-body">
+                <h4>Estimated Cost Savings</h4>
+                <span>No Rebate Available</span>
+              </div>
+              <div class="align-self-center">
+                <i class="material-icons green font-large-2 mr-2">money_off</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<hr/>
+
+
+ <div class="row">
+
+    <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <i class="material-icons yellow font-large-2 mr-2">attach_money</i>
+              </div>
+              <div class="media-body">
+                <h4>High Efficiency Furnace</h4>
+                <span>Estimated Upgrade Cost</span>
+              </div>
+              <div class="align-self-center">
+                <h1>$<output id="furnace_energy"></output></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <h1 class="mr-2">$<output id="furnace_cost_savings"></output></h1>
+              </div>
+              <div class="media-body">
+                <h4>Estimated Cost Savings</h4>
+                <span>No Rebate Available</span>
+              </div>
+              <div class="align-self-center">
+                <i class="material-icons green font-large-2 mr-2">money_off</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<hr/>
+
+
+
+ <div class="row">
+
+    <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <i class="material-icons yellow font-large-2 mr-2">attach_money</i>
+              </div>
+              <div class="media-body">
+                <h4>Wall Insulation</h4>
+                <span>Estimated Upgrade Cost</span>
+              </div>
+              <div class="align-self-center">
+                <h1>$<output id="insulation_energy"></output></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <h1 class="mr-2">$<output id="insulation_cost_savings"></output></h1>
+              </div>
+              <div class="media-body">
+                <h4>Estimated Cost Savings</h4>
+                <span>No Rebate Available</span>
+              </div>
+              <div class="align-self-center">
+                <i class="material-icons green font-large-2 mr-2">money_off</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<hr/>
+ <div class="row">
+
+    <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <i class="material-icons yellow font-large-2 mr-2">attach_money</i>
+              </div>
+              <div class="media-body">
+                <h4><a href="https://store.google.com/ca/category/connected_home?gcl
+                id=EAIaIQobChMIyYK-17aI6wIVQx-tBh0Ztg7SEAAYASAAEgL3MvD_BwE&gclsrc=aw.ds">Smart Thermostat</a></h4>
+                <span>Estimated Upgrade Cost</span>
+              </div>
+              <div class="align-self-center">
+                <h1>$<output id="thermostat_energy"></output></h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div class="col-xl-6 col-md-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body cleartfix">
+            <div class="media align-items-stretch">
+              <div class="align-self-center">
+                <h1 class="mr-2">$<output id="thermostat_cost_savings"></output></h1>
+              </div>
+              <div class="media-body">
+                <h4>Estimated Cost Savings</h4>
+                <span>No Rebate Available</span>
+              </div>
+              <div class="align-self-center">
+                <i class="material-icons green font-large-2 mr-2">money_off</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+</section>
+</div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+{% endblock content %}

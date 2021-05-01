@@ -1,0 +1,479 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+<form id="msform" method = "POST" form = form1 enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+
+<fieldset>
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3" style="margin-right: 19vw; margin-left: 19vw">
+
+
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'fridge.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Fridges</p>
+                                                      <div id="input_div" class="col">
+                                                        <input type="button" value="-" id="moins" onclick="minusfridge()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="fridgeCount" id="fridgeCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold;">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusfridge()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                          var fridgeCount = 0;
+                                                          var countE1 = document.getElementById("fridgeCount");
+                                                          function plusfridge(){
+                                                              fridgeCount++;
+                                                              countE1.value = fridgeCount;
+                                                          }
+                                                          function minusfridge(){
+                                                            if (fridgeCount >= 1) {
+                                                              fridgeCount--;
+                                                              countE1.value = fridgeCount;
+                                                            }
+                                                          }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+
+
+
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'freezer.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Freezers</p>
+                                                      <div id="input_div" class="col">
+                                                        <input type="button" value="-" id="moins" onclick="minusfreezer()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="freezerCount" id="freezerCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusfreezer()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                          var freezerCount = 0;
+                                                          var countE2 = document.getElementById("freezerCount");
+                                                          function plusfreezer(){
+                                                              freezerCount++;
+                                                              countE2.value = freezerCount;
+                                                          }
+                                                          function minusfreezer(){
+                                                            if (freezerCount >= 1) {
+                                                              freezerCount--;
+                                                              countE2.value = freezerCount;
+                                                            }
+                                                          }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'microwave.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Microwave</p>
+
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusmicrowave()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="microwaveCount" id="microwaveCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusmicrowave()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var microwaveCount = 0;
+    var countE3 = document.getElementById("microwaveCount");
+    function plusmicrowave(){
+        microwaveCount++;
+        countE3.value = microwaveCount;
+    }
+    function minusmicrowave(){
+      if (microwaveCount >= 1) {
+        microwaveCount--;
+        countE3.value = microwaveCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'blender.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Blender</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusblender()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="blenderCount" id="blenderCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusblender()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var blenderCount = 0;
+    var countE4 = document.getElementById("blenderCount");
+    function plusblender(){
+        blenderCount++;
+        countE4.value = blenderCount;
+    }
+    function minusblender(){
+      if (blenderCount >= 1) {
+        blenderCount--;
+        countE4.value = blenderCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'coffeeMaker.svg') }}" width="150"> </div>
+                                                    <div class="col"><p style="font-size:30"> Coffee Maker</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minuscoffeeMaker()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="coffeeMakerCount" id="coffeeMakerCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="pluscoffeeMaker()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var coffeeMakerCount = 0;
+    var countE5 = document.getElementById("coffeeMakerCount");
+    function pluscoffeeMaker(){
+        coffeeMakerCount++;
+        countE5.value = coffeeMakerCount;
+    }
+    function minuscoffeeMaker(){
+      if (coffeeMakerCount >= 1) {
+        coffeeMakerCount--;
+        countE5.value = coffeeMakerCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'computer.svg') }}" width="150"> </div>
+                                                    <div class="col"><p style="font-size:30"> Computers </p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minuscomputer()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="computerCount" id="computerCount" style="width: 40;ext-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="pluscomputer()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var computerCount = 0;
+    var countE6 = document.getElementById("computerCount");
+    function pluscomputer(){
+        computerCount++;
+        countE6.value = computerCount;
+    }
+    function minuscomputer(){
+      if (computerCount >= 1) {
+        computerCount--;
+        countE6.value = computerCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'dishwasher.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Dishwashers</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusdishwasher()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="dishwasherCount" id="dishwasherCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusdishwasher()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var dishwasherCount = 0;
+    var countE7 = document.getElementById("dishwasherCount");
+    function plusdishwasher(){
+        dishwasherCount++;
+        countE7.value = dishwasherCount;
+    }
+    function minusdishwasher(){
+      if (dishwasherCount >= 1) {
+        dishwasherCount--;
+        countE7.value = dishwasherCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'washer.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Washers </p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minuswasher()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="washerCount" id="washerCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="pluswasher()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var washerCount = 0;
+    var countE16 = document.getElementById("washerCount");
+    function pluswasher(){
+        washerCount++;
+        countE16.value = washerCount;
+    }
+    function minuswasher(){
+      if (washerCount >= 1) {
+        washerCount--;
+        countE16.value = washerCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'dryer.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Dryers </p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusdryer()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="dryerCount" id="dryerCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusdryer()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var dryerCount = 0;
+    var countE8 = document.getElementById("dryerCount");
+    function plusdryer(){
+        dryerCount++;
+        countE8.value = dryerCount;
+    }
+    function minusdryer(){
+      if (dryerCount >= 1) {
+        dryerCount--;
+        countE8.value = dryerCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'garageOpener.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Garage Door Openers</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusgarageOpener()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="garageOpenerCount" id="garageOpenerCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusgarageOpener()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var garageOpenerCount = 0;
+    var countE9 = document.getElementById("garageOpenerCount");
+    function plusgarageOpener(){
+        garageOpenerCount++;
+        countE9.value = garageOpenerCount;
+    }
+    function minusgarageOpener(){
+      if (garageOpenerCount >= 1) {
+        garageOpenerCount--;
+        countE9.value = garageOpenerCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'kettle.svg') }}" width="150"> </div>
+                                                    <div class="col"><p style="font-size:30"> Kettles </p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minuskettle()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="kettleCount" id="kettleCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="pluskettle()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var kettleCount = 0;
+    var countE10 = document.getElementById("kettleCount");
+    function pluskettle(){
+        kettleCount++;
+        countE10.value = kettleCount;
+    }
+    function minuskettle(){
+      if (kettleCount >= 1) {
+        kettleCount--;
+        countE10.value = kettleCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+
+
+<hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'oven.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Ovens / Ranges </p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins"  onclick="minusoven()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="ovenCount" id="ovenCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusoven()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var ovenCount = 0;
+    var countE11 = document.getElementById("ovenCount");
+    function plusoven(){
+        ovenCount++;
+        countE11.value = ovenCount;
+    }
+    function minusoven(){
+      if (ovenCount >= 1) {
+        ovenCount--;
+        countE11.value = ovenCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+                                      <hr>
+
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'Toaster.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Toasters</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusToaster()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="toasterCount" id="ToasterCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusToaster()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var ToasterCount = 0;
+    var countE12 = document.getElementById("ToasterCount");
+    function plusToaster(){
+        ToasterCount++;
+        countE12.value = ToasterCount;
+    }
+    function minusToaster(){
+      if (ovenCount >= 1) {
+        ovenCount--;
+        countE12.value = ovenCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+                                      <hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'toasterOven.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Toaster Ovens</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minustoasterOven()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="toasterOvenCount" id="toasterOvenCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plustoasterOven()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var toasterOvenCount = 0;
+    var countE13 = document.getElementById("toasterOvenCount");
+    function plustoasterOven(){
+        toasterOvenCount++;
+        countE13.value = toasterOvenCount;
+    }
+    function minustoasterOven(){
+      if (toasterOvenCount >= 1) {
+        toasterOvenCount--;
+        countE13.value = toasterOvenCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+                                      <hr>
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'sumpPump.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Sump Pumps</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minussumpPump()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="sumpPumpCount" id="sumpPumpCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plussumpPump()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var sumpPumpCount = 0;
+    var countE14 = document.getElementById("sumpPumpCount");
+    function plussumpPump(){
+        sumpPumpCount++;
+        countE14.value = sumpPumpCount;
+    }
+    function minussumpPump(){
+      if (sumpPumpCount >= 1) {
+        sumpPumpCount--;
+        countE14.value = sumpPumpCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+                                      <hr>
+
+                                    <div class="row" style="align-items: center; ">
+                                            <div class="col"> <img src="{{ url_for ('static', filename = 'vacuum.svg') }}" width="150"> </div>
+                                                    <div class="col"> <p style="font-size:30">Vacuum Cleaners</p>
+                                                      <div id="input_div" class = "col">
+                                                        <input type="button" value="-" id="moins" onclick="minusvacuum()" class="btn btn-primary plusminus">
+                                                          <input type="text" size="1" value="0" name="vacuumCount" id="vacuumCount" style="width: 40;text-align:center; font-size: 20; border:none; font-weight: bold">
+
+                                                          <input type="button" value="+" id="plus" onclick="plusvacuum()" class="btn btn-primary plusminus">
+                                                          <script type="text/javascript">
+                                                                var vacuumCount = 0;
+    var countE15 = document.getElementById("vacuumCount");
+    function plusvacuum(){
+        vacuumCount++;
+        countE15.value = vacuumCount;
+    }
+    function minusvacuum(){
+      if (vacuumCount >= 1) {
+        vacuumCount--;
+        countE15.value = vacuumCount;
+      }
+    }
+
+                                                          </script>
+                                                      </div>
+                                      </div>
+                                      </div>
+                                      <hr>
+
+</div>
+                                      <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <input type="submit" value="submit"  class="btn-success btn btn-lg">
+</fieldset>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+
+{% endblock %}

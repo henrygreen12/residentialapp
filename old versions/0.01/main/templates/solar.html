@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% set active_page = "solar" %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Balsamiq+Sans&famil
+y=Orienta&family=PT+Sans+Caption&family=Palanquin&family=Prompt&family=Volkhov&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+<style type="text/css">
+      .dial {
+font-size: 30px !important;
+}
+.grey-bg {
+    background-color: #DFDFDF;
+}
+.cardsSection{
+font-family: 'Orienta', sans-serif!important;
+}
+.text-uppercase{
+  font-family: 'Orienta', sans-serif!important;
+}
+.media-body{
+   font-family: 'Orienta', sans-serif!important;}
+.material-icons.blue { color: #4385F5; }
+.material-icons.green { color: #34A755; }
+.material-icons.yellow { color: #FBBE08; }
+.material-icons.red { color: #E94234; }
+
+    </style>
+
+
+
+
+
+
+
+
+
+<div class="grey-bg container-fluid">
+
+
+
+
+
+
+
+                                                                                   <div>
+                                             <br />
+
+
+
+
+  <section id="minimal-statistics" class="cardsSection" style="font-family: 'Orienta', sans-serif!important">
+
+
+<div class="row justify-content-center" style="height: 40vh; width: 100%; align-content: center;align-items: center;position: relative;">
+                  <div id="map" data-latitude="{{customer.latitude}}" align="middle" data-longitude="{{customer.longitude}}" style="
+                  height: 100%; width :80%; margin-left:auto; margin-right:auto;"></div>
+
+
+
+
+
+  </section>
+
+  <section id="stats-subtitle">
+  <div class="row">
+    <div class="col-12 mt-3 mb-1">
+      <h4 class="text-uppercase">Solar for your Home</h4>
+      <p>We Estimated a Solar System for your home</p>
+    </div>
+  </div>
+
+    <div class="row justify-content-around">
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons yellow font-large-2 float-left">wb_sunny</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3><output id="UA_walls_loss"></output>3.2 kW</h3>
+                  <span>Estimated Hourly Production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons green font-large-2 float-left">wb_sunny</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3><output id="UA_windows_loss"></output>14,413 kWh</h3>
+                  <span>Estimated Yearly Production</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="material-icons red font-large-2 float-left">attach_money</i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>$20,000<output id="UA_doors_loss"></output></h3>
+                  <span>Estimated Cost for Solar Panels</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+</section>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+{% endblock content %}
+{% block scripts %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF-BhgAB-WyhjAjxsk9DLkn2fiH-ri-3o&callback=initialize&libraries=&v=weekly" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}?u={{ last_updated }}"></script>
+  {% endblock scripts %}

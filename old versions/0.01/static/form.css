@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0
+
+
+
+}
+body {
+    width: 100%;
+    height: 100%;
+    background: #DFDFDF;
+    font-family: 'Orienta', sans-serif;
+
+}
+
+
+.grad1{
+    background-color:#DFDFDF;
+    font-family: 'Orienta', sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+    font-family: 'Orienta', sans-serif;
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    font-family: 'Orienta', sans-serif;
+    background: #DFDFDF;
+}
+
+#msform fieldset .form-card {
+    background: #DFDFDF;
+    border: 0 none;
+    border-radius: 0px;
+    /*box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2); */
+    padding: 20px 40px 30px 40px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 0 0;
+    position: relative;
+    font-family: 'Orienta', sans-serif;
+}
+
+#msform fieldset {
+    background:#DFDFDF;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+    background: #DFDFDF;
+}
+
+#msform fieldset .form-card {
+    text-align: left;
+    color: #111111
+    background: #DFDFDF;
+}
+
+.row {
+    background: #DFDFDF;
+}
+
+.card {
+    background: #DFDFDF;
+}
+
+#msform input,
+#msform textarea {
+    padding: 20px 8px 4px 8px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #111111;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: #DFDFDF;
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    font-weight: bold;
+    border-bottom: 2px solid skyblue;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #4385F5;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #4385F5
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+}
+
+select.list-dt {
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    padding: 2px 5px 3px 5px;
+    margin: 2px
+}
+
+select.list-dt:focus {
+    border-bottom: 2px solid skyblue
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    border-radius: 0.5rem;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #111111;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #000000
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative
+}
+
+#progressbar #account:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f023"
+}
+
+#progressbar #personal:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f09d"
+}
+
+#progressbar #confirm:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #DFDFDF;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #DFDFDF;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #DFDFDF;
+}
+
+.radio-group {
+    position: relative;
+    margin-bottom: 25px
+}
+
+.radio {
+    display: inline-block;
+    width: 204;
+    height: 104;
+    border-radius: 0;
+    background: lightblue;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 8px 2px
+}
+
+.radio:hover {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3)
+}
+
+.radio.selected {
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1)
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+.logoPollen {
+    padding: 0 20 0 0;
+    box-sizing: border-box;
+    width: 6%;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    border-right: 1px solid #ccc
+}
+
+
+.logoTown {
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+    width: 5%;
+    margin-left: 10px;
+    margin-right:20px;
+    margin-top: 4px;
+    position: relative
+}
+
+.tip {
+    padding-top: -10px;
+    margin-top: -10px;
+}
+
+#msform .question {
+    font-family: montserrat;
+    color: #DFDFDF;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+
+.icon {
+    padding: 3px 3px 3px 3px;
+    box-sizing: border-box;
+    width: 65%;
+    margin: 0 0 0 0;
+    position: relative
+}
+
+
+
+
+
+
+.btn-xlg{
+    padding:.5rem 1rem;
+    font-size:3vw;
+    line-height:1.5;
+    border-radius:.9rem;
+    box-shadow:1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.plusminus{
+
+    color: #fff !important;
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+    display: inline-block!important;
+    font-weight: 400!important;
+    text-align: center!important;
+    vertical-align: middle!important;
+    border: 1px solid transparent!important;
+    padding: .375rem .75rem!important;
+    font-size: 1rem!important;
+    line-height: 1.5!important;
+    border-radius: .25rem!important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
+    box-sizing: border-box!important;
+    width:40!important;
+}
+
+.col {
+    display: inline-block!important;
+}
+
+.dial {
+font-size: 30px !important;
+}
+
+#map,
+#pano {
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+
+
+
+
+.custom-radios div {
+  display: inline-block;
+}
+.custom-radios input[type="radio"] {
+  display: none;
+}
+.custom-radios input[type="radio"] + label {
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+.custom-radios input[type="radio"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  line-height: 44px;
+}
+.custom-radios input[type="radio"] + label span img {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.custom-radios input[type="radio"]#color-1 + label span {
+  background-color: #2ecc71;
+}
+.custom-radios input[type="radio"]#color-2 + label span {
+  background-color: #3498db;
+}
+.custom-radios input[type="radio"]#color-3 + label span {
+  background-color: #f1c40f;
+}
+.custom-radios input[type="radio"]#color-4 + label span {
+  background-color: #e74c3c;
+}
+.custom-radios input[type="radio"]:checked + label span img {
+  opacity: 1;
+}
+.card{
+    border-radius: .60rem!important;
+}
+
+
+
+
+
+iframe{
+    width:100%!important;
+}
+
+
+#magic-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: #fe4902;
+}
+

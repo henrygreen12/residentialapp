@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+<form id="msform" method = "POST" form = form1 enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+<fieldset data-name="WaterHeating">
+                                  <div class="form-card text center">
+                                    <h2 class="fs-title">Water Heating Systems</h2>
+                                    <small>Provide as much information as you can, to help us give you an accurate benchmark.</small>
+                                                                            <p class="question">What Kind of Water Heating System do You Have? </p>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                                  <label class="btn btn-secondary active">
+                                    <input type="radio" name="waterHeatingType" id="option1" value="tankless" autocomplete="off" checked> Tankless
+                                  </label>
+                                  <label class="btn btn-secondary">
+                                    <input type="radio" name="waterHeatingType" id="option2" value="storageTank" autocomplete="off"> Storage Tank
+                                  </label>
+                                  <label class="btn btn-secondary">
+                                    <input type="radio" name="waterHeatingType" id="option3" value="other" autocomplete="off"> I Don't Know
+                                  </label>
+                                </div>
+                                    <input type="storageVolume" name="storageVolume" placeholder="Storage Volume" required />
+                                    <input type="inputCapacity" name="inputCapacity" placeholder="What is the Heating Capacity of your Water Heater?" required />
+                                    <input type="waterHeaterAge" name="waterHeatingAge" placeholder="What year was your water heater installed?" required />
+                                <input type="submit" value="submit"  class="btn-success btn btn-lg" style="background-color:#4385F5;">
+</fieldset>
+
+
+</form>
+</div>
+</div>
+</div>
+{% endblock content %}
