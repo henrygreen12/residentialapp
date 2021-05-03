@@ -1,0 +1,268 @@
+/* screen - appliance-photo */
+
+.appliance-photo {
+  align-items: center;
+  background-color: rgba(6,30,51,1.0);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 48px 21px;
+  position: relative;
+  width: 375px;
+}
+.appliance-photo .appliance-photo-7Yk5FP {
+  background-color: transparent;
+  color: var(--white);
+  flex-shrink: 1;
+  font-family: 'Averta CY-Bold', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  margin-left: 64px;
+  min-height: 20px;
+  min-width: 158px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+}
+.appliance-photo .chevron-left-7Yk5FP {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 5.0px 8px;
+  position: relative;
+  width: 24px;
+}
+.appliance-photo .ellipse-7-5mdx5K {
+  background-color: transparent;
+  height: 53px;
+  left: 9px;
+  position: absolute;
+  top: 9px;
+  width: 53px;
+}
+.appliance-photo .group-1021-5mdx5K {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 71px;
+  justify-content: center;
+  left: 0px;
+  min-width: 71px;
+  position: absolute;
+  top: 0px;
+  width: auto;
+}
+.appliance-photo .group-1060-EEgMBb {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 71px;
+  margin-left: 82px;
+  position: relative;
+  width: 71px;
+}
+.appliance-photo .group-6938-GTBLoR {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  justify-content: flex-start;
+  left: 0px;
+  min-width: 295px;
+  position: absolute;
+  top: 0px;
+  width: auto;
+}
+.appliance-photo .group-6939-GTBLoR {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  justify-content: flex-start;
+  left: 0px;
+  min-width: 295px;
+  position: absolute;
+  top: 470px;
+  width: auto;
+}
+.appliance-photo .group-6940-C61RwL {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 71px;
+  justify-content: flex-start;
+  margin-left: 1.0px;
+  margin-top: 50px;
+  min-width: 316px;
+  position: relative;
+  width: auto;
+}
+.appliance-photo .group-6941-C61RwL {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 510px;
+  margin-top: 55px;
+  position: relative;
+  width: 295px;
+}
+.appliance-photo .group-6942-C61RwL {
+  align-items: center;
+  align-self: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  min-width: 246px;
+  position: relative;
+  width: auto;
+}
+.appliance-photo .images-54PxQx {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-bottom: 0.61px;
+  margin-left: 83px;
+  min-width: 40px;
+  padding: 7.6px 8.0px;
+  position: relative;
+  width: auto;
+}
+.appliance-photo .images-EEgMBb {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-start;
+  margin-bottom: 0.61px;
+  min-width: 40px;
+  padding: 11.6px 9.7px;
+  position: relative;
+  width: auto;
+}
+.appliance-photo .info-OJ4mxw {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 24px;
+  overflow: hidden;
+  position: relative;
+  width: 24px;
+}
+.appliance-photo .oval-lBVomp {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 73px;
+  margin-top: -1.2px;
+  position: relative;
+  width: 73px;
+}
+.appliance-photo .patrik-storm-al-kos-unsplash-1-GTBLoR {
+  background-color: transparent;
+  height: 480px;
+  left: 14px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  width: 268px;
+}
+.appliance-photo .vector-CQtg8d {
+  background-color: transparent;
+  height: 3px;
+  left: 11px;
+  position: absolute;
+  top: 6px;
+  width: 3px;
+}
+.appliance-photo .vector-EA8wwR {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 16px;
+  position: relative;
+  width: 20px;
+}
+.appliance-photo .vector-Hq4Eh7 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+.appliance-photo .vector-LkGf9D {
+  background-color: transparent;
+  height: 23px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 23px;
+}
+.appliance-photo .vector-WQ6nZr {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  position: relative;
+  width: 8px;
+}
+.appliance-photo .vector-YU8uGB {
+  background-color: transparent;
+  height: 7px;
+  left: 10px;
+  position: absolute;
+  top: 10px;
+  width: 3px;
+}
+.appliance-photo .vector-moZSLr {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 40px;
+  position: relative;
+  width: 40px;
+}
+.appliance-photo .vector-nGYUc4 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 40px;
+  margin-left: 215px;
+  position: relative;
+  width: 40px;
+}
+.appliance-photo .vector-pYfpfD {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 40px;
+  margin-left: 215px;
+  position: relative;
+  width: 40px;
+}

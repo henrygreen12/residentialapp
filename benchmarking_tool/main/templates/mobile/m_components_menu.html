@@ -1,0 +1,36 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<div class='page'>
+  <div class='row'>
+      <div class='column'>
+          <form action="/m_savings/">
+            <input type="image" src="{{url_for('static', filename='/mobileimages/cashcolor.png')}}" width='31.09' height='60' alt="Submit">
+          </form>
+          <p class="h6">Savings</p>
+      </div>
+      <div class='column'>
+        <form action="/m_upgrades/">
+          <input type="image" src="{{url_for('static', filename='/mobileimages/upgrades.png')}}" width='52.43' height='60' alt="Submit">
+        </form>
+        <p class="h6">Upgrades</p>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='center'>
+        <div class='column'>
+            
+            <form action="/m_coming_soon/">
+            <input type="image" src="{{url_for('static', filename='/mobileimages/netzero.png')}}" width='70' height='35.16' alt="Submit">
+        
+            </form>
+        
+            <p class="h6">Net Zero</p>
+        </div>
+        </div>
+    </div>
+    
+  
+</div>
+
+{% endblock content %}

@@ -1,0 +1,289 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+<style>
+  .wrapper.home_info {
+    background-color: white;
+    box-shadow: 0 1px 6px;
+    margin: 18px 8px;
+  }
+</style>
+
+<div class="wrapper home_info">
+
+  <div class="border border-dark px-2 py-2">
+    <h5 class="m-0">{{ home_info["address"] }} {{ home_info["city"] }}, {{ home_info["province"] }}</h5>
+  </div>
+
+  <div class="container">
+    <!-- loop this row for each info -->
+    <div class="row pt-2 border-bottom border-secondary">
+      <div class="col-6 text-secondary">
+        <h6>Info title</h6>
+      </div>
+      <div class="col-6 text-dark text-center">
+        <h6>Info data</h6>
+      </div>
+    </div>
+    <!-- ----------------------------- -->
+
+    <div class="row pt-2 border-bottom border-secondary">
+      <div class="col-6 text-secondary">
+        <h6>Info title</h6>
+      </div>
+      <div class="col-6 text-dark text-center">
+        <h6>Info data</h6>
+      </div>
+    </div>
+
+    <div class="row pt-2 border-bottom border-secondary">
+      <div class="col-6 text-secondary">
+        <h6>Info title</h6>
+      </div>
+      <div class="col-6 text-dark text-center">
+        <h6>Info data</h6>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper home_info">
+
+  <div class="border border-dark px-2 py-2">
+    <h5 class="m-0">Energuide Rating</h5>
+  </div>
+
+  <div class="">
+    <h5>" "</h5>
+  </div>
+</div>
+
+<div class="wrapper home_info">
+
+  <div class="border border-dark px-2 py-2">
+    <h5 class="m-0">Energy Breakdown</h5>
+  </div>
+
+  <div class="" style="background-color: white; margin-bottom: 0.5em;">
+    <div id="chart_energy_breakdown"></div>
+  </div>
+
+  <table class="table table-bordered table-sm" style="width: 100%; padding: 8px;">
+    <thead>
+      <tr>
+        <th scope="col"> </th>
+        <th scope="col">Type</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" style="width: 20px;">
+          <div class="" style="height: 12px; width: 12px; background-color: red; margin: auto;">
+          </div>
+        </th>
+        <td>Furnace</td>
+        <td>$ 12.34</td>
+      </tr>
+      <tr>
+        <th scope="row" style="width: 20px;">
+          <div class="" style="height: 12px; width: 12px; background-color: blue; margin: auto;">
+          </div>
+        </th>
+        <td>Furnace</td>
+        <td>$ 12.34</td>
+      </tr>
+      <tr>
+        <th scope="row" style="width: 20px;">
+          <div class="" style="height: 12px; width: 12px; background-color: green; margin: auto;">
+          </div>
+        </th>
+        <td>Furnace</td>
+        <td>$ 12.34</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="card mb-3 d-flex">
+  <div class="card-body">
+
+      <br />
+      {% if bill_identified == true%}
+
+      <ul class="list-group list-group-flush">
+  <li class="list-group-item"><div class='text-muted' style="display:inline">Provider</div><div class="float-right" style="display:inline"><img class="py-1 responsiveImg"  src="{{ url_for('static',filename= bill_provider+'.png') }}" width="100"" width="auto"></div></li>
+  <li class="list-group-item"><div class='text-muted' style="display:inline">Electrical Rate</div><div class="float-right" style="display:inline">${{ customer_electrical_rate|round(4) }}</div></li>
+  <li class="list-group-item"><div class='text-muted' style="display:inline">Total Bill</div><div class="float-right">${{ electricity_charged }}</div></li>
+  <li class="list-group-item"><div class='text-muted' style="display:inline">Total Usage</div><div class="float-right" style="display:inline">{{ found_kwh }} kWh</div></li>
+
+      </ul>
+    {% elif wrong_page == true %}
+    <div class="col-lg-4 col-md-12 col-sm-12 mb-3 mb-sm-0">
+     <p class="card-text text-muted">Take a photo of your utility bill to view a comparison of rates with other providers</p>
+  </div>
+    <form  method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+
+
+         <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+          <div class="card-text"></div>
+           <div id="loading"></div>
+           <div id="content">
+              <label for="electrical_photo" class='btncam pt-2' >
+              <i class="fas fa-camera  fa-5x"></i>
+              <br />
+              <small style="padding-left:7px;">Add Bill</small>
+              </label>
+              <input type="file" style='display: none;'  accept="image/*" capture="user" autocomplete="off" id='electrical_photo' onchange="submit();"
+              required class="btn btn-default btn-lg button" style="border:none"
+                 name="electrical_photo">
+           </div>
+        </div>
+
+        <div class="col col-lg-4 col-md-12" style="text-align: center;">
+         <img class="iconLg" style="opacity: 0.8;" src="{{ url_for('static',filename='billphoto.svg') }}">
+        </div>
+    </form>
+
+    {% else %}
+    <div class="col-lg-12 col-md-12 col-sm-12 mb-3 mb-sm-0">
+     <p class="card-text text-muted">Take a photo of your utility bill to view a comparison of rates with other providers</p>
+  </div>
+  <div class="col col-lg-4 col-md-12" style="text-align: center;">
+         <img class="iconLg" style="opacity: 0.8;" src="{{ url_for('static',filename='billphoto.svg') }}">
+        </div>
+    <form  method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+
+
+         <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+           <div id="loading"></div>
+           <div id="content">
+              <label for="electrical_photo" class='btncam pt-2' >
+              <i class="fas fa-camera  fa-5x"></i>
+              <br />
+              <small style="padding-left:7px;">Add Bill</small>
+              </label>
+              <input type="file" style='display: none;' autocomplete="off" id='electrical_photo' capture='user' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                 name="electrical_photo">
+           </div>
+        </div>
+
+
+    </form>
+    {% endif %}
+  </div>
+</div>
+      {% if electric_bills|count >0 %}
+      <div class="card mb-3">
+          <div class="card-body">
+              <div class="card-header bg-transparent">
+              Your Bills
+              </div>
+              {% for bill in electric_bills %}
+              <li class="list-group-item"><div class='text-muted' style="display:inline"><small class="text-muted" style="line-height: 5px">{{ bill.created_date }}</small></div>
+                <div class="float-right" style="display:inline">{{ bill.consumption }} kWh</div>
+              </li>
+                {% endfor %}
+          </div>
+      </div>
+      {% endif %}
+</div>
+
+
+
+<div class="wrapper home_info">
+
+  <div class="border border-dark px-2 py-2">
+    <h5 class="m-0">Home Inventory</h5>
+  </div>
+
+  <div class="container upgrades_container">
+    <div class="row justify-content-left">
+
+      <div class="inventory_card m-1 border border-dark" style="width: 47%">
+        <div class="">
+          <img src="{{ url_for ('static',filename='appliance_default.png') }}" alt="inventory item" style="max-width:100%; max-height: 100%;">
+        </div>
+
+        <div class="border border-secondary px-2 pt-1">
+          <h6>Inventory item</h6>
+        </div>
+      </div>
+
+      <div class="inventory_card m-1 border border-dark" style="width: 47%">
+        <div class="">
+          <img src="{{ url_for ('static',filename='appliance_default.png') }}" alt="inventory item" style="max-width:100%; max-height: 100%;">
+        </div>
+
+        <div class="border border-secondary px-2 pt-1">
+          <h6>Inventory item</h6>
+        </div>
+      </div>
+
+      <div class="inventory_card m-1 border border-dark" style="width: 47%">
+        <div class="">
+          <img src="{{ url_for ('static',filename='appliance_default.png') }}" alt="inventory item" style="max-width:100%; max-height: 100%;">
+        </div>
+
+        <div class="border border-secondary px-2 pt-1">
+          <h6>Inventory item</h6>
+        </div>
+      </div>
+
+      <div class="inventory_card m-1 border border-dark" style="width: 47%">
+        <div class="">
+          <img src="{{ url_for ('static',filename='appliance_default.png') }}" alt="inventory item" style="max-width:100%; max-height: 100%;">
+        </div>
+
+        <div class="border border-secondary px-2 pt-1">
+          <h6>Inventory item</h6>
+        </div>
+      </div>
+
+      <div class="inventory_card m-1 border border-dark" style="width: 47%">
+        <div class="">
+          <img src="{{ url_for ('static',filename='appliance_default.png') }}" alt="inventory item" style="max-width:100%; max-height: 100%;">
+        </div>
+
+        <div class="border border-secondary px-2 pt-1">
+          <h6>Inventory item</h6>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="card-body">
+    {% if appliances|count < 1 %}
+    <a href='/m_appliances'>Click to add your appliances.</a>
+    {% else %}
+
+    <div class="card-deck">
+          {% for appliance in appliances %}
+            <div class="card d-flex justify-content-center text-center m-2 d-flex clickBox">
+                <div class="card-header bg-transparent" style="border-bottom: 0">
+                  <small class="text-muted">
+                  {{ appliance.appliance_type }}
+                  </small>
+                </div>
+            <a href="/m_appliances" class="mt-auto"><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></a>
+            <p class="text-muted">${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }}</p>
+            </div>
+          {% endfor %}
+      {% endif %}
+
+
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static',filename='m_home_comparison.js') }}"></script>
+{% endblock scripts %}

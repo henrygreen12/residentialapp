@@ -1,0 +1,36 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<div class='page'>
+  <div class='row'>
+      <div class='column'>
+          <form action="/m_home_menu/">
+            <input type="image" src="{{url_for('static', filename='/mobileimages/Group116.png')}}" width='100' alt="Submit">
+          </form>
+          <p class="h6">My House</p>
+      </div>
+      <div class='column'>
+        <form action="/m_components_menu/">
+          <input type="image" src="{{url_for('static', filename='/mobileimages/Groupretro.png')}}" width='100' alt="Submit">
+        </form>
+        <p class="h6">Components <br> & Retrofittings</p>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='center'>
+        <div class='column'> 
+            
+            <form action="/m_energy_plan/">
+            <input type="image" src="{{url_for('static', filename='/mobileimages/Group119.png')}}" width='100' alt="Submit">
+        
+            </form>
+        
+            <p class="h6">Energy Retail</p>
+        </div>
+    </div>
+  </div>
+    
+  
+</div>
+
+{% endblock content %}

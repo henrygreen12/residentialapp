@@ -1,0 +1,44 @@
+{% extends 'mobile_base.html' %}
+{% set active_page = "home" %}
+{% block content %}
+
+<style>
+.link_button {
+    min-height: 110px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    text-align: left;
+    font-size: 30px;
+    margin: 8px 0;
+    white-space: normal;
+  }
+hr {
+    border: none;
+    width: 100%;
+    height: 2px;
+    color: #333;
+    background-color: #333; 
+    padding: 0px;
+}
+.center {
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+.larry {
+    text-align: left;
+    padding: 0px;
+    width: 90%;
+}
+</style>
+
+
+<div class="m-2">
+
+    <h2 class="larry">Furnaces</h2>
+    <hr>
+
+</div>
+{% endblock content %}

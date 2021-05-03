@@ -1,0 +1,105 @@
+/* screen - new-user-user-type */
+
+.new-user-user-type {
+  align-items: flex-start;
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 812px;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 0 48px;
+  position: relative;
+  width: 375px;
+}
+.new-user-user-type .business-icNILm {
+  background-color: transparent;
+  height: auto;
+  left: 78px;
+  letter-spacing: 0.00px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+  white-space: nowrap;
+  width: auto;
+}
+.new-user-user-type .button-TpSaDb {
+  background-color: transparent;
+  cursor: pointer;
+  flex-shrink: 1;
+  height: 60px;
+  margin-top: 20px;
+  position: relative;
+  width: 219px;
+}
+.new-user-user-type .button-WAOlvN {
+  background-color: transparent;
+  cursor: pointer;
+  flex-shrink: 1;
+  height: 60px;
+  margin-top: 70px;
+  position: relative;
+  width: 219px;
+}
+.new-user-user-type .group-6946-C61RwL {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-top: 265px;
+  min-height: 282px;
+  position: relative;
+  width: 277px;
+}
+.new-user-user-type .rectangle-2313-icNILm {
+  background-color: var(--gulf-blue);
+  border-radius: 20px;
+  box-shadow: 0px 4px 50px rgba(102,117,192,0.2);;
+  height: 60px;
+  left: 0px;
+  opacity: 0.1;
+  position: absolute;
+  top: 0px;
+  width: 217px;
+}
+.new-user-user-type .rectangle-2313-x2epvg {
+  background-color: var(--orange-soda);
+  border-radius: 20px;
+  box-shadow: 0px 4px 50px rgba(102,117,192,0.2);;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 217px;
+}
+.new-user-user-type .residencial-home-x2epvg {
+  background-color: transparent;
+  height: auto;
+  left: 43px;
+  letter-spacing: 0.00px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 22px;
+  white-space: nowrap;
+  width: auto;
+}
+.new-user-user-type .what-type-of-user-are-you-WAOlvN {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  min-height: 72px;
+  min-width: 277px;
+  position: relative;
+  text-align: center;
+  width: auto;
+}

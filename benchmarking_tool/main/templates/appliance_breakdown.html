@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/inventory-appliances-usage.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}"/>
+      <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="inventory-appliances-usage" />
+    <div class="container-center-horizontal">
+      <div class="inventory-appliances-usage screen">
+        <div class="group-6883-C61RwL">
+          <div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="img/vector-3@2x.svg" /></div>
+          <div class="appliances-usage-ht0xwR avertacy-bold-gulf-blue-20px">Appliances Usage</div>
+        </div>
+        <div class="x1-C61RwL">
+          <div class="kitchen-GML0ip">Kitchen</div>
+          {% for kitchen_appliance in kitchen_appliances %}
+          <div class="avertacy-normal-gulf-blue-13px">
+            <div class="card-body d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div id="chart"></div>
+                        </div>
+                          <script>
+                              var name ='{{kitchen_appliance.appliance_name}}';
+                              var data = '{{kitchen_appliance.usage_time}}';
+                              var options = {
+                                series: [{
+                                data: [data]
+                              }],
+                                chart: {
+                                type: 'bar',
+                                height: 70,
+                                toolbar:{
+                                  show:false
+                                },
+                                baseFont: "Averta CY-Bold",
+                              },
+                              tooltip:{
+                                enabled: false
+                              },
+                              plotOptions: {
+                                bar: {
+                                  borderRadius: 4,
+                                  horizontal: true,
+                                }
+                              },
+                              grid:{
+
+                                show: false
+                              },
+                              xaxis: {
+                                  labels: {
+                                    show: false
+                                   },
+                                   axisBorder:{
+                                    show: false
+                                   },                                  
+                                   axisTicks:{
+                                    show: false
+                                   },
+                                categories: [name
+                                ],
+                              },
+                              yaxis:{
+                                axisBorder:{
+                                    show: false
+                                   },
+                                 },
+                              };
+
+                              var chart = new ApexCharts(document.querySelector("#chart"), options);
+                              chart.render();
+      
+                        </script>
+                    </div>
+                  </div>
+                  {% endfor %}
+        <div class="x2-C61RwL">
+          <div class="living-room-Xk2MQo">Living Room</div>
+          <div class="group-6901-Xk2MQo">
+            <div class="air-conditioner-lQc3YC avertacy-normal-gulf-blue-13px">Air Conditioner</div>
+            <div class="overlap-group-lQc3YC">
+              <div class="rectangle-2350-NOyNBQ"></div>
+              <div class="x12-NOyNBQ avertacy-normal-white-10px">12%</div>
+            </div>
+          </div>
+          <div class="group-6902-Xk2MQo">
+            <div class="vacuum-cleaner-AIqPWW avertacy-normal-gulf-blue-13px">Vacuum Cleaner</div>
+            <div class="overlap-group1-AIqPWW">
+              <div class="rectangle-2350-jsEBQS"></div>
+              <div class="x13-jsEBQS avertacy-normal-white-10px">13%</div>
+            </div>
+          </div>
+          <div class="group-6903-Xk2MQo">
+            <div class="heater-aqlrbx avertacy-normal-gulf-blue-13px">Heater</div>
+            <div class="overlap-group2-aqlrbx">
+              <div class="rectangle-2350-sUdbP2"></div>
+              <div class="x11-sUdbP2 avertacy-normal-white-10px">11%</div>
+            </div>
+          </div>
+          <div class="group-6904-Xk2MQo">
+            <div class="computer-R1M6Zi avertacy-normal-gulf-blue-13px">Computer</div>
+            <div class="overlap-group3-R1M6Zi">
+              <div class="rectangle-2350-y3PStb"></div>
+              <div class="x10-y3PStb avertacy-normal-white-10px">10%</div>
+            </div>
+          </div>
+          <div class="group-6905-Xk2MQo">
+            <div class="fan-a5kNEa avertacy-normal-gulf-blue-13px">Fan</div>
+            <div class="overlap-group4-a5kNEa">
+              <div class="rectangle-2350-leie9g"></div>
+              <div class="x8-leie9g avertacy-normal-white-10px">8%</div>
+            </div>
+          </div>
+          <div class="group-6906-Xk2MQo">
+            <div class="speakers-BU3y2N avertacy-normal-gulf-blue-13px">Speakers</div>
+            <div class="overlap-group5-BU3y2N">
+              <div class="rectangle-2350-hHGvmS"></div>
+              <div class="x9-hHGvmS avertacy-normal-white-10px">9%</div>
+            </div>
+          </div>
+          <div class="group-6907-Xk2MQo">
+            <div class="telephone-wcVwCY avertacy-normal-gulf-blue-13px">Telephone</div>
+            <div class="overlap-group6-wcVwCY">
+              <div class="rectangle-2350-P6CdT0"></div>
+              <div class="x5-P6CdT0 avertacy-normal-white-10px">5%</div>
+            </div>
+          </div>
+          <div class="group-6917-Xk2MQo">
+            <div class="iron-1Xr9sO avertacy-normal-gulf-blue-13px">Iron</div>
+            <div class="overlap-group7-1Xr9sO">
+              <div class="rectangle-2350-tWviqQ"></div>
+              <div class="x7-tWviqQ avertacy-normal-white-10px">7%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

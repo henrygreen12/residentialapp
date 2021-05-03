@@ -1,0 +1,79 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<div class='page'>
+    
+    <h4>Current windows</h4>
+    <small> click on a window to compaison</small>
+    <div id="rcorners">
+        <div id="imgdiv">
+            <img src="{{url_for('static', filename='/mobileimages/grayblock.png')}}" alt="">
+        </div>
+        <div class="container"style="padding: 3px;">
+            <div>
+
+                <text style="float: left; text-align: left; vertical-align: text-top;" >{{ user_furnace[0] }}</text>
+            
+                <text style="float: right; text-align: right; vertical-align: text-top;">Monthly Cost: <b>${{ user_furnace[2] }}</b></text>
+                
+            </div>
+            <div style="clear: both;"></div>
+            <div>
+                <small style="float: left; text-align: left; vertical-align: text-top;" >Efficiency: <b>{{ user_furnace[1] }}%</b></small>
+            </div>
+            <div style="clear: both;"></div>
+            
+        </div>
+    </div>
+    
+    <br>
+    <h4>Suggested Windows</h4>
+    <form action="/m_windows_comparison_details/" method="get">
+        <button class="btn btn-default" type="submit" name="comp" id="comp" value='{{ user_furnace }}, {{ top1 }}'>
+            <div id="imgdiv">
+                <img src="{{url_for('static', filename='/mobileimages/grayblock.png')}}" alt="">
+            </div>
+            <div class="container"style="padding: 3px;">
+                <div>
+
+                    <text style="float: left; text-align: left; vertical-align: text-top;" >{{ top1[0]}}</text>
+                
+                    <text style="float: right; text-align: right; vertical-align: text-top;">Monthly Cost: <b>${{ top1[2]}}</b></text>
+                    
+                </div>
+                <div style="clear: both;"></div>
+                <div>
+                    <text style="float: left; text-align: left; vertical-align: text-top;" >Efficiency: <b>{{ top1[1] }}%</b></text>
+                </div>
+                <div style="clear: both;"></div>
+                
+            </div>
+        </button>
+    </form>
+    <form action="/m_windows_comparison_details/" method="get">
+        <button class="btn btn-default" type="submit" name="comp" id="comp" value='{{ user_furnace }}, {{ top2 }}'>
+            <div id="imgdiv">
+                <img src="{{url_for('static', filename='/mobileimages/grayblock.png')}}" alt="">
+            </div>
+            <div class="container"style="padding: 3px;">
+                <div>
+
+                    <text style="float: left; text-align: left; vertical-align: text-top;" >{{ top2[0] }}</text>
+                
+                    <text style="float: right; text-align: right; vertical-align: text-top;">Monthly Cost: <b>${{ top2[2]}}</b></text>
+                    
+                </div>
+                <div style="clear: both;"></div>
+                <div>
+                    <text style="float: left; text-align: left; vertical-align: text-top;" >Efficiency: <b>{{ top2[1] }}%</b></text>
+                </div>
+                <div style="clear: both;"></div>
+                
+            </div>
+        </button>
+    </form>
+    <br>
+
+</div>
+
+{% endblock content %} 

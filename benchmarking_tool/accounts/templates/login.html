@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/login.css')}}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://animaapp.s3.amazonaws.com/launchpad-static/launchpad.js"></script>
+    <style>
+      .component-wrapper a,
+      .screen a {
+        text-decoration: none;
+        display: contents;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen *,
+      .component-wrapper * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .container-center-vertical,
+      .container-center-horizontal {
+        pointer-events: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        height: 100%;
+      }
+
+      .container-center-horizontal {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .container-center-vertical > *,
+      .container-center-horizontal > * {
+        pointer-events: auto;
+        flex-shrink: 0;
+      }
+
+      .component-wrapper,
+      .screen {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+        word-break: break-word;
+      }
+
+      .auto-animated div {
+        opacity: 0;
+        position: absolute;
+        --z-index: -1;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay {
+        position: absolute;
+        opacity: 0;
+        display: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .animate-appear {
+        opacity: 0;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+      }
+
+      .animate-disappear {
+        opacity: 1;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+      .align-self-flex-center {
+        align-self: center;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      input:focus {
+        outline: none;
+      }
+      .component-wrapper,
+      .component-wrapper * {
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper a,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe,
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .avertacy-normal-cadet-blue-14px {
+        color: var(--cadet-blue);
+        font-family: var(--font-family-averta_cy-semibold);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+      :root {
+        --cadet-blue: rgba(175, 184, 204, 1);
+        --font-family-averta_cy-bold: "Averta CY-Bold", Helvetica;
+        --font-family-averta_cy-semibold: "Averta CY-Semibold", Helvetica;
+        --font-size-l: 32px;
+        --font-size-m: 14px;
+      }
+    </style>
+    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
+  </head>
+  <body style="margin: 0; background: rgba(255, 255, 255, 1)">
+    <input type="hidden" id="anPageName" name="page" value="login" />
+    <div class="container-center-horizontal">
+      <form class="login screen" name="form2" method="POST">
+        {{form.hidden_tag()}}
+        <img class="pollen-2-C61RwL" src="{{ url_for('static',filename='img/pollen-2@2x.png')}}"/>
+        <div class="login-C61RwL">Login</div>
+        <div class="group-6899-C61RwL">
+          <div class="email-Mz8XNq avertacy-normal-cadet-blue-14px">Email</div>
+          {{form.email(placeholder="Email",class="rectangle-2345-Mz8XNq", id="inputEmail", type="email" )}}
+          {% if form.email.errors %}
+            <div class="invalid-feedback">
+            {% for error in form.email.errors  %}
+            <span>{{error}}</span>
+            {% endfor %}
+            </div>
+           {% endif %}
+        </div>
+        <div class="group-6898-C61RwL">
+          <div class="password-xQb8O6 avertacy-normal-cadet-blue-14px">Password</div>
+          <div class="overlap-group-xQb8O6">
+          {{form.password(placeholder="Password", class="rectangle-2345-yXclYN", id='inputPassword', placeholder='Password',type="password")}}
+              {% if form.password.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                    <span>{{error}}</span>
+                    {% endfor %}
+                </div>
+              {% endif %}
+            <a href="#rectangle-2345">
+              <div class="eye-off-yXclYN">
+                <img class="vector-oM7nf2" src="{{ url_for('static',filename='img/vector@2x.svg')}}" />
+                <img class="vector-rAchWF" src="{{ url_for('static',filename='img/vector-1@2x.svg')}}" /></div
+            ></a>
+          </div>
+        </div>
+          <div class="forgot-password-C61RwL avertacy-normal-cadet-blue-14px">Forgot Password?</div>
+          <div class="group-6945-C61RwL">
+            <div class="group-2613-sdswyJ">
+
+              <img class="polygon-1-LUu7gt" src="{{ url_for('static',filename='img/polygon-1@2x.svg')}}" />
+              <div class="create-an-account-LUu7gt">Create an account</div>
+            </div>
+            <button class="button-sdswyJ" type = "Submit">
+                <img class="back-QE7ndr" src="{{ url_for('static',filename='img/back@2x.svg')}}" />
+                <img class="back-Rrbt1U" src="{{ url_for('static',filename='img/back-1@2x.svg')}}" />
+              </button>
+            </div></div
+        >
+      </form>
+    </div>
+  </body>
+</html>

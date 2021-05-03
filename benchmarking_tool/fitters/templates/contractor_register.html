@@ -1,0 +1,84 @@
+{% extends 'contractor_base.html' %}
+{% block content %}
+<div class="container-fluid" id="grad1">
+  <div class="row justify-content-center mt-0">
+    <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+      <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+        <h2>Register as a contractor</h2>
+        <div class="row">
+          <div class="col-md-12 mx-0">
+            {% for field, errors in form.errors.items() %}
+              <div class="alert alert-error">
+                {{ form[field].label }}: {{ ', '.join(errors) }}
+              </div>
+            {% endfor %}
+            <form id="msform" method="POST" form="form1" enctype="multipart/form-data">
+              {{ form.csrf_token }}
+                <!-- progressbar -->
+                  <!-- fieldsets -->
+              <fieldset data-name="Personal">
+                <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title">Your Information</h2>
+                  <input type="email" name="email" placeholder="Email" required />
+                  <input type="text" name="first_name" placeholder="First Name" required/>
+                  <input type="text" name="last_name" placeholder="Last Name" required/>
+                  <input type="password" name="password" placeholder="Password" required />
+                  <input type="password" name="confirm_password" placeholder="Confirm Password" required/>
+                </div>
+                <input type="button" name="next" class="next action-button" value="Next Step"/>
+              </fieldset>
+              <fieldset data-name="Phone">
+                <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title"> Your Phone Number</h2>
+                  <input type="phone_number" name="phone_number" placeholder="Phone Number" required />
+                  <!-- <input type="text" name="location" id="search_city" placeholder="City" required/> -->
+                </div>
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input type="button" name="next" class="next action-button" value="Next Step"/>
+              </fieldset>
+              <!-- <fieldset data-name="Code"> -->
+              <fieldset data-name="Code">
+                <div class="progress" style="margin-left:3%;margin-right: 3%;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title">Code of the company</h2>
+                  <input type="password" name="code" placeholder="Code of the company" />
+                </div>
+                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                <input type="button" name="next" class="next action-button" value="Next Step"/>
+              </fieldset>
+              <fieldset data-name="Success">
+                <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                </div>
+                <div class="form-card">
+                  <h2 class="fs-title text-center">Success !</h2>
+                  <br /><br />
+                  <div class="row justify-content-center">
+                  </div>
+                  <br/><br/>
+                  <div class="row justify-content-center">
+                    <div class="col-7 text-center">
+                      <h5>You Have Successfully Signed Up</h5>
+                    </div>
+                    <input type="submit" value="submit" />
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

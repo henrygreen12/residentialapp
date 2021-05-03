@@ -1,0 +1,957 @@
+/* screen - your-utility-rates-gridview */
+
+.your-utility-rates-gridview {
+  align-items: flex-start;
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 48px 0;
+  position: relative;
+  width: 375px;
+}
+.your-utility-rates-gridview .add-appliances-ugIVvE {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  margin-left: 8px;
+  min-height: 12px;
+  min-width: 114px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .button-bYMnra {
+  align-items: center;
+  background-color: var(--orange-soda);
+  border-radius: 20px;
+  box-shadow: 0px 4px 50px rgba(102,117,192,0.2);;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 60px;
+  justify-content: flex-end;
+  min-width: 217px;
+  padding: 0 36px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .category-2n3xc3 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 14px;
+  justify-content: flex-start;
+  margin-left: 10px;
+  min-width: 21px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .category-bqxNep {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 14px;
+  justify-content: flex-start;
+  min-width: 14px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .chevron-left-dpZnG9 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 4px;
+  overflow: hidden;
+  padding: 6.0px 3px;
+  position: relative;
+  transform: rotate(-90deg);
+  width: 18px;
+}
+.your-utility-rates-gridview .chevron-left-ht0xwR {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 5.0px 8px;
+  position: relative;
+  width: 24px;
+}
+.your-utility-rates-gridview .compare-AxMRo8 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  min-height: 14px;
+  min-width: 64px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .compare-GYjC9r {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  min-height: 14px;
+  min-width: 64px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .compare-KAHh4y {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  min-height: 14px;
+  min-width: 64px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .edit-4PRxWs {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  overflow: hidden;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .edit-K3m4Wk {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  overflow: hidden;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .edit-S75U9a {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  overflow: hidden;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .flex-col-6MsvME {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-left: 1px;
+  margin-top: -1px;
+  min-height: 16px;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .flex-col-6bcc5e {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-left: -1px;
+  margin-top: -1.28px;
+  min-height: 17px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .flex-col-MdvlXP {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-left: -1px;
+  margin-top: -1.28px;
+  min-height: 17px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .flex-col-ZBV1JT {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-left: 0px;
+  margin-top: -1.28px;
+  min-height: 17px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .flex-row-1hqbxx {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-top: 28px;
+  min-width: 295px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .flex-row-IKPCVH {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-top: 28px;
+  min-width: 295px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .flex-row-pDUNPd {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-top: 28px;
+  min-width: 295px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .frame-4311-l9lMLv {
+  align-items: center;
+  background-color: var(--zircon);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: 247px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+  width: 335px;
+}
+.your-utility-rates-gridview .frame-4312-1hqbxx {
+  background-color: transparent;
+  border-radius: 16px;
+  flex-shrink: 1;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  width: 307px;
+}
+.your-utility-rates-gridview .frame-4312-IKPCVH {
+  background-color: transparent;
+  border-radius: 16px;
+  flex-shrink: 1;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  width: 307px;
+}
+.your-utility-rates-gridview .frame-4312-pDUNPd {
+  background-color: transparent;
+  border-radius: 16px;
+  flex-shrink: 1;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  width: 307px;
+}
+.your-utility-rates-gridview .frame-4318-l9lMLv {
+  align-items: center;
+  background-color: var(--zircon);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: 247px;
+  justify-content: flex-start;
+  margin-top: 16px;
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+  width: 335px;
+}
+.your-utility-rates-gridview .frame-4318-lPOvJn {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  min-height: 773px;
+  position: relative;
+  width: 335px;
+}
+.your-utility-rates-gridview .frame-4319-l9lMLv {
+  align-items: center;
+  background-color: var(--zircon);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: 247px;
+  justify-content: flex-start;
+  margin-top: 16px;
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+  width: 335px;
+}
+.your-utility-rates-gridview .frame-4321-I4nOoS {
+  align-items: center;
+  background-color: var(--orange-soda);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-end;
+  min-width: 90px;
+  padding: 0 12px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .frame-4321-ej0thl {
+  align-items: center;
+  background-color: var(--orange-soda);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-end;
+  min-width: 90px;
+  padding: 0 12px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .frame-4321-o5P56g {
+  align-items: center;
+  background-color: var(--orange-soda);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-end;
+  min-width: 90px;
+  padding: 0 12px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-4293-uwuftL {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  min-width: 144px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-4328-jz2xnr {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  min-width: 146px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6883-C61RwL {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  margin-left: 21px;
+  min-width: 244px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6889-cPaGO5 {
+  align-items: center;
+  background-color: var(--orange-soda-2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  justify-content: flex-start;
+  left: 265px;
+  min-width: 32px;
+  padding: 0 9px;
+  position: absolute;
+  top: 10px;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6889-fqFgT6 {
+  align-items: center;
+  background-color: var(--orange-soda-2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  justify-content: flex-start;
+  left: 265px;
+  min-width: 32px;
+  padding: 0 9px;
+  position: absolute;
+  top: 10px;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6889-rQLjTq {
+  align-items: center;
+  background-color: var(--orange-soda-2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 32px;
+  justify-content: flex-start;
+  left: 265px;
+  min-width: 32px;
+  padding: 0 9px;
+  position: absolute;
+  top: 10px;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6891-UyvNxx {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 14px;
+  justify-content: flex-start;
+  margin-left: 197px;
+  min-width: 45px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6892-C61RwL {
+  align-items: center;
+  align-self: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-top: 30px;
+  min-width: 315px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6892-UyvNxx {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 73px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6893-4eduM0 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 773px;
+  justify-content: flex-start;
+  left: 20px;
+  min-width: 335px;
+  position: absolute;
+  top: 0px;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6923-4eduM0 {
+  align-items: flex-start;
+  background-color: transparent;
+  background-image: url(../img/rectangle-2343@2x.svg);
+  background-size: 100% 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 95px;
+  justify-content: flex-start;
+  left: 0px;
+  min-width: 375px;
+  padding: 11px 79px;
+  position: absolute;
+  top: 577px;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6980-UWdlEr {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 20px;
+  justify-content: flex-start;
+  min-width: 104px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6980-jiyMjw {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 20px;
+  justify-content: flex-start;
+  min-width: 49px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6980-lUQJ67 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 20px;
+  justify-content: flex-start;
+  min-width: 153px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6981-UWdlEr {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-left: 101px;
+  min-width: 90px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6981-jiyMjw {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-left: 156px;
+  min-width: 90px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .group-6981-lUQJ67 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 28px;
+  justify-content: flex-start;
+  margin-left: 52px;
+  min-width: 90px;
+  position: relative;
+  width: auto;
+}
+.your-utility-rates-gridview .image-33-rQLjTq {
+  background-color: transparent;
+  height: 188px;
+  left: -4px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 332px;
+}
+.your-utility-rates-gridview .image-36-rQLjTq {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -50px;
+  width: 309px;
+}
+.your-utility-rates-gridview .image-37-cPaGO5 {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -55px;
+  width: 309px;
+}
+.your-utility-rates-gridview .image-37-fqFgT6 {
+  background-color: transparent;
+  height: 205px;
+  left: 0px;
+  object-fit: cover;
+  position: absolute;
+  top: -55px;
+  width: 309px;
+}
+.your-utility-rates-gridview .overlap-group-C61RwL {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 773px;
+  margin-top: 20px;
+  position: relative;
+  width: 375px;
+}
+.your-utility-rates-gridview .plus-ugIVvE {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 0 4px;
+  position: relative;
+  width: 24px;
+}
+.your-utility-rates-gridview .rectangle-2369-cPaGO5 {
+  background-color: transparent;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  top: 97px;
+  width: 309px;
+}
+.your-utility-rates-gridview .rectangle-2369-fqFgT6 {
+  background-color: transparent;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  top: 97px;
+  width: 309px;
+}
+.your-utility-rates-gridview .rectangle-2369-rQLjTq {
+  background-color: transparent;
+  height: 53px;
+  left: 0px;
+  position: absolute;
+  top: 97px;
+  width: 309px;
+}
+.your-utility-rates-gridview .refrigerator-tKZGL4 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  min-height: 20px;
+  min-width: 104px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .sort-by-dpZnG9 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 14px;
+  margin-top: 1px;
+  min-height: 14px;
+  min-width: 49px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .stove-6lZWaS {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  min-height: 20px;
+  min-width: 49px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .stroke-1-9sxLnV {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-1-wYdRmV {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-3-DgRVip {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-3-cqxZln {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 7px;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .stroke-5-9sxLnV {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 0px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-5-wYdRmV {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 0px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-7-DgRVip {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 0px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .stroke-7-cqxZln {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 7px;
+  margin-top: 2px;
+  position: relative;
+  width: 14px;
+}
+.your-utility-rates-gridview .vector-2QKard {
+  background-color: transparent;
+  height: 10px;
+  left: 4px;
+  position: absolute;
+  top: 0px;
+  width: 10px;
+}
+.your-utility-rates-gridview .vector-5HGmIx {
+  background-color: transparent;
+  height: 13px;
+  left: -0px;
+  position: absolute;
+  top: 1px;
+  width: 13px;
+}
+.your-utility-rates-gridview .vector-8aWNw8 {
+  background-color: transparent;
+  height: 10px;
+  left: 4px;
+  position: absolute;
+  top: 0px;
+  width: 10px;
+}
+.your-utility-rates-gridview .vector-CJX5B5 {
+  background-color: transparent;
+  height: 13px;
+  left: -0px;
+  position: absolute;
+  top: 1px;
+  width: 13px;
+}
+.your-utility-rates-gridview .vector-DxLbh3 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  position: relative;
+  width: 8px;
+}
+.your-utility-rates-gridview .vector-GbMVKV {
+  background-color: transparent;
+  height: 10px;
+  left: 4px;
+  position: absolute;
+  top: 0px;
+  width: 10px;
+}
+.your-utility-rates-gridview .vector-qu7IxL {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+.your-utility-rates-gridview .vector-t76KLz {
+  background-color: transparent;
+  height: 13px;
+  left: -0px;
+  position: absolute;
+  top: 1px;
+  width: 13px;
+}
+.your-utility-rates-gridview .vector-zG3hpk {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 6px;
+  position: relative;
+  transform: rotate(90deg);
+  width: 12px;
+}
+.your-utility-rates-gridview .washing-machine-kuFxU5 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  min-height: 20px;
+  min-width: 153px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .x122333-cPaGO5 {
+  background-color: transparent;
+  height: auto;
+  left: 217px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  top: 122px;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .x122333-fqFgT6 {
+  background-color: transparent;
+  height: auto;
+  left: 217px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  top: 122px;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .x122333-rQLjTq {
+  background-color: transparent;
+  height: auto;
+  left: 217px;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  position: absolute;
+  text-align: left;
+  top: 122px;
+  white-space: nowrap;
+  width: auto;
+}
+.your-utility-rates-gridview .your-appliances-ht0xwR {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  margin-left: 67px;
+  min-height: 20px;
+  min-width: 153px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+}

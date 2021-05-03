@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kitchen</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='kitchen.css') }}">
+</head>
+<body>
+    <div class="registration-form">
+        <div class="row justify-content-center my-2">
+            <div class="col col-12 text-center">
+                <div style="color: gray; font-size: 1.5rem;">We hope your washing machine was in the basement, but if not, we appologize!</div><br>
+            </div>
+        </div>
+        <div class="row justify-content-center my-2">
+            <div class="col col-12 text-center">
+                <div style="color: gray; font-size: 1.2rem;">But please take a photo of your furnace and hot water tank (these are costing you the most), or anything else in your basement for that matter</div>
+            </div>
+        </div>
+        <form>
+            <div class="form-icon">
+                <span><img height="50vw" src="{{ url_for('static',filename='laundry.svg') }}"></span>
+            </div>
+            <div class="form-group">
+                <label for="furnace">Add your Furnace</label>
+                <input type="file" class="form-control item" autocomplete="off" accept="image/*" capture="camera" id="furnace">
+            </div>
+            <div class="form-group">
+                <label for="hotwater">Add your Hot Water Tank</label>
+                <input type="file" autocomplete="off" accept="image/*" capture="camera" class="form-control item" id="hotwater">
+            </div>
+            <div class="form-group">
+                <label for="other">Add something Else</label>
+                <input type="file" autocomplete="off" accept="image/*" capture="camera" class="form-control item" id="other">
+            </div>
+            <div class="form-group">
+                <a type="button" href="/appliances" class="btn btn-block create-account">You're Done!</a>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

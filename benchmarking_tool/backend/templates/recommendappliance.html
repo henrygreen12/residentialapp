@@ -1,0 +1,29 @@
+{% extends 'adminbase.html' %}
+
+{% block content %}
+
+<form action = " " method = "POST" enctype="multipart/form-data">
+    <div class = "form-row">
+        <div class = "col-sm-10 my-1">
+    <label for="newStuff class = "sr-only">Recommend Appliance</label>
+     <p>
+        {{ form.appliance_name(class_ = "form-control", placeholder = "Appliance Name")}}
+    </p>
+    <p>
+        {{ form.appliance_type(class_ = "form-control", placeholder = "Appliance Type")}}
+    </p>
+    <p>
+        {{ form.rated_power(class_ = "form-control", placeholder = "Rated Power")}}
+    </p>
+    <p>
+        {{ form.reason(class_ = "form-control", placeholder = "Reason")}}
+    </p>
+    {{ form.hidden_tag() }}
+    <button type = 'submit' class ="btn btn-primary btn-block">Recommend</button>
+         </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

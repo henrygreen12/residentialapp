@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+    <div class="col-12 col-sm-12 col-md-7 col-lg-5 mx-auto mt-5" ><img src="{{url_for('static',filename='logoFade.png')}}" style="width: 100%"></div>
+     </div>
+     <div class="row">
+      <div class="col-12 col-sm-12 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-3">
+          <div class="card-body">
+            <h5 class="card-title text-center">Send Message</h5>
+            <form method = "POST">
+                {{form.hidden_tag()}}
+              <div class="form-label-group">
+                {{form.message(placeholder="Message",class="form-control")}}
+              </div>
+               <button class="btn btn-lg btn-primary btn-block text-uppercase mb-2" type="submit" value="SendMessage">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

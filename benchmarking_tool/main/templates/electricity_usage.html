@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+
+                <h2><strong>Pollen One</strong></h2>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+						<form id="msform" method = "POST" form = form1 enctype="multipart/form-data">
+							{{form.hidden_tag()}}
+                            <fieldset class="form-group">
+                                <div class="form-card">
+                                    <h2 class="fs-title">Electricity Usage</h2>
+                                    <div class="form-group">
+                                        {{form.consumption(placeholder="Consumption",class="form-control form-control-lg is-invalid")}}
+                                        {% if form.consumption.errors %}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.consumption.errors  %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}                             
+                                    </div>
+                                    <div class="form-group">
+                                        {{form.account_number(placeholder="Account Number",class="form-control form-control-lg is-invalid")}}
+                                        {% if form.account_number.errors %}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.account_number.errors %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{form.meter_number(placeholder="Meter Number",class="form-control form-control-lg is-invalid")}}
+                                        {% if form.meter_number.errors %} 
+                                            <div class="invalid-feedback">
+                                                {% for error in form.meter_number.errors %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div>      
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{form.site_id(placeholder="Site Id", class="form-control form-control-lg is-invalid")}}
+                                        {% if form.site_id.errors %}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.site_id.errors %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div> 
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        {{form.month(placeholder="Month",class="form-control form-control-lg is-invalid")}}
+                                        {% if form.month.errors %}
+                                            <div class="invalid-feedback">
+                                                {% for error in form.month.errors %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div> 
+                                        {% endif %}  
+									</div>
+									<div class="form-group">
+                                        {{form.year(placeholder="Year",class="form-control form-control-lg is-invalid")}}
+                                        {% if form.year.errors %}
+                                         
+                                            <div class="invalid-feedback">
+                                                {% for error in form.year.errors %}
+                                                    <span>{{error}}</span>  
+                                                {% endfor %}
+                                            </div> 
+                                        {% endif %}  
+                                    </div>
+                                    <input type="submit" value="Sign Up"> 
+                                </div>
+                            </fieldset>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+{% endblock content %}

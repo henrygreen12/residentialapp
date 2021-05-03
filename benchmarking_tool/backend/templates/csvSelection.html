@@ -1,0 +1,128 @@
+{% extends 'adminbase.html' %}
+{% set active_page = "users" %}
+{% block content %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Appliances</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dehumidifiers</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.dryercsv', id = user.id)}}">Dryers</a></td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.washingcsv', id = user.id)}}">Washing Machines</a></td>
+                </tr>
+                <tr>
+                    <td>Dishwashers</td>
+                </tr>
+                <tr>
+                    <td>Freezers</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.fridgecsv', id = user.id)}}">Refrigerators</a></td>
+                </tr>
+                <tr>
+                    <td>Air Cleaner</td>
+                </tr>
+            </tbody>
+        </table>
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Building Products</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="{{url_for('backend.roofcsv', id = user.id)}}">Roof Products</a></td>
+                </tr>
+                <tr>
+                    <td>Storm Windows</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.windowcsv', id = user.id)}}">Windows</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Electronics</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Audio Video</td>
+                </tr>
+                <tr>
+                    <td>Set Top Boxes</td>
+                </tr>
+                <tr>
+                    <td>Telephones</td>
+                </tr>
+                <tr>
+                    <td>Televisions</td>
+                </tr>
+            </tbody>
+        </table>
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Heating & Cooling</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Boilers</td>
+                </tr>
+                <tr>
+                    <td>Commercial Boilers</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.furnacecsv', id = user.id)}}">Furnaces</a></td>
+                </tr>
+                <tr>
+                    <td>Geothermal Heat Pumps</td>
+                </tr>
+                <tr>
+                    <td>Light Commercial HVAC</td>
+                </tr>
+                <tr>
+                    <td>Room Air Conditioners</td>
+                </tr>
+                <tr>
+                    <td>Smart Thermostats</td>
+                </tr>
+                <tr>
+                    <td>Ventilating Fans</td>
+                </tr>
+            </tbody>
+        </table>
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Lighting & Fans</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="{{url_for('backend.lightbulbscsv', id = user.id)}}">Light Bulbs</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.ceilinfanscsv', id = user.id)}}">Ceiling Fans</a></td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.lightfixturescsv', id = user.id)}}">Light Fixtures</a></td>
+                </tr>
+            </tbody>
+        </table>
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3"><h1>Water Heater</h1></td></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Commercial Water Heaters</td>
+                </tr>
+                <tr>
+                    <td><a href="{{url_for('backend.waterheatercsv', id = user.id)}}">Water Heaters</a></td>
+                </tr>
+            </tbody>
+        </table>
+{% endblock %}

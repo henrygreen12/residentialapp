@@ -1,0 +1,10 @@
+.message {
+    position: fixed;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    vertical-align: middle;
+    background-color: cornflowerblue;
+    padding: 40vh 0;
+}

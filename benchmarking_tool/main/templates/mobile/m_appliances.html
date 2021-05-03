@@ -1,0 +1,748 @@
+{% extends 'mobile_base.html' %}
+{% set active_page = "appliances" %}
+{% block content %}
+<div class="container" style="padding-top: 30px">
+   <div class="row">
+      <div class="col col-lg-8 col-md-12">
+         <div class="row">
+            <div class="col">
+               <div class="card mb-3 d-flex">
+                  <div class="card-body d-flex justify-content-center align-items-center">
+                     {% if appliance_found_bool == true and appliance_duplicates|count >0 %}
+                     <div class="row  d-flex justify-content-center align-items-center">
+                        <div class="col col-lg-4 col-md-12">
+                           <p class="card-text text-warning">You've already added your {{ appliance_type_static }}</p>
+                           <p class="card-text text-muted">Would you like to add another {{ appliance_type_static }}?</p>
+                        </div>
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                           <img style="height: 15vh;width: auto; border-radius: 25px;" src="{{ url_for('main.display_image', filename=filename) }}">
+                        </div>
+                        <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                           <form method="POST">
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                              <a href = '/update/{{ appliance_new.id }}' data-toggle="modal" class="btn btn-success btn-xs" data-target="#modaledit{{ appliance_new.id }}">Yes</a>
+                              <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" >No</a>
+                              <div id="modaledit{{ appliance_new.id }}" class="modal fade"  role="dialog">
+                                 <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h4 class="modal-title" id='applianceType'>{{ appliance_new.appliance_name }}</h4>
+                                       </div>
+                                       <div class="modal-body">
+                                          <form  method="POST" enctype="multipart/form-data">
+                                          {{ form.csrf_token }}
+
+                                             <div class="form-group">
+                                                <label for="formGroupExampleInput">Hours Used per Week</label>
+                                                <input type="hidden"  name="id" value="{{appliance_new.id}}">
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hours" name="usage_time_new" value="{{ appliance_new.usage_time }}">
+                                             </div>
+                                             <div class="form-group">
+                                                <label for="formGroupExampleInput2">Location</label>
+                                                <select class="form-control" name="category" value="{{ appliance_new.category_appliance }}">
+                                                   <option value= 'kitchen'>Kitchen</option>
+                                                   <option value="misc">Misc</option>
+                                                   <option value="entertainment">Entertainment</option>
+                                                   <option value="basement">Basement</option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group">
+                                                <button type="submit" name='finalSubmit' class="btn btn-primary">Save changes</button>
+                                                </div>
+                                                </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Delete This Appliance?')">Delete</a>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                                </div><!-- /.modal-content -->
+                                                </div><!-- /.modal-dialog -->
+                                             </div><!-- /.modal -->
+                                          </form>
+
+                        </div>
+                     </div>
+                     {% elif appliance_found_bool == true %}
+                     <div class="row  d-flex justify-content-center align-items-center">
+                        <div class="col col-lg-4 col-md-12">
+                           <p class="card-text text-muted">Would you like to add your {{ appliance_type_static }}?</p>
+                        </div>
+                        <div class="col col-lg-4 col-md-12 col-sm-12">
+                           <img style="height: 15vh;width: auto; border-radius: 25px;" src="{{ url_for('main.display_image', filename=filename) }}">
+                        </div>
+                        <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                           <form method="POST">
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                              <a href = '/update/{{ appliance_new.id }}' data-toggle="modal" class="btn btn-success btn-xs" data-target="#modaledit{{ appliance_new.id }}">Yes</a>
+                              <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" >No</a>
+                              <div id="modaledit{{ appliance_new.id }}" class="modal fade"  role="dialog">
+                                 <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h4 class="modal-title" id='applianceType'>{{ appliance_new.appliance_name }}</h4>
+                                       </div>
+                                       <div class="modal-body">
+                           <form  method="POST" enctype="multipart/form-data">
+                           {{ form.csrf_token }}
+                           <div class="form-group">
+                           <label for="formGroupExampleInput">Hours Used per Week</label>
+                           <input type="hidden"  name="id" value="{{appliance_new.id}}">
+                           <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hours" name="usage_time_new" value="{{ appliance_new.usage_time }}">
+                           </div>
+                           <div class="form-group">
+                           <label for="formGroupExampleInput2">Location</label>
+                           <select class="form-control" name="category" value="{{ appliance_new.category_appliance }}">
+                           <option value= 'kitchen'>Kitchen</option>
+                           <option value="misc">Misc</option>
+                           <option value="entertainment">Entertainment</option>
+                           <option value="basement">Basement</option>
+                           </select>
+                           </div>
+                           <div class="form-group">
+                           <button type="submit" name='finalSubmit' class="btn btn-primary">Save changes</button>
+                           </div>
+                           </form>
+                           </div>
+                           <div class="modal-footer">
+                           <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Delete This Appliance?')">Delete</a>
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                           </div><!-- /.modal-content -->
+                           </div><!-- /.modal-dialog -->
+                           </div><!-- /.modal -->
+                           </form>
+                        </div>
+                     </div>
+                     {% elif appliance_not_found_bool==true %}
+                     <div class="row  d-flex justify-content-center align-items-center">
+                        <div class="col col-lg-4 col-md-12">
+                           <p class="card-text text-warning"> We're detecting <b>{{ appliance_found[1] }}</b></p>
+                           <p class='card-text text-success'>Try taking another photo</p>
+                        </div>
+                        <div class="col col-lg-4 col-md-12" style="text-align: center;"> <img class="iconLg" style="opacity: 0.5;"
+                           src="{{ url_for('static',filename='question.svg') }}">
+                        </div>
+                        <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                           <form  method="POST" enctype="multipart/form-data"  id='photo_form'>
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                              <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+                                 <div id="loading"></div>
+                                 <div id="content">
+                                    <label for="appliance_photo" class='btncam pt-2' >
+                                    <i class="fas fa-camera  fa-5x"></i>
+                                    <br />
+                                    <small style="padding-left:7px;">Take Photo</small>
+                                    </label>
+                                    <input type="file" style='display: none;' accept="image/*" capture="user"  id='appliance_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                                       name="appliance_photo">
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     {% elif furnace_found_bool == true %}
+                     <div></div>
+                     {% else %}
+                     <div class="row  d-flex justify-content-center align-items-center">
+                        <div class="col-lg-6 col-md-12 col-sm-12 mb-3 mb-sm-0">
+                           <p class="card-text text-muted">Take a photo of an appliance in your home, and we'll show you how much it's costing you</p>
+                        </div>
+
+                        <div class="col col-lg-6 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                           <form  method="POST" enctype="multipart/form-data" id='photo_form'>
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                              <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+                                 <div id="loading"></div>
+                                 <div id="content">
+                                    <label for="appliance_photo" class='btncam pt-2' >
+                                    <i class="fas fa-camera  fa-5x"></i>
+                                    <br />
+                                    <small style="padding-left:7px;">Take Photo</small>
+                                    </label>
+                                    <input type="file" style='display: none;' autocomplete="off"
+                                    accept="image/*" capture="user" id='appliance_photo' onchange="submit();"
+                                    required class="btn btn-default btn-lg button" style="border:none"
+                                       name="appliance_photo">
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                     {% endif %}
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center" style="color:gray;">Don't know where to start?</div>
+         <div class="row justify-content-center">
+
+            <a class="btn-lg btn-primary btn my-3" href="/fridge">Start Guided Home Audit</a>
+         </div>
+         <div class="row">
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" style="flex-basis:auto">
+               <div class="card mb-3" ">
+                  <div class="card-header">Home Heating</div>
+                  <div class="row no-gutters mt-2 mb-2">
+  <!--                    {% if furnace|count == 0 %}
+                     <div class="col-md-4">
+
+                        <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image" preserveAspectRatio="xMidYMid slice" role="img">
+                           <title>Furnace</title>
+                           <rect width="100%" height="100%" fill="#868e96"/>
+                           <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
+                        </svg>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="card-body">
+                           <h5 class="card-title">Furnace</h5>
+                           <p class="card-text">Utility Cost</p>
+                           <p class="card-text text-success"> $500</p>
+                           <p class="card-text"><small class="text-muted"><a href="#">Click to Edit</a></small></p>
+                           <form  method="POST" enctype="multipart/form-data" id='photo_form'>
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                              <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+                                 <div id="loading2"></div>
+                                 <div id="content2">
+                                    <label for="furnace_photo" class='btncam pt-2' >
+                                    <i class="fas fa-camera fa-1x"></i>
+
+                                    <small>Take Photo</small>
+                                    </label>
+                                    <input type="file" style='display: none;' autocomplete="off" accept="image/*" capture="camera" id='furnace_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                                       name="furnace_photo">
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+
+                     {% elif furnace_identified == false %}
+
+                     {% endif %} -->
+
+
+
+
+            {% if furnace|count >0 %}
+
+
+                <div class="col col-12 col-lg-4 col-md-12 mb-2 mt-3 my-auto align-items-center text-center">
+                   <img class="iconMd" src="{{ url_for('static',filename= 'furnace.svg') }}">
+                </div>
+                <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center" style="align-content: center; align-items: center;">
+                  <h5 class="card-text text-muted">Yearly Heating Cost</h5>
+               </div>
+                  <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2  my-auto align-items-center text-center" style="align-content: center; align-items: center;">
+                  <h5 class="card-text">${{(heating_usage*4.50)|round(2)}}</h5>
+                  <small><a href="/deleteheating/{{furnace[0].id}}" class="" >Delete</a></small>
+                </div>
+
+
+            {% elif furnace_found_bool == true %}
+
+                <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center">
+                   <p class="card-text text-muted" style="align-content: center; align-items: center;">We detected your {{ efficiency }} efficiency furnace!</p>
+                </div>
+                <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center" style="align-content: center; align-items: center;">
+                   <img style="height: 15vh;width: auto; border-radius: 25px; margin-right: auto;margin-left: auto;"
+                   src="{{ url_for('main.display_image_furnace', filename=filename) }}">
+                </div>
+                <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center" style="align-content: center; align-items: center;">
+                      {{ form.hidden_tag() }}
+                      {{ form.csrf_token }}
+                      <a href = '/appliances'  class="btn btn-success btn-xs">Add</a>
+                      <a href="/deleteheating/{{appliance_new.id}}" class="btn btn-danger btn-xs" >Try Again</a>
+
+                </div>
+             {% elif furnace_not_found_bool==true %}
+
+
+             <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center">
+
+                   <p class='card-text text-warning'>Try taking another photo</p>
+                </div>
+                <div class="col col-12 col-lg-4 col-md-12 col-sm-12 mb-2 my-auto align-items-center text-center" style="align-content: center; align-items: center;">
+                   <img style="height: 15vh;width: auto; border-radius: 25px; margin-right: auto;margin-left: auto;"
+                   src="{{ url_for('static',filename='question.svg') }}">
+                </div>
+                <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                   <form  method="POST" action="/uploadfurnace" enctype="multipart/form-data" id='furnace_form'>
+                      {{ form.hidden_tag() }}
+                      {{ form.csrf_token }}
+                      <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+                         <div id="loading2" class="mt-3"></div>
+                         <div id="content2">
+                            <label for="furance_photo" class='btncam pt-2' >
+                            <i class="fas fa-camera  fa-5x"></i>
+                            <br />
+                            <small style="padding-left:7px;">Take Photo</small>
+                            </label>
+                            <input type="file" style='display: none;' accept="image/*" capture="user" autocomplete="off"
+                             id='furnace_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                               name="furnace_photo">
+                         </div>
+                      </div>
+                   </form>
+                </div>
+
+             {% elif correctApplianceBoolian == true %}
+                          <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-12 col-sm-12 mb-3 mb-sm-0 text-center">
+                   <p class="card-text text-muted">Furnace Added!</p>
+                </div>
+
+             </div>
+
+                <a type="button" href="/other" class="btn btn-block create-account">Next Step</a>
+             {% else %}
+
+
+                        <form  method="POST" action="/uploadfurnace" enctype="multipart/form-data" id='furnace_form' style="width: 100%; margin-top: 15px;">
+                              {{ form.hidden_tag() }}
+                              {{ form.csrf_token }}
+                         <div id="loading2" style="width: 100%"></div>
+
+                         <div id="content2" class="row justify-content-center">
+
+                           <div class="col col-12 col-lg-4 col-md-12 col-sm-12 my-auto align-items-center text-center">
+                              <img class="iconMd" src="{{ url_for('static',filename= 'furnaceGray.svg') }}">
+                           </div>
+                           <div class="col  col-12 col-lg-4 col-md-12 col-sm-12 my-auto align-items-center text-center">
+                               <p class="card-text text-muted">Upload your furnace</p>
+                           </div>
+                        <div  class="col col-12 col-lg-4 col-md-12 col-sm-12 my-auto align-items-center text-center">
+                            <label for="furnace_photo" class='btncam pt-2' >
+                            <i class="fas fa-camera  fa-2x"></i>
+                            <br />
+                            <small style="padding-left:7px;">Take Photo</small>
+                            </label>
+                            <input type="file" style='display: none;' autocomplete="off"
+                            accept="image/*" capture="user" id='furnace_photo' onchange="submit();"
+                            required class="btn btn-default btn-lg button" style="border:none"
+                              name="furnace_photo">
+                           </div>
+                         </div>
+                      </form>
+
+
+
+
+             {% endif %}
+
+
+
+
+                  </div>
+               </div>
+            </div>
+            <!-- <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12" style="flex-basis:auto">
+               <div class="card mb-3" style="max-width: 450px;">
+                  <div class="row no-gutters">
+                     <div class="col-md-4">
+                        <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image" preserveAspectRatio="xMidYMid slice" role="img">
+                           <title>hotwater</title>
+                           <rect width="100%" height="100%" fill="#868e96"/>
+                           <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image</text>
+                        </svg>
+                     </div>
+                     <div class="col-md-8">
+                        <div class="card-body">
+                           <h5 class="card-title">Water Heater</h5>
+                           <p class="card-text">Utility Cost</p>
+                           <p class="card-text text-success"> $100</p>
+                           <p class="card-text"><small class="text-muted"><a href="#"> Click to Edit</a></small></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div> -->
+         </div>
+         <div class="row">
+            <div class="col">
+               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-wrap='true'>
+                  <ol class="carousel-indicators">
+                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="card mb-3"  >
+                           <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows where we think your utility expenses are going">
+                              <div class="row justify-content-between">
+                                 <div class="col text-left">
+                                    <small href='#'class='text-muted d-none d-lg-inline' style="display: inline">
+                                    <i class="material-icons-outlined float-left">arrow_left</i>Misc</small>
+                                 </div>
+                                 <div class="col text-center">
+                                    <h5 style="display: inline;">Kitchen</h5>
+                                 </div>
+                                 <div class="col text-right">
+                                    <small class='text-muted float-right d-none d-lg-inline' style="display: inline">Basement
+                                    <i class="material-icons-outlined float-right">arrow_right</i></small>
+                                 </div>
+                              </div>
+                           </div>
+                           {% if kitchen_appliances|count < 1 %}
+                           <div class="card-body">
+                              <p class="card-text">There is nothing to see here.</p>
+                           </div>
+                           {% else %}
+                           <table class="table table-hover">
+                              <thead>
+                                 <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Utility Cost</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 {% for appliance in kitchen_appliances %}
+                                 <tr>
+                                    <td><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></td>
+                                    <td>
+                                       {{ appliance.appliance_name }}<br />
+                                       <p style="line-height: 13px"> <small class="text-muted" style="line-height: 5px">Added</small><br/>
+                                          <small class="text-muted" style="line-height: 5px">{{ appliance.created_date }}</small><small class="text-muted"> &#183; {{ appliance.category_appliance }}</small>
+                                       </p>
+                                    </td>
+                                    </td>
+                                    <td>${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }}</td>
+                                 </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
+                           {% endif %}
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="card mb-3" >
+                           <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows where we think your utility expenses are going">
+                              <div class="row justify-content-between">
+                                 <div class="col text-left">
+                                    <small href='#'class='text-muted d-none d-lg-inline' style="display: inline">
+                                    <i class="material-icons-outlined float-left">arrow_left</i>Kitchen</small>
+                                 </div>
+                                 <div class="col text-center">
+                                    <h5 style="display: inline;">Basement</h5>
+                                 </div>
+                                 <div class="col text-right">
+                                    <small class='text-muted float-right d-none d-lg-inline' style="display: inline">Entertainment
+                                    <i class="material-icons-outlined float-right">arrow_right</i></small>
+                                 </div>
+                              </div>
+                           </div>
+                           {% if basement_appliances|count < 1 %}
+                           <div class="card-body">
+                              <p class="card-text">There is nothing to see here.</p>
+                           </div>
+                           {% else %}
+                           <table class="table table-hover">
+                              <thead>
+                                 <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Utility Cost</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 {% for appliance in basement_appliances %}
+                                 <tr>
+                                    <td><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></td>
+                                    <td>
+                                       {{ appliance.appliance_name }}<br />
+                                       <p style="line-height: 13px"> <small class="text-muted" style="line-height: 5px">Added</small><br/>
+                                          <small class="text-muted" style="line-height: 5px">{{ appliance.created_date }}</small><small class="text-muted"> &#183; {{ appliance.category_appliance }}</small>
+                                       </p>
+                                    </td>
+                                    </td>
+                                    <td>${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }}</td>
+                                 </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
+                           {% endif %}
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="card mb-3"  >
+                           <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows where we think your utility expenses are going">
+                              <div class="row justify-content-between">
+                                 <div class="col text-left">
+                                    <small class='text-muted d-none d-lg-inline' style="display: inline">
+                                    <i class="material-icons-outlined float-left">arrow_left</i>Basement</small>
+                                 </div>
+                                 <div class="col text-center">
+                                    <h5 style="display: inline;">Entertainment</h5>
+                                 </div>
+                                 <div class="col text-right">
+                                    <small class='text-muted float-right d-none d-lg-inline' style="display: inline">Misc
+                                    <i class="material-icons-outlined float-right">arrow_right</i></small>
+                                 </div>
+                              </div>
+                           </div>
+                           {% if entertainment_appliances|count < 1 %}
+                           <div class="card-body">
+                              <p class="card-text">There is nothing to see here.</p>
+                           </div>
+                           {% else %}
+                           <table class="table table-hover">
+                              <thead>
+                                 <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Utility Cost</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    {% for appliance in entertainment_appliances %}
+                                 <tr>
+                                    <td><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></td>
+                                    <td>
+                                       {{ appliance.appliance_name }}<br />
+                                       <p style="line-height: 13px"> <small class="text-muted" style="line-height: 5px">Added</small><br/>
+                                          <small class="text-muted" style="line-height: 5px">{{ appliance.created_date }}</small><small class="text-muted"> &#183; {{ appliance.category_appliance }}</small>
+                                       </p>
+                                    </td>
+                                    </td>
+                                    <td>${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }}</td>
+                                 </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
+                           {% endif %}
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="card mb-3"  >
+                           <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows where we think your utility expenses are going">
+                              <div class="row justify-content-between">
+                                 <div class="col text-left">
+                                    <small href='#'class='text-muted d-none d-lg-inline' style="display: inline">
+                                    <i class="material-icons-outlined float-left">arrow_left</i>Entertainment</small>
+                                 </div>
+                                 <div class="col text-center">
+                                    <h5 style="display: inline;">Misc</h5>
+                                 </div>
+                                 <div class="col text-right">
+                                    <small class='text-muted float-right d-none d-lg-inline' style="display: inline">Kitchen
+                                    <i class="material-icons-outlined float-right">arrow_right</i></small>
+                                 </div>
+                              </div>
+                           </div>
+                           {% if misc_appliances|count < 1 %}
+                           <div class="card-body">
+                              <p class="card-text">There is nothing to see here.</p>
+                           </div>
+                           {% else %}
+                           <table class="table table-hover">
+                              <thead>
+                                 <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Utility Cost</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    {% for appliance in misc_appliances %}
+                                 <tr>
+                                    <td><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></td>
+                                    <td>
+                                       {{ appliance.appliance_name }}<br />
+                                       <p style="line-height: 13px"> <small class="text-muted" style="line-height: 5px">Added</small><br/>
+                                          <small class="text-muted" style="line-height: 5px">{{ appliance.created_date }}</small><small class="text-muted"> &#183; {{ appliance.category_appliance }}</small>
+                                       </p>
+                                    </td>
+                                    </td>
+                                    <td>${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }}</td>
+                                 </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
+                           {% endif %}
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+         <div class="card mb-3"  >
+            <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows where we think your utility expenses are going">
+               Recently Added <i class="material-icons-outlined float-right">info</i>
+            </div>
+            {% if appliances|count < 1 %}
+            <div class="card-body">
+            <p>There is nothing to see here.</p>
+            </div>
+            {% else %}
+            <table class="table table-hover">
+               <thead>
+                  <tr>
+                     <th scope="col"></th>
+                     <th scope="col">Type</th>
+                     <th scope="col">Utility Cost</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for appliance in appliances %}
+                  <tr>
+                     <td><img class="iconMd" src="{{ url_for('static',filename= appliance['appliance_type']+'.svg') }}"></td>
+                     <td>
+                        {{ appliance.appliance_type }} <br />
+                        <p style="line-height: 13px"> <small class="text-muted" style="line-height: 5px">Added</small><br/>
+                           <small class="text-muted" style="line-height: 5px">{{ appliance.created_date }}</small><small class="text-muted"> &#183; {{ appliance.category_appliance }}</small>
+                        </p>
+                     </td>
+                     </td>
+                     <td>${{ (((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)  }} <br/> <small><a href = '/update/{{ appliance.id }}' data-toggle="modal" data-target="#modaledit{{ appliance.id }}">Edit</a></small></td>
+                  </tr>
+                  <div id="modaledit{{ appliance.id }}" class="modal fade"  role="dialog">
+                     <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h4 class="modal-title" id='applianceType'>{{ appliance.appliance_name }}</h4>
+                           </div>
+                           <div class="modal-body">
+                              <form action="{{ url_for('main.updateappliance') }}" method="POST" enctype="multipart/form-data">
+                                 {{ form.csrf_token }}
+                                 <div class="form-group">
+                                    <label for="formGroupExampleInput">Hours Used per Week</label>
+                                    <input type="hidden"  name="id" value="{{appliance.id}}">
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hours" name="usage_time" value="{{ appliance.usage_time }}">
+                                 </div>
+                                 <div class="form-group">
+                                    <label for="formGroupExampleInput2">Location</label>
+                                    <select class="form-control" name="category" value="{{ appliance.category_appliance }}">
+                                       <option value= 'kitchen'>Kitchen</option>
+                                       <option value="misc">Misc</option>
+                                       <option value="entertainment">Entertainment</option>
+                                       <option value="basement">Basement</option>
+                                    </select>
+                                 </div>
+                                 <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                 </div>
+                              </form>
+                           </div>
+                           <div class="modal-footer">
+                              <a href="/deleteappliance/{{appliance.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Delete This Appliance?')">Delete</a>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </div>
+                        <!-- /.modal-content -->
+                     </div>
+                     <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+                  <!-- <script type="text/javascript"> -->
+                  <!-- $('table tbody tr  td').on('click',function(){ -->
+                  <!-- $("#modalEdit{{ appliance.id}}").modal("show"); -->
+                  <!-- }); -->
+                  <!-- </script> -->
+                  {% endfor %}
+               </tbody>
+            </table>
+            {% endif %}
+         </div>
+      </div>
+   </div>
+</div>
+<div id="AddApplianceModal" class="modal fade"  role="dialog">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id='applianceType'></h4>
+         </div>
+         <div class="modal-body">
+            <form  method="POST" enctype="multipart/form-data">
+               {{ form.hidden_tag() }}
+               {{ form.csrf_token }}
+               <div class="form-group">
+                  <input type="file" name="appliance_photo">
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+                  <div>{{ appliance_type }}</div>
+               </div>
+            </form>
+            {% if filename %}
+            <div>
+               <img src="{{ url_for('main.display_image', filename=file_name) }}">
+            </div>
+            {% endif %}
+            {% if static_appliance_match %}
+            <form  method="POST" enctype="multipart/form-data">
+               <div class="form-group">
+                  <label for="formGroupExampleInput">Hours Used per Week</label>
+                  <input type="hidden"  name="id">
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hours" name="usage_time">
+               </div>
+               <div class="form-group">
+                  <label for="formGroupExampleInput2">Location</label>
+                  <select class="form-control" name="category">
+                     <option value= 'kitchen'>Kitchen</option>
+                     <option value="misc">Misc</option>
+                     <option value="entertainment">Entertainment</option>
+                     <option value="basement">Basement</option>
+                  </select>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+               </div>
+            </form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+{% endif %}
+{% endblock content %}
+{% block scripts %}
+<script type="text/javascript">// <![CDATA[
+   function submit(){
+   $("#photo_form").submit();
+   }
+
+   $( document ).ready(function() {
+   $('#photo_form').on('change', function() { $("#loading").show(); });
+   $('#photo_form').on('change', function() { $("#content").hide(); });
+   $('#photo_form').on('change', function() { $("#content2").hide(); });
+   });
+                               // ]]>
+</script>
+<script type="text/javascript">// <![CDATA[
+   function submit(){
+   $("#furnace_form").submit();
+   }
+
+   $( document ).ready(function() {
+   $('#furnace_form').on('change', function() { $("#loading2").show(); });
+   $('#furnace_form').on('change', function() { $("#content2").hide(); });
+   $('#furnace_form').on('change', function() { $("#content").hide(); });
+   });
+                               // ]]>
+</script>
+{% endblock scripts %}

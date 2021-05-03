@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/compare-my-home.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}" />
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="compare-my-home" />
+    <div class="container-center-horizontal">
+      <form class="compare-my-home screen" name="form1" method="POST">
+        <div class="group-6883-C61RwL">
+          <a href="{{ url_for('main.overview')}}">
+            <div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div
+          ></a>
+          <div class="compare-ht0xwR">Compare</div>
+        </div>
+        <div class="frame-62-C61RwL">
+          <div class="group-4307-ci5xbs">
+            <div class="your-total-costs-856Kxd">Your total costs</div>
+            <div class="x685-856Kxd">${{cost}}</div>
+          </div>
+          <div class="overlap-group-ci5xbs">
+            <img class="vector-86-2eUPtx" src="{{ url_for('static',filename='img/2.svg')}}" />
+            <img class="vector-87-2eUPtx" src="{{ url_for('static',filename='img/3.svg')}}" />
+          </div>
+        </div>
+        <div class="block-header-C61RwL"><div class="wholesale-power-dIkcdh">Wholesale Power</div></div>
+        {% for rate in electrical_rates %}
+        <div class="frame-61-C61RwL">
+          <div class="frame-62-4IfWpd"><img class="image-31-lIX9Nk" src="{{ url_for('static',filename= rate['retailer']+'.png')}}"></div>
+          <div class="group-6925-4IfWpd">
+            <div class="you-saved-uKo6k3 avertacy-normal-gulf-blue-10px">You saved</div>
+            <div class="flex-col-uKo6k3">
+              <div class="x785-dHWvD2 avertacy-normal-gulf-blue-20px">${{(rate.total_rate)|float|round(2)}}</div>
+              <div class="group-6924-dHWvD2">
+                <div class="rectangle-2355-6hNNb1"></div>
+                {% if ((rate.total_rate/cost)) > 0 %}
+                <div class="x-043-irYC4N">-{{((rate.total_rate/cost|float)*100)|round(2)}}%</div>
+                {% else %}
+                <div class="x043-6hNNb1 avertacy-normal-mountain-meadow-11px">+{{((rate.total_rate/cost|float)*100)|round(2)}}%</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </form>
+    </div>
+  </body>
+</html>

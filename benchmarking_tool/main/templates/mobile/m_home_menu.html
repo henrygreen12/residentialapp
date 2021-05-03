@@ -1,0 +1,38 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<div class='page'>
+  <div class='row'>
+      <div class='column'>
+          <form action="/m_my_home/">
+            <input type="image" src="{{url_for('static', filename='/mobileimages/Group116.png')}}" width='100' alt="Submit">
+          </form>
+          <p class="h6">My Home</p>
+      </div>
+      <div class='column'>
+        <form action="/m_my_info/">
+          <input type="image" src="{{url_for('static', filename='/mobileimages/Group117.png')}}" width='100' alt="Submit">
+        </form>
+        <p class="h6">My Info</p>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='column'>
+        <form action="/m_util_bill_photo/">
+          <input type="image" src="{{url_for('static', filename='/mobileimages/Group119.png')}}" width='100' alt="Submit">
+        </form>
+        <p class="h6">Utility Bill</p>
+    </div>
+    <div class='column'>
+      <form action="/m_contact_us/">
+        <input type="image" src="{{url_for('static', filename='/mobileimages/Group118.png')}}" width='100' alt="Submit">
+      </form>
+      <p class="h6">Contact Us</p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+

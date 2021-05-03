@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/appliances-usage.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}"/>
+
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts" type="text/javascript"></script>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="appliances-usage" />
+    <div class="container-center-horizontal">
+      <div class="appliances-usage screen">
+        <div class="group-6883-C61RwL">
+          <a href = "{{url_for('main.overview')}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{url_for('static',filename='img/vector-3@2x.svg')}}" /></div></a>
+          <div class="usage-breakdown-ht0xwR avertacy-bold-gulf-blue-20px">Usage Breakdown</div>
+        </div>
+          <div class="col-lg-8 col-md-12">
+                    <div class="card mb-3">
+
+                      <div class="card-body d-flex justify-content-center">
+                      <div class="group-4345-ZRvEhx">
+                      <div class="total-copy-Yj9nBx">Total</div>
+                      <div class="x2597-Yj9nBx">${{total|round(2)}}</div>
+                       </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12" style ="left:10px;">
+                            <div id="chart"></div>
+                        </div>
+                          <script>
+                            var options = {
+                              labels: ["Lighting", "Appliances", "Ventilation", "Hot Water", "Heating"],
+                              series: [{{light_usage}}, {{appliance_usage}}, {{ventilation_usage}}, {{dhw_usage}}, {{heating_usage}}],
+                              chart: {
+                              width: 380,
+                              type: 'donut',
+                            },
+                            dataLabels: {
+                              enabled: false
+                            },
+                            legend: {
+                                position: 'bottom',
+                                horizontalAlign:'left',
+                                show:false
+                            },
+
+                            colors:['#EE5937', '#3649A8', '#EE8F37','#3BCDEE','#DBE2F3',],
+
+                            responsive: [{
+                              breakpoint: 480,
+                              options: {
+                                chart: {
+                                  width: 300
+                                },
+                              }
+                            }]
+                            };
+                            var chart = new ApexCharts(document.querySelector("#chart"), options);
+                            chart.render();
+                        </script>
+                    </div>
+                  </div>
+        <div class="breakdown-table-C61RwL">
+          <div class="flex-row-nYPY0E">
+            <div class="group-22-JbRi5D">
+              <div class="energy-cost-pSjHhw avertacy-bold-gulf-blue-18px">Energy Cost</div>
+            </div>
+            <div class="good-JbRi5D"></div><div class="help-tip">
+              <p>For more details, click on an item from the list.<br />
+              </p>
+              </div>
+          </div>
+          <div class="rectangle-15-nYPY0E"></div>
+          <a href="{{url_for('main.appliance_breakdown')}}"><div class="group-6878-nYPY0E">
+            <div class="group-4340-3ZX6kh">
+              <div class="group-4339-Ufo1kh">
+                <img class="ellipse-30-sZaceu" src="{{url_for('static',filename='img/ellipse-30@2x.svg')}}" />
+                <div class="appliances-sZaceu avertacy-normal-gulf-blue-14px">Appliances</div>
+              </div>
+              <div class="legend-items-Ufo1kh">
+                <div class="group-23-6A2kha"><div class="x1632-yvBNG5 avertacy-normal-gulf-blue-14px">${{appliance_usage|round(2)}}</div></div>
+              </div>
+            </div>
+            <div class="chevron-left-3ZX6kh"><img class="vector-glGyIS" src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+          </div></a>
+          <div class="group-6879-nYPY0E">
+            <div class="group-4340-WwVqOe">
+              <div class="group-4339-50139l">
+                <img class="ellipse-30-bZnebx" src="{{url_for('static',filename='img/12.svg')}}" />
+                <div class="lighting-bZnebx avertacy-normal-gulf-blue-14px">Lighting</div>
+              </div>
+              <div class="legend-items-50139l">
+                <div class="group-23-as77gx"><div class="x2321-Z8MCjc avertacy-normal-gulf-blue-14px">${{light_usage|round(2)}}</div></div>
+              </div>
+            </div>
+            <div class="chevron-left-WwVqOe"><img class="vector-9xRfar" src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+          </div>
+          <div class="group-6880-nYPY0E">
+            <div class="group-4340-9ObawI">
+              <div class="group-4339-SKax1P">
+                <img class="ellipse-30-z6MbP0" src="{{url_for('static',filename='img/ellipse-30-2@2x.svg')}}" />
+                <div class="hot-water-z6MbP0 avertacy-normal-gulf-blue-14px">Hot Water</div>
+              </div>
+              <div class="legend-items-SKax1P">
+                <div class="group-23-NUsvn9"><div class="x1632-OsTt9j avertacy-normal-gulf-blue-14px">${{dhw_usage|round(2)}}</div></div>
+              </div>
+            </div>
+            <div class="chevron-left-9ObawI"><img class="vector-INI6Nx" src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+          </div>
+          <div class="group-6881-nYPY0E">
+            <div class="group-4340-EvAMMD">
+              <div class="group-4339-p35oVJ">
+                <img class="ellipse-30-kHsh2t" src="{{url_for('static',filename='img/ellipse-30-3@2x.svg')}}" />
+                <div class="heating-kHsh2t avertacy-normal-gulf-blue-14px">Heating</div>
+              </div>
+              <div class="legend-items-p35oVJ">
+                <div class="group-23-qFeAkZ"><div class="x1458-G5PRTL avertacy-normal-gulf-blue-14px">${{heating_usage|round(2)}}</div></div>
+              </div>
+            </div>
+            <div class="chevron-left-EvAMMD"><img class="vector-EZfZ8H" src="{{ url_for('static',filename='img/vector-3@2x.svg')}}"/></div>
+          </div>
+          <div class="group-6882-nYPY0E">
+            <div class="group-4340-Ftdnsa">
+              <div class="group-4339-PrJxfu">
+                <img class="ellipse-30-Sw7S1u" src="{{url_for('static',filename='img/ellipse-30-4@2x.svg')}}" />
+                <div class="ventilation-Sw7S1u avertacy-normal-gulf-blue-14px">Ventilation</div>
+              </div>
+              <div class="legend-items-PrJxfu">
+                <div class="group-23-9AWi0X"><div class="x699-J4QGqX avertacy-normal-gulf-blue-14px">${{ventilation_usage|round(2)}}</div></div>
+              </div>
+            </div>
+            <div class="chevron-left-Ftdnsa"><img class="vector-b6CpT4" src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{% extends 'adminbase.html' %}
+{% set active_page = "users" %}
+{% block content %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3">Recommended Appliances</td></tr>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Appliance Type</th>
+                    <th>Rated Power</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appliance in appliances %}
+                <tr>
+                    <td>{{ appliance.appliance_name }}</td>
+                    <td> {{ appliance.appliance_type }}</td>
+                    <td> {{ appliance.rated_power }}</td>
+                    <td> {{ appliance.reason }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href="{{url_for('backend.recommendAppliance', id = user.id)}}">Recommend Appliance</a>
+        <table class='table'>
+            <thead>
+                <tr><td colspan="3">DHW</td></tr>
+                <tr>
+                    <th>Name Plate</th>
+                    <th>BTU Output</th>
+                    <th>Volume</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dhw in dhws %}
+                <tr>
+                    <td>{{ dhw.name_plate }}</td>
+                    <td> {{ dhw.btu_output }}</td>
+                    <td> {{ dhw.volume }}</td>
+                    <td> {{ dhw.reason }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href="{{url_for('backend.recommendDHW', id = user.id)}}">Recommend DHW</a>
+        <table class='table'>
+            <thead>
+                <tr><td colspan="3">Heating Equipment</td></tr>
+                <tr>
+                    <th>Appliance</th>
+                    <th>BTU Input</th>
+                    <th>BTU Output</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for heating_equipment in heating_equipments %}
+                <tr>
+                    <td>{{ heating_equipment.name_plate }}</td>
+                    <td> {{ heating_equipment.btu_input}}</td>
+                    <td> {{ heating_equipment.btu_output }}</td>
+                    <td> {{ heating_equipment.reason }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-danger btn-sm" href="{{url_for('backend.recommendHeatingEquipment', id = user.id)}}">Recommend Heating Equipment</a>
+{% endblock %}

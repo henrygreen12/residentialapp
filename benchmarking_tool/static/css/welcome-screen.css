@@ -1,0 +1,126 @@
+/* screen - welcome-screen */
+
+.welcome-screen {
+  align-items: center;
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 48px 21px;
+  position: relative;
+  width: 375px;
+}
+.welcome-screen .button-C61RwL {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 60px;
+  margin-left: 2.0px;
+  margin-top: 312px;
+  position: relative;
+  width: 237px;
+}
+.welcome-screen .chevron-left-ht0xwR {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 5.0px 8px;
+  position: relative;
+  width: 24px;
+}
+.welcome-screen .group-6883-C61RwL {
+  align-items: flex-start;
+  align-self: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  min-width: 24px;
+  position: relative;
+  width: auto;
+}
+.welcome-screen .group-6951-C61RwL {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: auto;
+  justify-content: flex-start;
+  margin-left: 4.0px;
+  margin-top: 240px;
+  min-height: 98px;
+  position: relative;
+  width: 319px;
+}
+.welcome-screen .help-us-get-sta-a-few-questions-AUDvRF {
+  background-color: transparent;
+  color: var(--cadet-blue);
+  flex-shrink: 1;
+  font-family: 'Averta CY-Regular', Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 26px;
+  margin-top: 10px;
+  min-height: 52px;
+  position: relative;
+  text-align: center;
+  width: 317px;
+}
+.welcome-screen .rectangle-2313-xHxYv9 {
+  background-color: var(--orange-soda);
+  border-radius: 20px;
+  box-shadow: 0px 4px 50px rgba(102,117,192,0.2);;
+  height: 60px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 235px;
+}
+.welcome-screen .start-xHxYv9 {
+  background-color: transparent;
+  height: auto;
+  left: 100px;
+  letter-spacing: 0.00px;
+  line-height: 12px;
+  position: absolute;
+  text-align: center;
+  top: 24px;
+  white-space: nowrap;
+  width: auto;
+}
+.welcome-screen .vector-DxLbh3 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  position: relative;
+  width: 8px;
+}
+.welcome-screen .welcome-AUDvRF {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 36px;
+  min-height: 36px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 317px;
+}

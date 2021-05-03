@@ -1,0 +1,143 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+<div class="w-100 d-flex justify-content-center align-items-center mt-3">
+    <div style="display: inline-block; width:40%; height: auto; margin-right: 8px;">
+        <img src="{{ data['img_file'] }}" alt="a" style="width: 100%; height: auto;">
+    </div>
+    <h4 class="rate_title font-weight-bold">{{ data["title"] }}</h4>
+</div>
+
+<div class="foo">
+    <div class="text-center mx-3 my-1">
+        <small>Rate (kWh)</small>
+        <h5 class="font-weight-bold">¢ {{ data["kwh_rate"] }}</h5>
+    </div>
+    <div class="text-center mx-3 my-1">
+        <small>Annual Savings</small>
+        <h5 class="font-weight-bold">$ {{ (data["savings"] * 12)|round(2) }}</h5>
+    </div>
+</div>
+
+<div class="mt-4 mb-2">
+    <div id="chart"></div>
+</div>
+
+<div class="savings_summary d-flex justify-content-around align-items-center">
+    <small>Your Savings:</small>
+    <div class="text-center">
+        <h5 class="my-0">$ 26.80</h5>
+        <small class="text-secondary my-0">Monthly</small>
+    </div>
+    <div class="text-center">
+        <h5 class="my-0">$ 321.54</h5>
+        <small class="text-secondary my-0">Annual</small>
+    </div>
+    <div class="text-center">
+        <h5 class="my-0">$ 643.08</h5>
+        <small class="text-secondary my-0">End of Term</small>
+    </div>
+</div>
+
+{% if (data["early_exit_fee"] and data["contract_remaining"]) %}
+<div class="early_exit_warning my-3">
+    <h5>Note:</h5>
+    <small>Your current plan’s contract ends in {{ data["contract_remaining"] }} months. 
+        Changing plans will cost you the Early Exit fee of ${{ data["early_exit_fee"] }}</small>
+</div>
+{% endif %}
+
+<div class="border border-secondary my-3 mx-2 pt-2">
+    <h5 class="mx-3 font-weight-bold">Plan Details</h5>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Rate (kWh)</th>
+                <td>¢ {{ data["kwh_rate"] }}</td>
+            </tr>
+            <tr>
+                <td>Monthly Admin Fee</th>
+                <td>$ {{ data["admin_fee"]}}</td>
+            </tr>
+            <tr>
+                <td>Contract Length</th>
+                <td>{{ data["contract_length"]}} mos</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="border border-secondary my-3 mx-2 pt-2">
+    <div class="d-flex justify-content-between mx-3">
+        <h5 class="font-weight-bold">Delivery Fees</h5>
+        <h6>$ 67.89</h6>
+    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">EPCOR</th>
+            </tr>
+            <tr>
+                <td>Variable Distribution</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Fixed Distribution</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Balancing Pool Rider</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Per kWh Rate Rider</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Local Access Fee</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <th scope="row">FortisAlberta</th>
+            </tr>
+            <tr>
+                <td>Variable Distribution</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Fixed Distribution</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Balancing Pool Rider</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Per kWh Rate Rider</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <td>Transmission Rate Rider</td>
+                <td>$ 12.34</td>
+            </tr>
+            <tr>
+                <th scope="row">Taxes</th>
+            </tr>
+            <tr>
+                <td>GST</td>
+                <td>$ 12.34</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    var this_plan_bill = 10; // TODO calculate me
+    var user_plan_bill = 15; // TODO calculate me
+</script>
+
+{% endblock content %}
+
+{% block scripts %}
+<!-- <script type="text/javascript" src="{{ url_for('static',filename='m_rate_details.js') }}"></script> -->
+{% endblock scripts %}

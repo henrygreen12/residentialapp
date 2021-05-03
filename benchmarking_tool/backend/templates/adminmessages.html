@@ -1,0 +1,19 @@
+{% extends "adminbase.html" %}
+{% set active_page = "messages" %}
+{% block content %}
+    <h1>Messages</h1>
+
+    <button class="btn btn-lg btn-primary text-uppercase mb-2" type="submit" value="SendMessage"><a href = "{{ url_for('backend.send_message', id = user.id) }}">Send Message</a></button>
+                    <div class="card mb-3 mt-6" >
+                      <div class="card-header bg-transparent" tabindex="0" data-toggle="tooltip" data-placement="left" title="This card shows potential issues we detected with your home">
+                        Messages from {{ user.email }} <i class="material-icons-outlined float-right">info</i>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        {% for message in messages %}
+                        <li class="list-group-item">{{ message.body }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+    </div>
+  </article>
+{% endblock %}

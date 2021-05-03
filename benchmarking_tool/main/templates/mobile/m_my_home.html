@@ -1,0 +1,46 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+
+
+<div class='page'>
+    <div>
+        <img src="{{url_for('static', filename='/mobileimages/Group116.png')}}" width='auto' hight='auto' alt="Submit">
+    </div>
+    
+    <span class='page__name'>My House Details.</span>
+    <br>
+
+    <div id="rcorners">
+        <summary>
+            <img src="{{url_for('static', filename='/mobileimages/cash.png')}}" width=35 hight='72' alt="">
+            <text style="text-align: left; padding-left: 13px; ">Spendings:  <h5 style="text-align: left;"><b>$219.32</b></h5> </text>
+            
+        </summary>
+    </div>
+    
+    
+    <div id="rcorners">
+        <summary>
+            <img src="{{url_for('static', filename='/mobileimages/electric.png')}}" width=35 hight='72'style=center alt="">
+            <text style="text-align: left; padding-left: 13px;">Energy Consumption:  <h5 style="text-align: left;"><b>131kwh</b></h5> </text>
+            
+        </summary>
+    </div>
+    
+    <div id="rcorners">
+        <summary>
+            <img src="{{url_for('static', filename='/mobileimages/fire.png')}}" width=35 hight='72' alt="">
+            <text style="text-align: left; padding-left: 13px;">Gas Consumption:  <h5 style="text-align: left;"><b>13 GJ</b></h5> </text>
+            
+        </summary>
+    </div>
+    
+    
+    <a class="btn-color btn my-3" href="/m_upgrades"><h5>You could be saving 83$ more! discover how <i class="fa fa-angle-right"></i></h5></a>
+
+    
+
+</div>
+
+{% endblock content %}

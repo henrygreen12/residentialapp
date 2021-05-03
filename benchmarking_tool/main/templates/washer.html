@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kitchen</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='kitchen.css') }}">
+<script src="https://kit.fontawesome.com/3829f3b5b1.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="registration-form">
+
+        <form method="POST" enctype="multipart/form-data" id='photo_form'>
+            <div class="row text-center align-items-center justify-content-center mb-3">
+                <img height="80vw" src="{{ url_for('static',filename='washerPhoto.png') }}">
+            </div>
+             {% if appliance_found_bool == true %}
+             <div class="row  d-flex justify-content-center align-items-center text-center">
+                <div class="col col-lg-4 col-md-12 mb-2">
+                   <p class="card-text text-muted" style="align-content: center; align-items: center;">We detected a {{ appliance_type_static }}</p>
+                </div>
+                <div class="col col-lg-12 col-md-12 col-sm-12 mb-2 text-center" style="align-content: center; align-items: center;">
+                   <img style="height: 15vh;width: auto; border-radius: 25px; margin-right: auto;margin-left: auto;" src="{{ url_for('main.display_image', filename=filename) }}">
+                </div>
+                <div class="col col-lg-12 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                      {{ form.hidden_tag() }}
+                      {{ form.csrf_token }}
+                      <a href = '/update/{{ appliance_new.id }}' data-toggle="modal" class="btn btn-success btn-xs" data-target="#modaledit{{ appliance_new.id }}">Add</a>
+                      <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" >Try Again</a>
+                      <div id="modaledit{{ appliance_new.id }}" class="modal fade"  role="dialog">
+                         <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                               <div class="modal-header">
+                                  <h4 class="modal-title" id='applianceType'>{{ appliance_new.appliance_name }}</h4>
+                               </div>
+                               <div class="modal-body">
+                   <form  method="POST" enctype="multipart/form-data">
+                   {{ form.csrf_token }}
+                   <div class="form-group">
+                   <label for="formGroupExampleInput">Hours Used per Week</label>
+                   <input type="hidden"  name="id" value="{{appliance_new.id}}">
+                   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Hours" name="usage_time_new" value="{{ appliance_new.usage_time }}">
+                   </div>
+                   <div class="form-group">
+                   <label for="formGroupExampleInput2">Location</label>
+                   <select class="form-control" name="category" value="{{ appliance_new.category_appliance }}">
+                   <option value= 'kitchen'>Kitchen</option>
+                   <option value="misc">Misc</option>
+                   <option value="entertainment">Entertainment</option>
+                   <option value="basement">Basement</option>
+                   </select>
+                   </div>
+                   <div class="form-group">
+                   <button type="submit" name='finalSubmit' class="btn btn-primary">Save changes</button>
+                   </div>
+                   </form>
+                   </div>
+                   <div class="modal-footer">
+                   <a href="/deleteappliance/{{appliance_new.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Delete This Appliance?')">Delete</a>
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   </div>
+                   </div><!-- /.modal-content -->
+                   </div><!-- /.modal-dialog -->
+                   </div><!-- /.modal -->
+                   </form>
+                </div>
+             </div>
+             {% elif appliance_not_found_bool==true %}
+             <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col col-lg-4 col-md-12">
+                   <p class="card-text text-warning"> We're detecting <b>{{ appliance_found[1] }}</b></p>
+                   <p class='card-text text-success'>Try taking another photo</p>
+                </div>
+                <div class="col col-lg-4 col-md-12" style="text-align: center;"> <img class="iconLg" style="opacity: 0.5;"
+                   src="{{ url_for('static',filename='question.svg') }}">
+                </div>
+                <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                   <form  method="POST" enctype="multipart/form-data" id='photo_form'>
+                      {{ form.hidden_tag() }}
+                      {{ form.csrf_token }}
+                      <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+                         <div id="loading" class="mt-3"></div>
+                         <div id="content">
+                            <label for="appliance_photo" class='btncam pt-2' >
+                            <i class="fas fa-camera  fa-5x"></i>
+                            <br />
+                            <small style="padding-left:7px;">Take Photo</small>
+                            </label>
+                            <input type="file" style='display: none;' accept="image/*" capture="user" autocomplete="off"
+                             id='appliance_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                               name="appliance_photo">
+                         </div>
+                      </div>
+                   </form>
+                </div>
+             </div>
+             {% elif correctApplianceBoolian == true %}
+                          <div class="row  d-flex justify-content-center align-items-center">
+                <div class="col-lg-4 col-md-12 col-sm-12 mb-3 mb-sm-0 text-center">
+                   <p class="card-text text-muted">Appliance Added!</p>
+                </div>
+
+             </div>
+
+                <a type="button" href="/dryer" class="btn btn-block create-account">Next Step</a>
+             {% else %}
+              <div class="row justify-content-center my-2">
+            <div class="col col-12 text-center">
+                <div style="color: gray; font-size: 1.1rem;" class="">Now let's move to the laundry room, add appliances from the laundry room by simply taking a photo</div><br>
+            </div>
+        </div>
+        <div class="row justify-content-center my-2">
+            <div class="col col-12 text-center">
+                <div style="color: gray; font-size: 1.4rem;" class="title2">Let's start with your washer</div>
+            </div>
+        </div>
+             <div class="row  d-flex justify-content-center align-items-center">
+
+
+                <div class="col col-lg-4 col-md-12 d-flex justify-content-center" style="align-content: center; align-items: center;">
+                      {{ form.hidden_tag() }}
+                      {{ form.csrf_token }}
+                      <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+
+                         <div id="loading"></div>
+
+                         <div id="content" style="align-items:center; text-align: center; justify-content: center;">
+
+                            <label for="appliance_photo" class='btncam pt-2' >
+                            <i class="fas fa-camera  fa-5x"></i>
+                            <br />
+                            <small style="padding-left:7px;">Take Photo</small>
+                            </label>
+                            <input type="file" style='display: none;' autocomplete="off"
+                            accept="image/*" capture="user" id='appliance_photo' onchange="submit();"
+                            required class="btn btn-default btn-lg button" style="border:none"
+                               name="appliance_photo">
+                         </div>
+                      </div>
+
+                </div>
+             </div>
+             {% endif %}
+
+            </div>
+        </form>
+            <a href="/dryer" class="btn btn-block create-account">Skip</a>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+
+<script type="text/javascript">// <![CDATA[
+   function submit(){
+   $("#photo_form").submit();
+   }
+
+   $( document ).ready(function() {
+   $('#photo_form').on('change', function() { $("#loading").show(); });
+   $('#photo_form').on('change', function() { $("#content").hide(); });
+   });
+                               // ]]>
+</script>
+
+
+</body>
+
+
+
+</html>

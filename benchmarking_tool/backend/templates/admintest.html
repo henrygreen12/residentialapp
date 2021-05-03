@@ -1,0 +1,26 @@
+{% extends 'adminbase.html' %}
+{% set active_page = "users" %}
+{% block content %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3">Users</td></tr>
+                <tr>
+                    <th>ID Number</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td><a href="{{url_for('backend.admincustomer', id = user.id)}}"> {{ user.email }}</a></td>
+                    <td><a href="{{url_for('backend.messages', id = user.id)}}">Messages</a></td>
+                    <td><a href="{{url_for('backend.adminbills', id = user.id)}}">Bills</a></td>
+                    <td><a href="{{url_for('backend.recommendations', id = user.id)}}">Recommendations</a></td>
+                    <td><a href="{{url_for('backend.csvSelection', id = user.id)}}">CSV Query</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}

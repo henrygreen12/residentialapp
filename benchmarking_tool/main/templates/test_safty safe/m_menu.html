@@ -1,0 +1,49 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+<style>
+  .link_button {
+    min-height: 110px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    text-align: left;
+    font-size: 30px;
+    margin: 8px 0;
+    white-space: normal;
+  }
+</style>
+
+<div class="m-2">
+
+  <h1 class="my-4">Get Started</h1>
+
+  <div>
+    <form action="/m_utility_costs/">
+      <input type="submit" value="Utility Costs" class="link_button" />
+    </form>
+  </div>
+
+  <div>
+    <form action="/m_home_comparison/">
+      <input type="submit" value="My Home" class="link_button" />
+    </form>
+  </div>
+
+  <div>
+    <form action="/m_upgrades/">
+      <input type="submit" value="Reduce Energy Consumption" class="link_button" />
+    </form>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  function foo() {
+    console.log('Digimon');
+  }
+
+</script>
+
+{% endblock content %}

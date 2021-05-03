@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--
+  <style type="text/css">
+    .btn{
+      white-space: normal;
+    }
+  </style> -->
+  <!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+   <div class="row justify-content-center mt-0">
+      <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-1 mb-2">
+         <div class="card px-0 pt-1 pb-0 mt-1 mb-3">
+            <div class="row" style="margin: 0">
+               <div class="col-md-12 mx-0" style="padding:0">
+                  <form id="msform" method = "POST" form = form1 enctype="multipart/form-data">
+                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                     <!-- progressbar -->
+                     <fieldset>
+                          <h2 class="text-muted">Home Heating</h2>
+                           <br />
+                           <br />
+                        <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                        </div>
+                        <div class="form-card text-center" style="padding: 20 10 30 10">
+
+                           <br />
+                           <h5 class="text-muted card-text">What temperature do you set your thermostat
+                              on the coldest days of the year?
+                           </h5>
+                           <div style="margin-bottom:-60px">
+                              <br />
+
+                              <input type="text" value="23" class="dial" name="setPoint" data-min="15" data-max="35" data-width="200"
+                                 data-fgColo r="#4385F5" data-skin="tron" data-thickness=".3" data-angleOffset=-105 data-angleArc=210 data-linecap=round>
+                              <script type="text/javascript">
+                                 $(function() {
+                                   $(".dial").knob({
+                                    'format' : function (value) {
+                                       return value + '°C';
+                                     }
+                                   });
+                                 });
+                              </script>
+                           </div>
+                           <small>Thermostat Setpoint</small>
+                        </div>
+                        <hr />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next Step" onclick="topFunction()" />
+
+                     </fieldset>
+                     <fieldset>
+                      <h2 class="text-muted">Home Heating</h2>
+                           <br />
+                           <br />
+                        <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                        </div>
+                        <div class="form-card text-center" style="padding: 20 10 30 10">
+                           <br />
+                           <div style="margin-bottom: 50">
+                              <h5 class="text-muted">Do you turn down your thermostat at night?</h5>
+                              <br />
+                              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                 <label class="btn btn-success active">
+                                 <input type="radio" name="thermostatNight" value ="Yes" id="option1" autocomplete="off" checked> Yes
+                                 </label>
+                                 <label class="btn btn-secondary">
+                                 <input type="radio" name="thermostatNight" value="No" id="option2" autocomplete="off"> No
+                                 </label>
+                              </div>
+                           </div>
+                        </div>
+                        <hr />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="button" name="next" class="next action-button" value="Next Step" onclick="topFunction()" />
+                     </fieldset>
+                     <fieldset>
+                      <h2 class="text-muted">Home Heating</h2>
+                           <br />
+                           <br />
+                        <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                        </div>
+                        <div class="form-card text-center" style="padding: 20 10 30 10">
+                           <br />
+                           <div style="margin-bottom: 50">
+                              <h5 class="card-text text-muted">Is your garage heated?</h5>
+                              <br />
+                              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                 <label class="btn btn-success active">
+                                 <input type="radio" id="yes" name="heatedGarage" value="yes" />Yes
+                                 </label>
+                                 <label class="btn btn-secondary">
+                                 <input type="radio" id="no" name="heatedGarage" value="no" checked />No
+                                 </label>
+                              </div>
+                           </div>
+                        </div>
+                        <hr />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="submit" value="submit" class="next action-button" style="background: #34A755">
+                     </fieldset>
+                     <!-- <fieldset data-name="HomeHabits">
+                      <h2 class="text-muted">Appliances</h2>
+                           <small>Provide as much information as you can, to help us give you an accurate benchmark.</small>
+                           <br />
+                           <br />
+                        <div class="progress"  style="margin-left:3%;margin-right: 3%;">
+                           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                              aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+                        </div>
+                        <div class="form-card">
+                          <div class="text-center">
+                            <h5 class="text-muted card-text">Do your appliances use gas or electricity?</h5>
+                      </div>
+                           <br />
+                            <div class="row">
+                              <div class="col text-center border-bottom mb-2 mr-3-lg pb-2">
+
+                                <p class="card-text text-muted">Stove/Oven</p>
+                                <img class="iconLg" src="{{ url_for('static',filename= 'stove.svg') }}">
+                                <br />
+                                <br />
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                   <label class="btn btn-danger active">
+                                   <input type="radio" name="stoveType" value="gas" id="optionGas" autocomplete="off" checked> Gas
+                                   </label>
+                                   <label class="btn btn-warning">
+                                   <input type="radio" name="stoveType" value="electric" id="optionElectric" autocomplete="off"> Electric
+                                   </label>
+                                   <br />
+                                   <label class="btn btn-secondary">
+                                   <input type="radio" name="stoveType" value="both" id="optionBoth" autocomplete="off"> Combined
+                                   </label>
+                                </div>
+                              </div>
+                              <div class="col text-center border-bottom mb-2 mr-3-lg pb-2">
+
+                                <p class="card-text text-muted">Clothes Dryer</p>
+                                <img class="iconLg" src="{{ url_for('static',filename= 'dryer.svg') }}">
+                                <br />
+                                <br />
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                   <label class="btn btn-danger active">
+                                   <input type="radio" name="clothesDryerType" value="gas" id="option1" autocomplete="off" checked> Gas
+                                   </label>
+                                   <label class="btn btn-warning">
+                                   <input type="radio" name="clothesDryerType" value="electric" id="option2" autocomplete="off"> Electric
+                                   </label>
+                                </div>
+                              </div>
+                              <div class="col text-center border-bottom mb-2 mr-3-lg pb-2">
+
+                                <p class="card-text text-muted">Water Heater</p>
+                                <img class="iconLg" src="{{ url_for('static',filename= 'waterHeaterBlue.svg') }}">
+                                <br />
+                                <br />
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                   <label class="btn btn-danger active">
+                                   <input type="radio" name="waterHeaterType" value="gas" id="option1" autocomplete="off" checked> Gas
+                                   </label>
+                                   <label class="btn btn-warning">
+                                   <input type="radio" name="waterHeaterType" value="electric" id="option2" autocomplete="off"> Electric
+                                   </label>
+                                </div>
+                              </div>
+                              <div class="col text-center border-bottom mb-2 mr-3-lg pb-2">
+
+                                <p class="card-text text-muted ">Furnace</p>
+                                <img class="iconLg" src="{{ url_for('static',filename= 'furnaceBlue.svg') }}">
+                                <br />
+                                <br />
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                   <label class="btn btn-danger active">
+                                   <input type="radio" name="furnaceType" value="gas" id="option1" autocomplete="off" checked> Gas
+                                   </label>
+                                   <label class="btn btn-warning">
+                                   <input type="radio" name="furnaceType" value="electric" id="option2" autocomplete="off"> Electric
+                                   </label>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                        <hr />
+                        <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                        <input type="submit" value="submit" class="next action-button" style="background: #34A755">
+                     </fieldset> -->
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>
+{% endblock %}

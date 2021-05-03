@@ -1,0 +1,72 @@
+{% extends 'adminbase.html' %}
+{% set active_page = "users" %}
+{% block content %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3">Appliances</td></tr>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Room</th>
+                    <th>Usage Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appliance in appliances %}
+                <tr>
+                    <td>{{ appliance.appliance_name }}</td>
+                    <td> {{ appliance.category_appliance }}</td>
+                    <td> {{ appliance.usage_time }}</td>
+                    <td> <img src="{{ url_for('static', filename='appliance_photos/img/' + appliance.photo_id) }}" alt="{{appliance.appliance_name}}" style="width:500px;height:500px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class='table'>
+            <thead>
+                <tr><td colspan="3">DHW</td></tr>
+                <tr>
+                    <th>Name Plate</th>
+                    <th>BTU Output</th>
+                    <th>Volume</th>
+                    <th>Year Built</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for dhw in dhws %}
+                <tr>
+                    <td>{{ dhw.name_plate }}</td>
+                    <td> {{ dhw.btu_output }}</td>
+                    <td> {{ dhw.volume }}</td>
+                    <td> {{ dhw.year_built }}</td>
+                    <td> <img src="{{ url_for('static', filename='dhw_folder/' + dhw.dhw_file) }}" alt="{{dhw.name_plate}}" style="width:500px;height:500px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+                 <table class='table'>
+            <thead>
+                <tr><td colspan="3">Heating Equipment</td></tr>
+                <tr>
+                    <th>Name Plate</th>
+                    <th>BTU Output</th>
+                    <th>Volume</th>
+                    <th>Year Built</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for heating_equipment in heating_equipments %}
+                <tr>
+                    <td>{{ heating_equipment.name_plate }}</td>
+                    <td> {{ heating_equipment.btu_output }}</td>
+                    <td> {{ heating_equipment.volume }}</td>
+                    <td> {{ heating_equipment.year_built }}</td>
+                    <td> <img src="{{ url_for('static', filename='furnance_photos/img/' + heating_equipment.furnace_file) }}" alt="{{heating_equipment.name_plate}}" style="width:500px;height:500px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}

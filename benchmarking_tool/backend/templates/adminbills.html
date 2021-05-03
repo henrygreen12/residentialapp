@@ -1,0 +1,70 @@
+{% extends 'adminbase.html' %}
+{% set active_page = "users" %}
+{% block content %}
+         <table class='table'>
+            <thead>
+                <tr><td colspan="3">Electrical Bill</td></tr>
+                <tr>
+                    <th>Consumption</th>
+                    <th>Cost</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for electrical_usage in electrical_usages %}
+                <tr>
+                    <td>{{ electrical_usage.consumption }}</td>
+                    <td>{{ electrical_usage.cost }}</td>
+                    <td><img src="{{ url_for('static', filename='electrical_folder/' + electrical_usage.electrical_file) }}" alt="Electrical Bill" style="width:500px;height:1000px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class='table'>
+            <thead>
+                <tr><td colspan="3">Gas Water</td></tr>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Room</th>
+                    <th>Usage Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for gas_usage in gas_usages %}
+                <tr>
+                    <td>{{ gas_usage.cosumption }}</td>
+                    <td>{{ gas_usage.cost }}</td>
+                    <td>{{ gas_usage.account_number }}</td>
+                    <td>{{ gas_usage.meter_number }}</td>
+                    <td>{{ gas_usage.site_id }}</td>
+                    <td>{{ gas_usage.month }}</td>
+                    <td>{{ gas_usage.year }}</td>
+                    <td><img src="{{ url_for('static', filename='gas_folder/' + gas_usage.gas_file) }}" alt="Gas Bill" style="width:500px;height:500px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class='table'>
+            <thead>
+                <tr><td colspan="3">Water Bill</td></tr>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Room</th>
+                    <th>Usage Time</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for water_usage in gas_usages %}
+                <tr>
+                    <td>{{ water_usage.meter_number }}</td>
+                    <td>{{ water_usage.usage }}</td>
+                    <td><img src="{{ url_for('static', filename='water_folder/' + water_usage.water_file) }}" alt="Water Bill" style="width:500px;height:1000px;"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+{% endblock %}

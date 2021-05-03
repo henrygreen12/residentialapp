@@ -1,0 +1,58 @@
+{% extends 'mobile_base.html' %}
+{% set active_page = "home" %}
+{% block content %}
+<style>
+body {
+  background: rgb(255, 255, 255);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: system-ui, sans-serif;
+}
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+pre {
+  background: #000;
+  text-align: left;
+  padding: 20px;
+  margin: 0 auto 30px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+</style>
+
+<p>
+    <div class='center'>Compared to other similar homes in your neighbourhood, you are {{ EI }} percent more efficient!
+    </div>
+    <div class='center'>
+        <img src="{{url_for('static', filename='/mobileimages/icons8-happy-cloud-50.png')}}"/>
+    
+    </div>
+</p>
+
+<div class = m-3>
+    <div class='center'>Community rank: {{ rank }} out of {{ outof }}! you are a Rockstar!
+        <div class='row justify-content-md-center'>
+            <div class='column'>
+                <img src="{{url_for('static', filename='/mobileimages/icons8-facebook-64.png')}}"/>
+                <img src="{{url_for('static', filename='/mobileimages/icons8-twitter-circled-64.png')}}"/>
+                <img src="{{url_for('static', filename='/mobileimages/icons8-instagram-64.png')}}"/>
+                <a class="btn-lg btn-primary btn my-3" href="/m_imporve_envolope">click here to start improving your score</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+ 

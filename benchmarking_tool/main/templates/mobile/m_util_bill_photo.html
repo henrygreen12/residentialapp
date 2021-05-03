@@ -1,0 +1,26 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+
+<div class='page'>
+      
+    <span class='page__name'>Take a picture of your Utility Bill to start</span>
+    <br>
+    <span class="page__hint"> 
+        <p class="text-primary"><i class="fa fa-info fa-fw"></i>   Why do you need this & is my data safe?</p>
+    </span>
+
+    <div>
+        <img src="{{url_for('static', filename='/mobileimages/util_bill_pic.png')}}" width='auto' hight='85%' alt="Submit">
+    </div>
+    
+    <div class ="row">
+        
+            <a class="btn-color" style="width:55%; margin-top: 13px" href="/utilitybills"><h5 style="margin-bottom: 0%;">Open Camera  <i class="fa-fw fa fa-camera"></i></h5></a>
+            
+            <a class="btn-color" style="width:55%; margin-top: 13px" href="/m_menu"><h5 style="margin-bottom: 0%;">Camera Roll  <i class="fa-fw fa-fw fa fa-image"></i></h5></a>
+        
+    </div>
+</div>
+
+{% endblock content %}

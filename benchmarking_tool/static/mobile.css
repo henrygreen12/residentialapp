@@ -1,0 +1,189 @@
+
+.wrapper {
+  display: fixed;
+}
+
+.upgrades_container,
+.inventory_container {
+  overflow: auto;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.upgrades_container .rate_card {
+  background-color: white;
+  display: inline-block;
+  float: none;
+  width: 140px;
+  height: 100px;
+  border-radius: 8px;
+  margin: 10px 4px;
+}
+
+.upgrades_container .upgrade_card {
+  /* width: 50%; */
+  border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rate_card .content,
+.upgrade_card .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content .image_card {
+  height: 50px;
+  width: 60px;
+  margin: auto 4px;
+  text-align: center;
+}
+
+.content .image_card .helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.content .image_card img,
+.image_card img {
+  max-width: 90%;
+  max-height: 100%;
+  vertical-align: middle;
+}
+
+.content .info {
+  margin-right: 5px;
+}
+
+.content .info h6 {
+  font-size: xx-small;
+  margin-bottom: 0;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.content .info h5 {
+  font-size: small;
+  text-align: right;
+}
+
+.upgrades_container::-webkit-scrollbar {
+  display: none;
+}
+
+.upgrades_container .divider_line {
+  display: inline-block;
+  height: 100px;
+  max-width: 4px;
+  border-left: 2px solid grey;
+}
+
+.financials-display {
+  display: flex;
+  justify-content: space-around;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 35px;
+}
+
+.financial-info h6 {
+  font-size: x-small;
+}
+
+  .upgrade_checkbox {
+    min-width: 40%;
+  }
+
+  input[type=checkbox] {
+    transform: scale(1.5);
+  }
+
+  .e_rate_card .rate_image {
+    display: inline-block;
+    height: 100%;
+    margin: 4px;
+  }
+
+  .e_rate_card .rate_image img {
+    height: 4em;
+    width: 6em;
+    object-fit: contain;
+  }
+
+  .e_rate_card .content {
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+  }
+
+  .checklist_container {
+    margin-top: -12px; 
+    padding: 30px 20px 8px;
+  }
+
+  .rate_title {
+    width: 50%;
+    word-wrap: normal;
+}
+
+.foo {
+    background-color: #cadeff;
+    margin: 12px 36px;
+    border: 2px solid #0275d8;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.early_exit_warning {
+    border: 1px solid red;
+    border-radius: 4px;
+    display: flex;
+    margin: 12px;
+    padding: 6px 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.early_exit_warning h5 {
+    display: inline;
+    margin: auto 6px;
+}
+.early_exit_warning small {
+    display: inline;
+    margin: auto 6px;
+}
+#page-wrap {
+  width: 490px;
+  margin: 80px auto;
+}
+body {
+  background: rgb(255, 255, 255);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-family: system-ui, sans-serif;
+}
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0 0 30px;
+}
+pre {
+  background: #000;
+  text-align: left;
+  padding: 20px;
+  margin: 0 auto 30px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  }

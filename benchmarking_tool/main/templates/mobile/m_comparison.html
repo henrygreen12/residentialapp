@@ -1,0 +1,56 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+<div class="text-center my-5">
+  <h2>Welcome to Pollen!</h2>
+  <br>
+  <p class="text-left mx-4">We offer a service that will revolutionize your
+    utility spending. We can analyze your energy usage, and by using AI, we can
+    provide you with options on how you can save on every bill. All this by
+    taking a few pictures for us!
+  </p>
+  <br>
+  <div class="">
+    <!-- <input type="button" class="mb-3" name="upload-utility-bill" value="Upload a Utility Bill" href="/m_analysis"> -->
+    <!-- <a href="/m_analysis" class="mb-3 btn btn-primary">Upload a Utility Bill</a> -->
+    <form  method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+
+         <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+           <div id="loading"></div>
+           <div id="content">
+              <label for="electrical_photo" class='btncam pt-2' >
+              <i class="fas fa-camera  fa-5x"></i>
+              <br />
+              <small style="padding-left:7px;">Add Bill</small>
+              </label>
+              <input type="file" style='display: none;' autocomplete="off" id='electrical_photo' capture='user' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+                 name="electrical_photo">
+           </div>
+        </div>
+
+    </form>
+  </div>
+  <br>
+  <h3>Here's how it works.</h3>
+  <p class="text-left mx-4">Using census data, we can predict a neighbourhood's
+    average energy consumption, and by uploading your utility bill, we can
+    confirm your address and show your area's energy models. With your help, we
+    can start making more accurate models about your home. Our AI will provide
+    you with smart suggestions that will make you save on your bill and making
+    you more environmentally green. It's a win-win!
+  </p>
+  <br>
+  <h3>Who is Pollen?</h3>
+  <p class="text-left mx-4">Pollen is a start-up that is spearheading the home
+    energy modelling industry, founded by people passionate about sustainable
+    energy. Our goal is to provide homes with information on energy distribution
+    and how everyone can easily switch to cheaper and greener options. We are
+    aiming to launch early in 2021, and we aim to significantly reduce
+    Greenhouse Gas Emissions by converting households to more energy efficient
+    alternatives.
+  </p>
+</div>
+
+{% endblock content %}

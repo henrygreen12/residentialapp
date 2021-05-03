@@ -1,0 +1,227 @@
+:root {
+  --cadet-blue: #afb8cc;
+  --gray-chateau: #a1a8b8;
+  --gulf-blue: #0d1758;
+  --gulf-blue-2: #0d175899;
+  --mountain-meadow: #1dbd9314;
+  --mountain-meadow-2: #1dbd93;
+  --mystic: #e7e9f5;
+  --orange-soda: #ee5937;
+  --orange-soda-2: #ee5937cc;
+  --picton-blue: #3ccbed;
+  --shadow-blue: #7f8dab;
+  --violet-blue: #3649a8;
+  --violet-blue-2: #3649a80f;
+  --violet-blue-3: #3649a81f;
+  --white: #ffffff;
+  --zircon: #f7f9fe;
+
+  --font-size-12_6px: 12.6px;
+  --font-size-15_2px: 15.2px;
+  --font-size-22_8px: 22.8px;
+  --font-size-39_6px: 39.6px;
+  --font-size-l: 15px;
+  --font-size-m: 14px;
+  --font-size-s: 13px;
+  --font-size-xl: 16px;
+  --font-size-xs: 12px;
+  --font-size-xxl: 18px;
+  --font-size-xxs: 11px;
+  --font-size-xxxl: 20px;
+  --font-size-xxxs: 10px;
+  --font-size-xxxxl: 24px;
+  --font-size-xxxxxl: 32px;
+  --font-size-xxxxxxl: 36px;
+
+  --font-family-averta_cy-bold: "Averta CY-Bold", Helvetica;
+  --font-family-averta_cy-regular: "Averta CY-Regular", Helvetica;
+  --font-family-averta_cy-semibold: "Averta CY-Semibold", Helvetica;
+}
+.avertacy-normal-gulf-blue-14px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-bold-gulf-blue-18px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 700;
+}
+.avertacy-normal-gulf-blue-13px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-white-10px {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-bold-gulf-blue-20px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 700;
+}
+.avertacy-normal-white-14px {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-cadet-blue-14px {
+  color: var(--cadet-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-bold-gulf-blue-16px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 700;
+}
+.avertacy-normal-white-15px {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-shadow-blue-16px {
+  color: var(--shadow-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-mountain-meadow-11px {
+  color: var(--mountain-meadow-2);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-regular-normal-cadet-blue-14px {
+  color: var(--cadet-blue);
+  font-family: var(--font-family-averta_cy-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-white-18px {
+  color: var(--white);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-20px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-15px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-shadow-blue-12px {
+  color: var(--shadow-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gray-chateau-10px {
+  color: var(--gray-chateau);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-11px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-bold-gulf-blue-32px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-bold);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 700;
+}
+.avertacy-normal-gulf-blue-12px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-10px {
+  color: var(--gulf-blue-2);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-10px-2 {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-picton-blue-14px {
+  color: var(--picton-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-regular-normal-gulf-blue-14px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-regular-normal-cadet-blue-11px {
+  color: var(--cadet-blue);
+  font-family: var(--font-family-averta_cy-regular);
+  font-size: var(--font-size-xxs);
+  font-style: normal;
+  font-weight: 400;
+}
+.avertacy-normal-gulf-blue-24px {
+  color: var(--gulf-blue);
+  font-family: var(--font-family-averta_cy-semibold);
+  font-size: var(--font-size-xxxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+.border-1px-mystic {
+  border: 1px solid var(--mystic);
+}
+.border-1px-violet-blue-3 {
+  border: 1px solid var(--violet-blue-3);
+}

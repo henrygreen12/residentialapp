@@ -1,0 +1,564 @@
+body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     background-color: #90dcfe;
+     text-align: center;
+}
+ .vertical-form-container {
+     height: 400px;
+     width: 300px;
+     position: relative;
+}
+ .vertical-form-container:after {
+     content: ' ';
+     position: absolute;
+     top: calc(100% + 5px);
+     left: 0;
+     display: inline-block;
+     height: 30px;
+     width: 100%;
+     background-color: rgba(0, 0, 0, .25);
+     border-radius: 50%;
+     filter: blur(10px);
+     z-index: 1;
+}
+ .vertical-form {
+     height: 100%;
+     width: 100%;
+     background-color: #eee;
+     position: relative;
+     overflow: hidden;
+     border-radius: 8px;
+}
+ .vertical-form .step {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     visibility: hidden;
+     background-color: #02A8F3;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     color: white;
+     font-family: montserrat, sans-serif;
+}
+ .vertical-form .step .title {
+     font-size: 24px;
+     margin-bottom: 16px;
+}
+ .vertical-form .step > * {
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+ .vertical-form .step.step-2 {
+     background-color: #0285c0;
+}
+ .vertical-form .step.step-3 {
+     background-color: #01628e;
+}
+ .vertical-form .step.active {
+     visibility: visible;
+     transform: translateY(0);
+     z-index: 2;
+}
+ .vertical-form .step.active > * {
+     opacity: 1;
+}
+ .vertical-form .step.previous {
+     visibility: visible;
+     transform: translateY(-100%);
+}
+ .vertical-form .step.next {
+     visibility: visible;
+     transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+     border-radius: 50%;
+     z-index: 2;
+}
+ .vertical-form .step.sliding-out {
+     animation: slidingOut 1s ease forwards;
+}
+ @keyframes slidingOut {
+     from {
+         transform: translateY(0);
+    }
+     to {
+         transform: translateY(-100%);
+    }
+}
+ .vertical-form .step.sliding-in {
+     animation: slidingIn 1s ease forwards;
+}
+ @keyframes slidingIn {
+     from {
+         transform: translateY(calc(100% - 67px)) scaleX(1.3333);
+         border-radius: 50%;
+    }
+     to {
+         transform: translateY(0) scaleX(1);
+         border-radius: 0;
+    }
+}
+ .vertical-form i {
+     position: absolute;
+     bottom: 47px;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 50%;
+     padding: 8px;
+     background-color: white;
+     box-shadow: 0 1px 0 black;
+     z-index: 3;
+}
+ .vertical-form i.animating {
+     animation: animating 1s linear;
+}
+ @keyframes animating {
+     0% {
+         transform: translateY(0) translateX(-50%);
+         opacity: 1;
+    }
+     15% {
+         transform: translateY(-100%) translateX(-50%);
+         opacity: 0;
+    }
+     85% {
+         transform: translateY(100%) translateX(-50%);
+         opacity: 0;
+    }
+     100% {
+         transform: translateY(0) translateX(-50%);
+         opacity: 1;
+    }
+}
+
+
+.bill{
+    width: 150px;
+    height: auto;
+    position: relative;
+    animation-name:billin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.money{
+    font-size: 25px;
+    position: relative;
+    animation-name:billin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes billin {
+    0% {
+        left:-1000px;
+    }
+    100% {
+        left:25px;
+    }
+}
+
+
+.time{
+    font-size: 25px;
+    position: relative;
+    left: -1000px;
+    color: #FBBE08;
+    animation-name:timein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay:1.5s;
+}
+
+
+@keyframes timein {
+    0% {
+        left:-1000px;
+    }
+    100% {
+        left:0px;
+    }
+}
+
+.question{
+    z-index: 4;
+    opacity: 0;
+    width:50px;
+    height:auto;
+    position: absolute;
+    top:160px;
+    left:50px;
+    -webkit-animation:pop-in 0.5s;
+-moz-animation:pop-in 0.5s;
+-ms-animation:pop-in 0.5s;
+animation-delay:2s;
+animation-fill-mode: forwards;
+}
+
+
+.question2{
+    z-index: 4;
+    opacity: 0;
+    width:50px;
+    height:auto;
+    position: absolute;
+    top:200px;
+    left:150px;
+    -webkit-animation:pop-in 0.5s;
+-moz-animation:pop-in 0.5s;
+-ms-animation:pop-in 0.5s;
+animation-delay:2.5s;
+animation-fill-mode: forwards;
+}
+
+
+.question3{
+    z-index: 4;
+    opacity: 0;
+    width:50px;
+    height:auto;
+    position: absolute;
+    top:260px;
+    left:50px;
+    -webkit-animation:pop-in 0.5s;
+-moz-animation:pop-in 0.5s;
+-ms-animation:pop-in 0.5s;
+animation-delay:3s;
+animation-fill-mode: forwards;
+}
+
+
+.billback{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left:25px;
+
+}
+
+.billbackanimated{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left:25px;
+    -webkit-animation: image_blur 1s;
+    -webkit-animation-delay:2.5s;
+    -webkit-animation-fill-mode:forwards;
+
+
+}
+
+
+
+.cam{
+
+}
+
+
+
+
+.furnaceback{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left:25px;
+
+}
+
+.furnacebackanimated{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left:25px;
+    -webkit-animation: image_blur 1s;
+    -webkit-animation-delay:2.5s;
+    -webkit-animation-fill-mode:forwards;
+
+
+}
+
+
+
+.furnacecam{
+
+}
+
+.furnacecamanimated{
+    width: 45px;
+    height: auto;
+    position: absolute;
+    top:195px;
+    left: 175px;
+    opacity: 0;
+    z-index: 6;
+    animation-name:pop-in;
+    animation-duration: 1s;
+        -webkit-animation:pop-in 0.5s;
+-moz-animation:pop-in 0.5s;
+-ms-animation:pop-in 0.5s;
+animation-delay: 3.8s;
+animation-fill-mode: forwards;
+}
+
+
+.camanimated{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    opacity: 0;
+    z-index: 4;
+    animation-name:camin;
+    animation-duration: 2s;
+    animation-delay:1.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes billin {
+    0% {
+        left:1000px;
+    }
+    100% {
+        left:0px;
+    }
+}
+
+@keyframes camin {
+    0% {
+        left:1000px;
+        top:182px;
+        opacity: 1;
+    }
+    100% {
+        left:150px;
+        top:182px;
+        opacity: 1;
+    }
+}
+
+
+
+.camflash{
+    width: 75px;
+    height: auto;
+    position: absolute;
+    top: 150px;
+    left:100px;
+    z-index: 5;
+
+
+
+}
+
+.camflashanimated{
+    opacity: 0;
+    width: 75px;
+    height: auto;
+    position: absolute;
+    top: 135px;
+    left:135px;
+    z-index: 5;
+    animation-name:pop-in;
+    animation-duration: 0.75s;
+
+    -webkit-animation:pop-in 2s;
+    -moz-animation:pop-in 2s;
+    -ms-animation:pop-in 2s;
+
+    -webkit-animation-delay:3.5s;
+    -ms-animation-delay:5s;
+    -moz-animation-delay:5s;
+}
+
+.billcam{
+
+}
+
+.billcamanimated{
+    width: 45px;
+    height: auto;
+    position: absolute;
+    top:192px;
+    left: 175px;
+    opacity: 0;
+    z-index: 6;
+    animation-name:pop-in;
+    animation-duration: 1s;
+        -webkit-animation:pop-in 0.5s;
+-moz-animation:pop-in 0.5s;
+-ms-animation:pop-in 0.5s;
+animation-delay: 3.8s;
+animation-fill-mode: forwards;
+}
+
+
+
+@-webkit-keyframes pop-in {
+0% { opacity: 1; -webkit-transform: scale(0.1); }
+50% { opacity: 1; -webkit-transform: scale(1.4);}
+100% { opacity: 1; -webkit-transform: scale(1); }
+}
+@-moz-keyframes pop-in {
+0% { opacity: 1; -moz-transform: scale(0.1);}
+50% { opacity: 1; -moz-transform: scale(1.4); }
+100% { opacity: 1; -moz-transform: scale(1); }
+}
+@keyframes pop-in {
+0% { opacity: 1; transform: scale(0.1); }
+50% { opacity: 1; transform: scale(1.4); }
+100% { opacity: 1; transform: scale(1); }
+}
+
+
+
+@-webkit-keyframes image_blur {
+    0% { -webkit-filter: blur(0px);}
+    50%; { -webkit-filter: blur(3px);}
+    100% { -webkit-filter: blur(3px);}
+}
+
+#image {
+    width    : 290px;
+    height   : 160px;
+    background: url(images/test1.jpg);
+}
+
+#image:hover {
+    -webkit-animation: image_blur 2s;
+}
+
+
+
+
+.furnaceback{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    opacity: 0;
+    top: 100px;
+    left:25px;
+
+}
+
+.furnacebackanimated{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 100px;
+    left:25px;
+    opacity: 0;
+    animation-name:pop-in;
+    animation-duration: 1s;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.cost{
+    font-size: 20px;
+    color: #9C9C9C;
+    opacity: 0;
+    position: absolute;
+    top:300px;
+    left: 0px;
+    width:100%;
+}
+.costanimated{
+    font-size: 20px;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    top:300px;
+    left: 0px;
+
+    z-index: 8;
+    width:100%;
+    animation-name:pop-in;
+    animation-duration: 1s;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+.furnace{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 125px;
+    left:75px;
+    opacity: 0;
+
+}
+
+.furnaceanimated{
+    width: 150px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 125px;
+    left:75px;
+    opacity: 0;
+    animation-name:pop-in;
+    animation-duration: 1s;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+}
+
+
+.quote{
+    font-size: 17px;
+    color: #9C9C9C;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top:350px;
+    left: 0px;
+    width:100%;
+}
+.quoteanimated{
+    font-size: 14px;
+    color: white;
+    opacity: 0;
+    text-decoration: underline;
+    position: absolute;
+    top:330gpx;
+    left: 0px;
+
+    z-index: 8;
+    width:100%;
+    animation-name:pop-in;
+    animation-duration: 1s;
+    -webkit-animation:pop-in 0.5s;
+    -moz-animation:pop-in 0.5s;
+    -ms-animation:pop-in 0.5s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}

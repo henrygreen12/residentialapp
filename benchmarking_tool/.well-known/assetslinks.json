@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.pythonanywhere.murraywarepollen.twa",
+    "sha256_cert_fingerprints": [
+      "DB:44:CD:F7:C2:AD:EE:AF:3B:DF:54:BA:F1:5D:4D:ab:77:8B:60:E5:AD:E8:68:E2:7D:C5:CC:D8:1E:AE:CC:5F"
+    ]
+  }
+}]

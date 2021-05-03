@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/your-utility-rates-listview.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}"/>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="your-utility-rates-listview" />
+    <div class="container-center-horizontal">
+      <div class="your-utility-rates-listview screen">
+        <div class="group-6883-C61RwL">
+          <a href = "{{url_for('main.overview')}}"><div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="{{ url_for('static',filename='img/4.svg')}}" /></div></a>
+          <div class="your-appliances-ht0xwR">Your Appliances</div>
+        </div>
+        <div class="group-6892-C61RwL">
+          <div class="group-6890-UyvNxx">
+            <div class="sort-by-x4pNuv">Sort by</div>
+            <div class="chevron-left-x4pNuv"><img class="vector-2TxzwZ" src="{{url_for('static',filename='img/vector-1@2x.svg')}}" /></div>
+          </div>
+          <div class="group-6891-UyvNxx">
+            <div class="category-bqxNep">
+              <div class="flex-col-6bcc5e">
+                <img class="stroke-1-9sxLnV" src="{{url_for('static',filename='img/stroke-1@2x.svg')}}" />
+                <img class="stroke-5-9sxLnV" src="{{url_for('static',filename='img/stroke-5@2x.svg')}}" />
+              </div>
+              <div class="flex-col-ZBV1JT">
+                <img class="stroke-3-DgRVip" src="{{url_for('static',filename='img/stroke-3@2x.svg')}}" />
+                <img class="stroke-7-DgRVip" src="{{url_for('static',filename='img/stroke-7@2x.svg')}}" />
+              </div>
+            </div>
+            <div class="category-2n3xc3">
+              <div class="flex-col-MdvlXP">
+                <img class="stroke-1-wYdRmV" src="{{url_for('static',filename='img/stroke-1-1@2x.svg')}}" />
+                <img class="stroke-5-wYdRmV" src="{{url_for('static',filename='img/stroke-5-1@2x.svg')}}" />
+              </div>
+              <div class="flex-col-6MsvME">
+                <img class="stroke-3-cqxZln" src="{{url_for('static',filename='img/stroke-3-1@2x.svg')}}" />
+                <img class="stroke-7-cqxZln" src="{{url_for('static',filename='img/stroke-3-1@2x.svg')}}" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlap-group-C61RwL">
+          <div class="frame-4317-4eduM0">
+            {% if appliances|count > 0 %}
+            {% for appliance in appliances %}
+            <div class="frame-4311-nIxcen">
+              <div class="frame-4312-ediO7D">
+                <img class="image-33-EyS01m" src="{{ url_for('static', filename='appliance_photos/img/' + appliance.photo_id) }}" />
+                <div class="group-6889-EyS01m">
+                  <div class="edit-suKEcJ">
+                    <img class="vector-6tZadk" src="{{url_for('static',filename='img/9.svg')}}" />
+                    <img class="vector-D9EyJn" src="{{url_for('static',filename='img/8.svg')}}" />
+                  </div>
+                </div>
+              </div>
+              <div class="group-6983-ediO7D">
+                <div class="flex-col-CxIaGc">
+                  <div class="group-4322-02Ltdm">
+                    <div class="refrigerator-vxapfi avertacy-bold-gulf-blue-16px">{{appliance.appliance_name}}</div>
+                  </div>
+                  <div class="group-4323-02Ltdm">
+                    <div class="costs-csIICt avertacy-normal-shadow-blue-12px">Costs</div>
+                    <div class="x1289-csIICt avertacy-bold-gulf-blue-18px">${{(((appliance.rated_power)/1000)*0.11*((appliance.usage_time))*4)|round(2)}}</div>
+                  </div>
+                </div>
+                <a href = "{{url_for('main.appliancedetails', id = appliance.id)}}"><div class="frame-4321-CxIaGc">
+                  <div class="compare-86PrIQ avertacy-normal-white-14px">Details</div>
+                </div></a>
+              </div>
+            </div>
+             {% endfor %}
+             {% else %}
+             no appliances
+             {% endif %}
+            </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

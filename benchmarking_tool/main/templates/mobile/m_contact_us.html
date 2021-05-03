@@ -1,0 +1,50 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+<style>
+    .column {
+      float: left;
+      width: 45%;
+      padding: 25px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+      content: "";
+      clear: both;
+      display: flex;
+      padding: 20px
+}
+</style>
+<div class='page'>
+    <img src="{{url_for('static', filename='/mobileimages/Group118.png')}}" width='100' alt="Submit">
+    <div padding></div>
+    <span class='page__name'>Contact us!</span>
+    <br>
+    <span class="page__hint">Any Concerns? Write us an E-mail or check us out on Social Media</span>
+    
+
+    <div class='row'>
+        <div class='column'style='padding: 15px;'>   
+              <img src="{{url_for('static', filename='/mobileimages/insta.png')}}" width='50' alt="Submit">
+        </div>
+        <div class='column'>
+            <img src="{{url_for('static', filename='/mobileimages/twitter.png')}}" width='50' alt="Submit">
+        </div>
+    </div>
+    <div class='row'>
+        <div class='column'>
+            <img src="{{url_for('static', filename='/mobileimages/facebook.png')}}" width='50' alt="Submit">
+        </div>
+        <div class='column'>  
+            <img src="{{url_for('static', filename='/mobileimages/indeed.png')}}" width='50' alt="Submit">   
+        </div>
+    </div>
+    
+    <div class=row>
+        <a class="btn-color" href="/m_menu"><h5>Email Us! <i class="material-icons">&#xe0be;</i></h5></a>
+    </div>
+
+
+</div>
+
+{% endblock content %}

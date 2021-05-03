@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/add-appliances-empty.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/styleguide.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/globals.css')}}"/>
+  </head>
+  <body style="margin: 0; background: #ffffff">
+    <input type="hidden" id="anPageName" name="page" value="add-appliances-empty" />
+    <div class="container-center-horizontal">
+      <div class="add-appliances-empty screen">
+        <div class="group-6883-C61RwL">
+          <div class="chevron-left-ht0xwR"><img class="vector-DxLbh3" src="img/vector-3@2x.svg" /></div>
+          <div class="add-appliances-ht0xwR avertacy-bold-gulf-blue-20px">Add Appliances</div>
+        </div>
+        <div class="appliance-photo-C61RwL avertacy-normal-cadet-blue-14px">Appliance Photo</div>
+        <div class="overlap-group-C61RwL">
+          <form  method="POST" enctype="multipart/form-data"  id='photo_form'>
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <div class="d-flex justify-content-center" style=" margin-right:10px; margin-top: auto; margin-bottom: auto;">
+            <div id="loading"></div>
+            <div id="content">
+            <label for="appliance_photo" class='btncam pt-2' >
+            <div class="group-2671-4eduM0">
+              <div class="camera-aLfFH4">
+                <img class="stroke-1-ByIUht" src="{{url_for('static',filename='img/stroke-1-2@2x.svg')}}" />
+                <img class="stroke-5-ByIUht" src="{{url_for('static',filename='img/stroke-5-2@2x.svg')}}" />
+              </div>
+            </div>
+            <br />
+            </label>
+            <input type="file" style='display: none;' accept="image/*" capture="user"  id='appliance_photo' onchange="submit();" required class="btn btn-default btn-lg button" style="border:none"
+            name="appliance_photo">
+            </div>
+            </div>
+          </form>
+          {% if appliance_found_bool == true  %}
+          <form  method="POST" enctype="multipart/form-data">
+          {{ form.csrf_token }}
+          <div class="group-6889-4eduM0">
+            <div class="plus-hZFHD8"><img class="vector-PoP6zx" src="{{url_for('static',filename='img/vector-112@2x.svg')}}" /></div>
+          </div>
+        </div>
+        <div class="group-6899-C61RwL">
+          <div class="select-appliance-Mz8XNq avertacy-normal-cadet-blue-14px">Select Appliance</div>
+          <div class="overlap-group1-Mz8XNq">
+            <div class="select-an-appliance-CBpmLc avertacy-regular-normal-cadet-blue-14px">{{appliance_type_static }}</div>
+            <div class="rectangle-2345-CBpmLc border-1px-mystic"></div>
+            <div class="chevron-left-CBpmLc"><img class="vector-2xXr9x" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <input type="hidden"  name="id" value="{{appliance_new.id}}">
+        <div class="group-6898-C61RwL">
+          <div class="select-group-xQb8O6 avertacy-normal-cadet-blue-14px">Hours Used Per Week</div>
+          <div class="overlap-group2-xQb8O6">
+            <input type="text" class="rectangle-2345-zK9Gcm border-1px-mystic avertacy-regular-normal-cadet-blue-14px"id="formGroupExampleInput" placeholder="Hours" name="usage_time_new" value="{{ appliance_new.usage_time }}">
+            <div class="chevron-left-zK9Gcm"><img class="vector-xqwVnF" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <div class="group-6898-C61RwL">
+          <div class="select-group-xQb8O6 avertacy-normal-cadet-blue-14px">Select Group</div>
+          <div class="overlap-group2-xQb8O6">
+             <select class="rectangle-2345-zK9Gcm border-1px-mystic avertacy-regular-normal-cadet-blue-14px" name="category" value="{{ appliance_new.category_appliance }}">
+                           <option value= 'kitchen'>Kitchen</option>
+                           <option value="misc">Misc</option>
+                           <option value="entertainment">Entertainment</option>
+                           <option value="basement">Basement</option>
+              </select>
+            <div class="chevron-left-zK9Gcm"><img class="vector-xqwVnF" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <button type="submit" name='finalSubmit' class="btn btn-primary"><div class="button-C61RwL">
+          <div class="rectangle-2313-xHxYv9"></div>
+
+          <div class="save-appliance-xHxYv9 avertacy-normal-gulf-blue-15px">Save Appliance</div>
+        </div></button></form>
+        {% else %}
+                  <form  method="POST" enctype="multipart/form-data">
+          {{ form.csrf_token }}
+          <div class="group-6889-4eduM0">
+            <div class="plus-hZFHD8"><img class="vector-PoP6zx" src="{{url_for('static',filename='img/vector-112@2x.svg')}}" /></div>
+          </div>
+        </div>
+        <div class="group-6899-C61RwL">
+          <div class="select-appliance-Mz8XNq avertacy-normal-cadet-blue-14px">Select Appliance</div>
+          <div class="overlap-group1-Mz8XNq">
+            <div class="select-an-appliance-CBpmLc avertacy-regular-normal-cadet-blue-14px">Appliance Name</div>
+            <div class="rectangle-2345-CBpmLc border-1px-mystic"></div>
+            <div class="chevron-left-CBpmLc"><img class="vector-2xXr9x" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <div class="group-6898-C61RwL">
+          <div class="select-group-xQb8O6 avertacy-normal-cadet-blue-14px">Hours Used Per Week</div>
+          <div class="overlap-group2-xQb8O6">
+            <input type="text" class="rectangle-2345-zK9Gcm border-1px-mystic avertacy-regular-normal-cadet-blue-14px"id="formGroupExampleInput" placeholder="Hours" name="usage_time_new">
+            <div class="chevron-left-zK9Gcm"><img class="vector-xqwVnF" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <div class="group-6898-C61RwL">
+          <div class="select-group-xQb8O6 avertacy-normal-cadet-blue-14px">Select Group</div>
+          <div class="overlap-group2-xQb8O6">
+             <select class="rectangle-2345-zK9Gcm border-1px-mystic avertacy-regular-normal-cadet-blue-14px" name="category">
+                           <option value= 'kitchen'>Kitchen</option>
+                           <option value="misc">Misc</option>
+                           <option value="entertainment">Entertainment</option>
+                           <option value="basement">Basement</option>
+              </select>
+            <div class="chevron-left-zK9Gcm"><img class="vector-xqwVnF" src="img/vector-1@2x.svg" /></div>
+          </div>
+        </div>
+        <button type="submit" name='finalSubmit' class="btn btn-primary"><div class="button-C61RwL">
+          <div class="rectangle-2313-xHxYv9"></div>
+
+          <div class="save-appliance-xHxYv9 avertacy-normal-gulf-blue-15px">Save Appliance</div>
+        </div></button></form>{% endif %}
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">// <![CDATA[
+   function submit(){
+   $("#photo_form").submit();
+   }
+
+   $( document ).ready(function() {
+   $('#photo_form').on('change', function() { $("#loading").show(); });
+   $('#photo_form').on('change', function() { $("#content").hide(); });
+   $('#photo_form').on('change', function() { $("#content2").hide(); });
+   });
+                               // ]]>
+</script>
+<script type="text/javascript">// <![CDATA[
+   function submit(){
+   $("#furnace_form").submit();
+   }
+
+   $( document ).ready(function() {
+   $('#furnace_form').on('change', function() { $("#loading2").show(); });
+   $('#furnace_form').on('change', function() { $("#content2").hide(); });
+   $('#furnace_form').on('change', function() { $("#content").hide(); });
+   });
+                               // ]]>
+</script>
+</html>

@@ -1,0 +1,164 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col md-12">
+        	<div class="jumbotron">
+					<table class="table table-hover table-dark">
+						<thead>
+							<tr>
+								<th>Furnace</th>
+								<th>BTU input</th>
+								<th>BTU output</th>
+								<th>Efficiency</th>
+								<th>Type Heating</th>
+								<th>Name Plate</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<td>Image of furnace</td>
+							<td>{{heating_equipment.btu_input}}</td>
+							<td>{{heating_equipment.btu_output}}</td>
+							<td>{{heating_equipment.btu_input}}</td>
+							<td>{{heating_equipment.btu_input}}</td>
+							<td>{{heating_equipment.btu_input}}</td>
+							<td>
+								{% if can_create_quote_heating == true %}
+									<button type="button" id="btn-quote" class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal">Request A quote</button>
+								{% else %}	
+									<button type="button" id="btn-quote" class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal" disabled>Request A quote</button>
+								{% endif %}
+							</td>
+						</tbody>		 
+					</table>
+					<br>
+					<br>
+					<br>
+					<table class="table table-hover table-dark">
+						<thead>
+							<tr>
+								<th>DHW</th>
+								<th>BTU output</th>
+								<th>Volume</th>
+								<th>Year Built</th>
+								<th>Unique Photo id</th>
+								<th>Name Plate</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<td>Image of DHW</td>
+							<td>{{dhw.btu_output}}</td>
+							<td>{{dhw.volume}}</td>
+							<td>{{dhw.year_built}}</td>
+							<td>{{dhw.unique_photo_id}}</td>
+							<td>{{dhw.name_plate}}</td>
+							<td>
+								{% if can_create_quote_dhw == true %}
+									<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal1">Request A quote</button>
+								{% else %}
+									<button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#mymodal1" disabled>Request A quote</button>
+								{% endif %}
+							</td>
+						</tbody>	
+					</table>
+				<div id="mymodal" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h3 class="modal-title">Request A Quote For Your Furnace</h4>
+							</div>
+							<div class="modal-body">
+								<form action="{{url_for('main.create_quote')}}" method="POST" enctype="multipart/form-data">
+									<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+									<input type="hidden" name="quote_type" value="QuoteHeating"/>
+									<div class="form-group">
+										<label>What problem do you have with your Furnace ?</label><br>
+										<input type="text" class="form-control" name="response1" required> 
+									</div>
+									<div class="form-group">
+										<label>Do you have any more comments ?</label><br>
+										<input type="text" class="form-control" name="response2" required> 
+									</div>
+									<!-- <div class="form-group">
+										<label>When do you want to receive your quote</label><br>
+										<select name="time_due">
+											<option value="1">One Week</option>
+											<option value="2">Two Weeks</option>
+											<option value="3">Three Weeks</option>
+										</select>
+									</div> -->
+									<div class="form-group">
+										<label>Please upload a short video of your Furnace</label><br>
+										<input type="file" class="form-control" name="video" required> 
+									</div>
+									<div class="form-group">
+										<button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure to request a quote ? After you cannot send another request before the due date choosen')">Send quote</button>
+									</div>
+									<div class="modal-footer">
+										<a href="" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to cancel')">Cancel</a>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+								</form>
+							</div>
+						</div>			
+					</div> 	
+				</div>
+				<div id="mymodal1" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h3 class="modal-title">Request A Quote For Your Domestic Hot Water </h4>
+							</div>
+							<div class="modal-body">
+								<form action="{{url_for('main.create_quote')}}" method="POST" enctype="multipart/form-data">
+									<input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+									<input type="hidden" name="quote_type" value="QuoteDHW"/>
+									<div class="form-group">
+										<label>What problem do you have with your Domestic Hot Water ?</label><br>
+										<input type="text" class="form-control" name="response1" required> 
+									</div>
+									<div class="form-group">
+										<label>Do you have any more comments ?</label><br>
+										<input type="text" class="form-control" name="response2" required> 
+									</div>
+									<!-- <div class="form-group">
+										<label>When do you want to receive your quote</label><br>
+										<select name="time_due">
+											<option value="1">One Week</option>
+											<option value="2">Two Weeks</option>
+											<option value="3">Three Weeks</option>
+										</select>
+									</div> -->
+									<div class="form-group">
+										<label>Please upload a short video of your DHW</label><br>
+										<input type="file" class="form-control" name="video" required> 
+									</div>
+									<div class="form-group">
+										<button class="btn btn-primary" type="submit" onclick="return confirm('Are you sure to request a quote ? After you cannot send another request before the due date choosen')">Send quote</button>
+									</div>
+									<div class="modal-footer">
+										<a href="" class="btn btn-danger btn-xs" onclick="return confirm('Do you want to cancel')">Cancel</a>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+								</form>
+							</div>
+						</div>			
+					</div> 	
+				</div>		
+        	</div> 
+        </div>
+    </div>
+</div>
+
+   
+
+{% endblock content %} 
+{% block scripts %}
+<script
+  type="text/javascript"
+  src="{{ url_for('static', filename='check_time.js') }}?u={{ last_updated }}"></script>
+{% endblock scripts %}
+ 

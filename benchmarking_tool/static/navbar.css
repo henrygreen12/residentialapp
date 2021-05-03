@@ -1,0 +1,481 @@
+.button {
+    border: 2px solid rgba(0,0,0,0.17);
+    border-radius: 4px;
+    color: #4285f4;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: 8px 13px;
+    text-decoration: none;
+    transition: border-color .4s cubic-bezier(0.4, 0, 0.2, 1),background .4s cubic-bezier(0.4, 0, 0.2, 1),color .4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: border-color, background, color;
+    transition-duration: 0.4s, 0.4s, 0.4s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s, 0s, 0s;
+
+}
+.btncam {
+    border: 2px solid rgba(0,0,0,0.17);
+    border-radius: 4px;
+    color: #4285f4;
+    cursor: pointer;
+    display: inline-block;
+    line-height: normal;
+    padding: 8px 13px;
+    text-decoration: none;
+    transition: border-color .4s cubic-bezier(0.4, 0, 0.2, 1),background .4s cubic-bezier(0.4, 0, 0.2, 1),color .4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: border-color, background, color;
+    transition-duration: 0.4s, 0.4s, 0.4s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s, 0s, 0s;
+    background: #ffffff;
+    border: none;
+
+}
+.button {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+
+.btncam {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+}
+a, .t--link {
+    color: #4285f4;
+    font-weight: 500;
+    position: relative;
+    text-decoration: underline;
+    -webkit-text-decoration-color: rgba(66,133,244,0);
+    text-decoration-color: rgba(66,133,244,0);
+    transition: color .25s linear,-webkit-text-decoration-color .25s linear;
+    transition-property: text-decoration-color, color, -webkit-text-decoration-color;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: linear, linear, linear;
+    transition-delay: 0s, 0s, 0s;
+    transition: text-decoration-color .25s linear,color .25s linear;
+    transition-property: text-decoration-color, color, -webkit-text-decoration-color;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: linear, linear, linear;
+    transition-delay: 0s, 0s, 0s;
+    transition: text-decoration-color .25s linear,color .25s linear,-webkit-text-decoration-color .25s linear;
+    transition-property: text-decoration-color, color, -webkit-text-decoration-color;
+    transition-duration: 0.25s, 0.25s, 0.25s;
+    transition-timing-function: linear, linear, linear;
+    transition-delay: 0s, 0s, 0s;
+}
+
+
+.button:hover {
+    background: #4285f4;
+    border-color: #4285f4;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btncam:hover {
+    background: #4285f4;
+    border-color: #4285f4;
+    color: #fff;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+.navbar{
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.12), inset 0 -1px 0 0 #dadce0;
+    padding:0;
+}
+
+.nav-item{
+    height:100%;
+}
+.nav-link{
+    height:100%;
+    border: none;
+    color: #5f6368;
+    display: block;
+    line-height: 64px;
+    position: relative;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: color .25s linear;
+    transition-property: color;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+.nav-link:hover::after {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+
+.nav-link::after {
+    background: #4285f4;
+    bottom: 0;
+    content: '';
+    height: 6px;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    transition: -webkit-transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s, 0s;
+    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s, 0s;
+    transition: transform .25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform .25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, -webkit-transform;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0s, 0s;
+    width: 100%;
+}
+
+body{
+    font-family:'Orienta', sans-serif;
+    background-color: #F7F7F7;
+}
+
+.material-icons-outlined.md-18 { font-size: 18px; }
+.material-icons-outlined.md-24 { font-size: 24px; }
+.material-icons-outlined.md-36 { font-size: 36px; }
+.material-icons-outlined.md-48 { font-size: 48px; }
+
+
+
+.clickBox:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
+
+
+
+
+
+
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}
+
+
+
+
+
+
+
+.card-flip {
+     perspective: 1000px;
+}
+ .card-flip:hover .flip, .card-flip.hover .flip {
+     transform: rotateY(180deg);
+}
+ .card-flip, .front, .back {
+     width: 100%;
+     height: 250px;
+}
+ .flip {
+     transition: 0.6s;
+     transform-style: preserve-3d;
+     position: relative;
+}
+ .front, .back {
+     backface-visibility: hidden;
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+ .front {
+     z-index: 2;
+     transform: rotateY(0deg);
+}
+ .back {
+     transform: rotateY(180deg);
+}
+
+
+
+
+
+.iconMd{
+    height: 7vh;
+    width: auto;
+}
+
+
+.iconLg{
+    height: 15vh;
+    width: auto;
+}
+
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+
+
+
+/*
+
+a.carousel-control-prev:hover {
+  background-color: rgba(57, 190, 185, 0.6);
+
+}
+a.carousel-control-next:hover {
+  background-color: rgba(57, 190, 185, 0.6);
+}
+
+
+a.carousel-control-prev {
+    overflow: hidden;
+  height:  397px;
+}
+a.carousel-control-next {
+
+  height:  397px;
+}
+
+*/
+
+
+.responsiveImg {
+  max-width: 70%;
+  height: auto;
+}
+
+
+
+div#loading {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: url(/static/ajax-loader.gif) no-repeat;
+    cursor: wait;
+    }
+
+
+
+div#loading2 {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: url(/static/ajax-loader.gif) no-repeat;
+    cursor: wait;
+    background-position: center;
+    }
+
+
+
+
+.dial {
+font-size: 30px !important;
+}
+
+
+
+
+
+
+
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    font-family: 'Orienta', sans-serif;
+
+}
+
+#msform fieldset .form-card {
+
+    border: 0 none;
+    border-radius: 0px;
+    /*box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2); */
+    padding: 20px 40px 30px 40px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 0 0;
+    position: relative;
+    font-family: 'Orienta', sans-serif;
+}
+
+#msform fieldset {
+
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+
+}
+
+#msform fieldset .form-card {
+    text-align: left;
+    color: #111111
+
+}
+
+
+
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    font-weight: bold;
+    border-bottom: 2px solid skyblue;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    background: #4385F5;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #4385F5
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #616161
+}
+
+
+
+.fs-title {
+    font-size: 25px;
+    color: #111111;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #000000
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative
+}
+
+#progressbar #account:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f023"
+}
+
+#progressbar #personal:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f09d"
+}
+
+#progressbar #confirm:before {
+    font-family: 'Orienta', sans-serif;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #F7F7F7;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #F7F7F7;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #F7F7F7;
+}

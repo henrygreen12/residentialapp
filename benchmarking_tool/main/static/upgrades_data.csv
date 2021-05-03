@@ -1,0 +1,6 @@
+id,title,wattage,cost,img_file,link,is_upgrade
+1,Energy Star Fridge,80,2000,default,-1,TRUE
+2,Energy Star Washer,80,1000,default,-1,TRUE
+3,Energy Star Dryer,80,800,default,-1,TRUE
+4,Switch to LED Lights,80,-1,default,-1,TRUE
+5,LED Christmas Lights,10,-1,default,-1,TRUE

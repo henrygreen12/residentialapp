@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css"href="{{ url_for('static',filename='css/home.css')}}" />
+    <style>
+      @font-face {
+        font-family: "Averta CY-Regular";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c5dda33922aa4000b8fd9ca/Intelligent Design - AvertaCY-Regular.otf")
+          format("opentype");
+      }
+
+      .component-wrapper a,
+      .screen a {
+        text-decoration: none;
+        display: contents;
+      }
+
+      .full-width-a {
+        width: 100%;
+      }
+
+      .full-height-a {
+        height: 100%;
+      }
+
+      .screen textarea:focus,
+      .screen input:focus {
+        outline: none;
+      }
+
+      .screen *,
+      .component-wrapper * {
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .screen div {
+        -webkit-text-size-adjust: none;
+      }
+
+      .container-center-vertical,
+      .container-center-horizontal {
+        pointer-events: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container-center-vertical {
+        align-items: center;
+        height: 100%;
+      }
+
+      .container-center-horizontal {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .container-center-vertical > *,
+      .container-center-horizontal > * {
+        pointer-events: auto;
+        flex-shrink: 0;
+      }
+
+      .auto-animated div {
+        opacity: 0;
+        position: absolute;
+        --z-index: -1;
+      }
+
+      .auto-animated .container-center-vertical,
+      .auto-animated .container-center-horizontal {
+        opacity: 1;
+      }
+
+      .overlay {
+        position: absolute;
+        opacity: 0;
+        display: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .animate-appear {
+        opacity: 0;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 normal forwards;
+      }
+
+      .animate-disappear {
+        opacity: 1;
+        display: block;
+        animation: reveal 0.3s ease-in-out 1 reverse forwards;
+      }
+
+      .animate-nodelay {
+        animation-delay: 0s;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .align-self-flex-start {
+        align-self: flex-start;
+      }
+      .align-self-flex-end {
+        align-self: flex-end;
+      }
+      .align-self-flex-center {
+        align-self: center;
+      }
+      .valign-text-middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .valign-text-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      input:focus {
+        outline: none;
+      }
+      .component-wrapper,
+      .component-wrapper * {
+        pointer-events: none;
+      }
+
+      .component-wrapper a *,
+      .component-wrapper a,
+      .component-wrapper input,
+      .component-wrapper video,
+      .component-wrapper iframe,
+      .listeners-active,
+      .listeners-active * {
+        pointer-events: auto;
+      }
+
+      .hidden,
+      .hidden * {
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .smart-layers-pointers,
+      .smart-layers-pointers * {
+        pointer-events: auto;
+        visibility: visible;
+      }
+
+      .component-wrapper.not-ready,
+      .component-wrapper.not-ready * {
+        visibility: hidden !important;
+      }
+
+      .listeners-active-click,
+      .listeners-active-click * {
+        cursor: pointer;
+      }
+
+      @font-face {
+        font-family: "Averta CY-Regular";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://anima-uploads.s3.amazonaws.com/5c5dda33922aa4000b8fd9ca/Intelligent Design - AvertaCY-Regular.otf")
+          format("opentype");
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .avertacy-bold-gulf-blue-16px {
+        color: var(--gulf-blue);
+        font-family: var(--font-family-averta_cy-bold);
+        font-size: var(--font-size-l);
+        font-style: normal;
+        font-weight: 700;
+      }
+      .avertacy-normal-gray-chateau-10px {
+        color: var(--gray-chateau);
+        font-family: var(--font-family-averta_cy-semibold);
+        font-size: var(--font-size-xs);
+        font-style: normal;
+        font-weight: 400;
+      }
+      .avertacy-normal-gulf-blue-14px {
+        color: var(--gulf-blue);
+        font-family: var(--font-family-averta_cy-semibold);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+      .avertacy-normal-picton-blue-14px {
+        color: var(--picton-blue);
+        font-family: var(--font-family-averta_cy-semibold);
+        font-size: var(--font-size-m);
+        font-style: normal;
+        font-weight: 400;
+      }
+      :root {
+        --font-family-averta_cy-bold: "Averta CY-Bold", Helvetica;
+        --font-family-averta_cy-regular: "Averta CY-Regular", Helvetica;
+        --font-family-averta_cy-semibold: "Averta CY-Semibold", Helvetica;
+        --font-size-l: 16px;
+        --font-size-m: 14px;
+        --font-size-s: 11px;
+        --font-size-xs: 10px;
+        --gray-chateau: rgba(161, 168, 184, 1);
+        --gulf-blue: rgba(13, 23, 88, 1);
+        --picton-blue: rgba(60, 203, 237, 1);
+        --white: rgba(255, 255, 255, 1);
+      }
+    </style>
+  </head>
+  <body style="margin: 0; background: rgba(255, 255, 255, 1)">
+    <input type="hidden" id="anPageName" name="page" value="home" />
+    <div class="container-center-horizontal">
+      <form class="home screen" name="form3" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+        <div class="flex-row-C61RwL">
+          <div class="header-dXBp89"></div>
+          <div class="group-6899-dXBp89">
+            <img class="vector-88-zCCLMK" src="{{ url_for('static',filename='img/vector-88@2x.svg')}}" />
+            <img class="vector-89-zCCLMK" src="{{ url_for('static',filename='img/vector-89@2x.svg')}}" />
+            <img class="vector-90-zCCLMK" src="{{ url_for('static',filename='img/vector-88@2x.svg')}}" />
+          </div>
+        </div>
+                <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                  <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+
+                <div class="frame-4310-NBfFgV">
+                  <div class="home-44rmUJ"><img src="{{url_for('static', filename='img/home@2x.svg')}}"/></div>
+                </div>
+                <div class="group-6887-NBfFgV">
+                  <div class="your-home-6Yg3G2 avertacy-bold-gulf-blue-16px">Your Home</div>
+                  <div class="good-6Yg3G2 avertacy-normal-picton-blue-14px">Good</div>
+                </div>
+                  <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+                  <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+              </summary>
+            <div class="box">
+                <div class="graph">
+                    
+                    <div class="m"style="height: {{ home_upgrades[0] }}%; left: 1%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[2] }}%; left: 15.3846153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[1] }}%; left: 7.69230769231%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[3] }}%; left: 23.07692308%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[4] }}%; left: 30.76923077%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[5] }}%; left: 38.46153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[6] }}%; left: 46.15384615%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[7] }}%; left: 53.84615384%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[8] }}%; left: 61.53846153%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[9] }}%; left: 69.23076922%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[10] }}%; left: 76.92307691%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[11] }}%; left: 84.6153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[12] }}%; left: 92.30769229%;"></div>
+
+                    <div class="av-text"style="height: {{ average_home[0] + 25}}%; left: {{ average_home[1] - 8 }}%;"></div>
+                    <div class="av"style="height: {{ average_home[0] }}%; left: {{ average_home[1] }}%"></div>
+                    
+                    <div class="yu"style="height: {{ user_home[0] }}%; left: {{ user_home[1] - 4 }}%;">
+                        <div class="group-4296-lweKOu">
+                        <div class="rectangle-4-Ib9Xsb"></div>
+                        <div class="my-costs-31023-Ib9Xsb">
+                          <span class="span0-TntRVx">My Costs:</span><span class="span1-TntRVx">&nbsp;</span><span class="span2-TntRVx">$310.23</span>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="yu-text"style="height: {{ user_home[0] + 18}}%; left: {{ user_home[1] - 3 }}%;"></div>
+                </div>
+              <div class="group-6885-0WEAec">
+              <div class="x0-tsxGPL avertacy-normal-gray-chateau-10px">0</div>
+              <div class="x50-tsxGPL avertacy-normal-gray-chateau-10px">50</div>
+              <div class="x200-tsxGPL avertacy-normal-gray-chateau-10px">200</div>
+              <div class="x500-tsxGPL avertacy-normal-gray-chateau-10px">500</div>
+              <div class="x1000-tsxGPL avertacy-normal-gray-chateau-10px">1000+</div>
+            </div>
+            <div class="frame-4297-0WEAec">
+              <div class="group-4318-Jx7vaB">
+                <img class="ellipse-14-VFPxsv" src="{{ url_for('static',filename='img/ellipse-14@2x.svg')}}" />
+                <div class="you-VFPxsv">You</div>
+              </div>
+              <div class="group-4319-Jx7vaB">
+                <img class="ellipse-14-u2hvF2" src="{{ url_for('static',filename='img/ellipse-14-1@2x.svg')}}" />
+                <div class="average-u2hvF2">Average</div>
+              </div>
+            </div>
+                <a href = "{{url_for('main.utility_bills')}}"><div class="group-6878-0WEAec">
+                <div class="rectangle-2340-8Bnjca"></div>
+                <div class="chevron-left-8Bnjca"><img  src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+<div class="compare-your-home-8Bnjca avertacy-normal-gulf-blue-14px">Compare Your Home</div></a>
+              </div>
+              <a href = "{{url_for('main.compareutilityrates')}}"><div class="group-6887-0WEAec">
+                <div class="rectangle-2340-GxldUN"></div>
+                <div class="chevron-left-GxldUN"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="compare-utility-rates-GxldUN avertacy-normal-gulf-blue-14px">Compare Utility Rates</div>
+              </div></a>
+              <a href = "{{url_for('main.appliance_usage')}}"><div class="group-6888-0WEAec">
+                <div class="rectangle-2340-ijCJbY"></div>
+                <div class="chevron-left-ijCJbY"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="utility-usage-breakdown-ijCJbY avertacy-normal-gulf-blue-14px">Utility Usage Breakdown</div>
+              </div>
+            </div></a>
+    </details>
+      <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                  <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+
+                <div class="frame-4310-Swrm9t">
+                <div class="thunder-24-outline-S1308Z"><img src="{{url_for('static', filename='img/vector-4@2x.svg')}}"/></div>
+              </div>
+              <div class="group-6887-Swrm9t">
+                <div class="your-electricity-nvuEm1 avertacy-bold-gulf-blue-16px">Your Electricity</div>
+                <div class="good-nvuEm1 avertacy-normal-picton-blue-14px">Good</div>
+              </div>
+          
+                  <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+                  <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+              </summary>
+            <div class="box">
+                <div class="graph">
+                    
+                    <div class="m"style="height: {{ home_upgrades[0] }}%; left: 1%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[2] }}%; left: 15.3846153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[1] }}%; left: 7.69230769231%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[3] }}%; left: 23.07692308%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[4] }}%; left: 30.76923077%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[5] }}%; left: 38.46153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[6] }}%; left: 46.15384615%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[7] }}%; left: 53.84615384%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[8] }}%; left: 61.53846153%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[9] }}%; left: 69.23076922%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[10] }}%; left: 76.92307691%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[11] }}%; left: 84.6153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[12] }}%; left: 92.30769229%;"></div>
+
+                    <div class="av-text"style="height: {{ average_home[0] + 25}}%; left: {{ average_home[1] - 8 }}%;"></div>
+                    <div class="av"style="height: {{ average_home[0] }}%; left: {{ average_home[1] }}%"></div>
+                    
+                    <div class="yu"style="height: {{ user_home[0] }}%; left: {{ user_home[1] - 4 }}%;">
+                        <div class="group-4296-lweKOu">
+                        <div class="rectangle-4-Ib9Xsb"></div>
+                        <div class="my-costs-31023-Ib9Xsb">
+                          <span class="span0-TntRVx">My Costs:</span><span class="span1-TntRVx">&nbsp;</span><span class="span2-TntRVx">$310.23</span>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="yu-text"style="height: {{ user_home[0] + 18}}%; left: {{ user_home[1] - 3 }}%;"></div>
+                </div>
+              <div class="group-6885-0WEAec">
+              <div class="x0-tsxGPL avertacy-normal-gray-chateau-10px">0</div>
+              <div class="x50-tsxGPL avertacy-normal-gray-chateau-10px">50</div>
+              <div class="x200-tsxGPL avertacy-normal-gray-chateau-10px">200</div>
+              <div class="x500-tsxGPL avertacy-normal-gray-chateau-10px">500</div>
+              <div class="x1000-tsxGPL avertacy-normal-gray-chateau-10px">1000+</div>
+            </div>
+            <div class="frame-4297-0WEAec">
+              <div class="group-4318-Jx7vaB">
+                <img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" />
+                <div class="you-VFPxsv">You</div>
+              </div>
+              <div class="group-4319-Jx7vaB">
+                <img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" />
+                <div class="average-u2hvF2">Average</div>
+              </div>
+            </div>
+            <a href="javascript:SubmitForm('form3')">
+              <div class="group-6878-0WEAec">
+                <div class="rectangle-2340-8Bnjca"></div>
+                <div class="chevron-left-8Bnjca"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="compare-your-home-8Bnjca avertacy-normal-gulf-blue-14px">Compare Your Home</div>
+              </div></a
+            >
+              <div class="group-6887-0WEAec">
+                <div class="rectangle-2340-GxldUN"></div>
+                <div class="chevron-left-GxldUN"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="compare-utility-rates-GxldUN avertacy-normal-gulf-blue-14px">Compare Utility Rates</div>
+              </div>
+              <div class="group-6888-0WEAec">
+                <div class="rectangle-2340-ijCJbY"></div>
+                <div class="chevron-left-ijCJbY"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="utility-usage-breakdown-ijCJbY avertacy-normal-gulf-blue-14px">Utility Usage Breakdown</div>
+              </div>
+            </div>
+    </details>
+                    <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+                  <svg xmlns="http://www.w3.org/2000/svg">
+                    <symbol viewBox="0 0 24 24" id="expand-more">
+                      <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                    <symbol viewBox="0 0 24 24" id="close">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+                    </symbol>
+                  </svg>
+                </div>
+                <details>
+                <summary>
+
+              <div class="frame-4310-TSbAzT">
+                <div class="fire-24-outline-lhJWox"><img src="{{url_for('static', filename='img/vector-6@2x.svg')}}"/></div>
+              </div>
+              <div class="group-6887-TSbAzT">
+                <div class="your-natural-gas-3bkSrd avertacy-bold-gulf-blue-16px">Your Natural Gas</div>
+                <div class="good-3bkSrd avertacy-normal-picton-blue-14px">Good</div>
+              </div>
+                  <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+                  <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+              </summary>
+            <div class="box">
+                <div class="graph">
+                    
+                    <div class="m"style="height: {{ home_upgrades[0] }}%; left: 1%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[2] }}%; left: 15.3846153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[1] }}%; left: 7.69230769231%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[3] }}%; left: 23.07692308%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[4] }}%; left: 30.76923077%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[5] }}%; left: 38.46153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[6] }}%; left: 46.15384615%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[7] }}%; left: 53.84615384%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[8] }}%; left: 61.53846153%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[9] }}%; left: 69.23076922%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[10] }}%; left: 76.92307691%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[11] }}%; left: 84.6153846%;"></div>
+                    <div class="m"style="height: {{ home_upgrades[12] }}%; left: 92.30769229%;"></div>
+
+                    <div class="av-text"style="height: {{ average_home[0] + 25}}%; left: {{ average_home[1] - 8 }}%;"></div>
+                    <div class="av"style="height: {{ average_home[0] }}%; left: {{ average_home[1] }}%"></div>
+                    
+                    <div class="yu"style="height: {{ user_home[0] }}%; left: {{ user_home[1] - 4 }}%;">
+                      <div class="group-4296-lweKOu">
+                        <div class="rectangle-4-Ib9Xsb"></div>
+                        <div class="my-costs-31023-Ib9Xsb">
+                          <span class="span0-TntRVx">My Costs:</span><span class="span1-TntRVx">&nbsp;</span><span class="span2-TntRVx">$310.23</span>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="yu-text"style="height: {{ user_home[0] + 18}}%; left: {{ user_home[1] - 3 }}%;"></div>
+                </div>
+              <div class="group-6885-0WEAec">
+              <div class="x0-tsxGPL avertacy-normal-gray-chateau-10px">0</div>
+              <div class="x50-tsxGPL avertacy-normal-gray-chateau-10px">50</div>
+              <div class="x200-tsxGPL avertacy-normal-gray-chateau-10px">200</div>
+              <div class="x500-tsxGPL avertacy-normal-gray-chateau-10px">500</div>
+              <div class="x1000-tsxGPL avertacy-normal-gray-chateau-10px">1000+</div>
+            </div>
+            <div class="frame-4297-0WEAec">
+              <div class="group-4318-Jx7vaB">
+                <img class="ellipse-14-VFPxsv" src="{{ url_for('static',filename='img/ellipse-14@2x.svg')}}" />
+                <div class="you-VFPxsv">You</div>
+              </div>
+              <div class="group-4319-Jx7vaB">
+                <img class="ellipse-14-u2hvF2" src="{{ url_for('static',filename='img/ellipse-14-1@2x.svg')}}" />
+                <div class="average-u2hvF2">Average</div>
+              </div>
+            </div>
+            <a href="javascript:SubmitForm('form3')">
+              <div class="group-6878-0WEAec">
+                <div class="rectangle-2340-8Bnjca"></div>
+                <div class="chevron-left-8Bnjca"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="compare-your-home-8Bnjca avertacy-normal-gulf-blue-14px">Compare Your Home</div>
+              </div></a
+            >
+              <div class="group-6887-0WEAec">
+                <div class="rectangle-2340-GxldUN"></div>
+                <div class="chevron-left-GxldUN"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="compare-utility-rates-GxldUN avertacy-normal-gulf-blue-14px">Compare Utility Rates</div>
+              </div>
+              <div class="group-6888-0WEAec">
+                <div class="rectangle-2340-ijCJbY"></div>
+                <div class="chevron-left-ijCJbY"><img src="{{ url_for('static',filename='img/vector-3@2x.svg')}}" /></div>
+                <div class="utility-usage-breakdown-ijCJbY avertacy-normal-gulf-blue-14px">Utility Usage Breakdown</div>
+              </div>
+            </div>
+    </details>
+    <script>
+    
+      if (!HTMLFormElement.prototype.reportValidity) {
+        HTMLFormElement.prototype.reportValidity = function () {
+          if (this.checkValidity()) return true;
+          var btn = document.createElement("button");
+          this.appendChild(btn);
+          btn.click();
+          this.removeChild(btn);
+          return false;
+        };
+      }
+
+      function SubmitForm(form_name) {
+        var form = document.getElementsByName(form_name)[0];
+        if (form.reportValidity()) {
+          form.submit();
+          if (window.submitted) window.submitted();
+        }
+      }
+    </script>
+  </body>
+</html>

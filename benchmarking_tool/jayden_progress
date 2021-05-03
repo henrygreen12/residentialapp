@@ -1,0 +1,293 @@
+print lines
+    accounts/views  
+        152
+        154
+        117
+
+feb 2
+    getting error request has no atribute MOBILE 
+        has somthing to do wiht @mobilize decorator 
+        mobile is not initalized 
+        added mobile = Mobility(app) to init and can move around the app freely
+
+    changed overview in main.views.py
+        added a mobile stopper to render the mobile menu rather then the regular one 
+
+    having toruble with variables not defiened 
+        uncommented the following lines in mian.overview ln  56
+            elec_bill = ElectricalUsage.query.filter_by(customer_id=customer.id).first()
+            elec_consumption = elec_bill.consumption
+            elec_cost=elec_bill.cost
+            elec_rate=elec_cost/elec_consumption
+            gas_rate=6.00
+        direct to m_comparison from overview 
+            m_comparison changes lots of variables 
+
+feb 3rd 
+    clean up loose ends 
+
+    figma has a extension that is called FIGMA TO HTML
+        genrates html code form selected figma stuff
+
+    testing this extract on m_main.html
+        
+
+
+UI meeting feb 3
+
+
+feb 4th 
+    Electrical_ratesdb does not init is empty 
+        silly database problem: 
+            electrical_rates_upload.py: changed file name bracket to "/" form "\"
+
+    e_rates(def ln1336) retruns a blank list this then becomes a issue when called in ln 1524
+
+    full detection[3] sometimes retuens numbers liek "500 Edmonton"
+        Full detectino could use more training - Murray has been told about this 
+
+        add some safety modifiers so that there isnt a NoneType passed on to a variable that causes a error later
+        # maybe add a 'Confirm my information" screen
+
+
+    ln 1333
+        indexError list out of range:  elif (a < calculate_total_bill(best_rates[1], e_consumption, True)):
+
+        just commenting out ln 1326 - 1336, not sure what the goal is. i think they want the top rates in sedgwick 
+
+        e_rates: list of indexes of the city in the database 
+
+    adding more pages home-> _home_comparison-> pictures of your appliances 
+
+    cant read line 1389 changed it to file_name = absolute_path + f"/static/upgrades_data.csv" where left slashes made them right
+
+
+    should add more buttons to home screen ADD appliances - maybe dont do this get a menu working 
+
+    furnace not detection
+
+        googleapiclient.errors.HttpError: <HttpError 404 
+        when requesting 
+        https://us-central1-ml.googleapis.com/v1/projects/trusty-moment-288519/models/furnace_not_furnace:predict?alt=json 
+        returned "Field: name 
+        Error: The model 
+        resource: "furnace_not_furnace" was not found.
+        Please create the model resource first by using 'gcloud ai-platform models create furnace_not_furnace'."
+        . Details: "[{'@type': 'type.googleapis.com/google.rpc.BadRequest', 
+        'fieldViolations': [{'field': 'name', 'description': 'The model resource: "furnace_not_furnace" 
+        was not found. Please create the model resource first by using \'gcloud ai-platform models create 
+        furnace_not_furnace\'.'}]}]">
+    
+    this is because the server was not online 
+
+
+
+
+WHAT PAGES DO I HAVE AT THE END OF FEB 4TH
+
+menu  
+    looks bad but gets the job done 
+    showed peter and joel my ideas for a dynamic menu
+
+my home (m_utility_cost)    
+    has a nice graph need to add a energuid rating thing value that murray is working on 
+    get some real values on the energy breakdown graph 
+    get pictures of your inventory (make those boxes links go to a "add furnace" page) 
+    make sure the database is still connected all around 
+
+utility rates (m_home_comparison)
+    this really just prints out our database values 
+    could use some more innovation 
+    maybe a comparison to your own cost 
+
+reduce energy cost (m_upgrades)
+    inital cost, savings, payback time -> all not calculated 
+
+    sugestions could use a palce to say 
+    more so a "if fridge is shit get this one" kinda deal 
+    just showing stock valuse 
+
+        
+
+
+implemented navebar that was in the web browser. 
+
+    places to add to nav bar
+
+    have to commit session variables to the database so it remembers it for the current user 
+
+need to get a mobile overview
+
+
+change route names
+    m_comparison -> m_addbill 
+
+    should change m_mobile comparison to mobile overview and share a mobile template
+        use the overview route but add a @mobile_template('m_overview') to the top so changes look 
+
+        to much to change to get the request.mobile to be true 
+
+        copy mobile overview and made m_overview as a route 
+
+changed login() 
+    made it so the route gets directed to m_overview
+    have to add a check login befor that 
+
+    made the @main.route('/') go over m_overview to develop the mobile menu
+    need to make when request.MOBILE is TRUE can add @is_mobile so a different template is rendered
+
+
+feb 8th 
+
+getting flow chart links 
+
+https://lucid.app/lucidchart/4a16c627-cdf4-458e-ae06-066a0c0fdea2/edit?shared=true&page=0_0#?folder_id=home&browser=icon
+
+
+ 
+
+templates 
+    appliances -> adding to my inventory 
+    utilitybills -> my bills overview page making sense of utility bills 
+
+    should make mobile versions of these -> NO NEED CONVERTED DESKTOP TO THESE
+
+need to do one page at a time. 
+
+Following the flow chart there are 3 main branches 
+    stats and comparisons
+    inventory and energy audit
+    home/info/profile
+
+home/overview tab (called overview route)
+
+    home layout
+        home page overview
+            energuid model when ready 
+            home profile
+            add bill 
+                interpert bill
+            contact us
+
+    changes i have made 
+        menu "home" renders template m_comparison 
+            need to add a add bill section to this page 
+            add a contact us on this page as well at the bottom. 
+
+        home profile could still use some more detail
+            maybe some graphs and stuff but need more data on the customer
+    
+    DONE added a bill photo section to m_home_comparison
+
+
+inventory and energy audit tab 
+    make a inventory and audit tab
+    basically a copy of the appliance.html tab 
+        cannot test out full action because of the appliance projects are not active so do this at a later database
+            WILL HAVE TO CHANGE THE REDIRECTS TO m_appliances rather then go back to the appliances, 
+            these templates should look fine in mobile
+
+        audit function still needs some work 
+    
+    when inventory is added should add it to overview menu
+    
+    after the audit should have more values that can make a chart or somehting on m_home_comparison then redirect there to show the changes 
+
+
+stats and comparison
+    dont know what benchmark graph thing that the gov was using. 
+
+    adding a efficency overview this can be m_upgrades and show savings and upgrades 
+
+    going to get upgrade values 
+
+m_overview 
+    current_regress = 0
+    light_usage = 2.16
+    appliance_usage = 9.27
+    ventilation_usage = 0.2
+    dhw_usage = 
+    
+    ALL HARD CODED
+
+KEEP IN MIND ADDBILL DOES NOT COMMIT TO DATABASE, WOULD HAVE TO UPLOAD A BILL EVERY LOG IN for the session 
+    db commmit happens in the bill detection area of m_home_comparison
+
+
+working on upgrades lead to database problems added some try and except statments to roles.py and data.py
+
+no have to make more seeds for a upgrades data
+
+what is the upgrades.csv looks like it was hand made?
+
+
+
+feb 9th 
+look at 
+    waystosave.html 
+
+image reck appliances 
+    fridge
+    microwave
+    stove
+    washer
+    dryer
+    tank
+    furnace
+    other
+
+meeting with joel and peter what needs to get done 
+
+
+making dummy app that then will be used for presentation 
+
+having trouble with my css mobile not being found 
+
+pages made 
+    m_menu
+    m_community_benchamrk 
+    m_comparison
+
+
+feb 10
+
+changing login to redirect to m_menu to start to look at what i have 
+
+g dang was doing the wrong UI imajes should change 
+
+going to make a new mobile_base template for the empty app
+
+
+
+feb 17th 
+    continue to make more pages and finished making the histogram 
+    shift from 11-11
+
+
+im trying to follow what the bill rec does, and it imports a function form google.cloud and 
+then sends a google service account to get a function response. the google service account info is 
+
+"type": "service_account",
+  "project_id": "gotyobills",
+  "private_key_id": "e3bb5c1db1becd2565db18d724db9c9546e6baad",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDbZm/4+2jO/tly\nTV+PB7S9DozvOYa2Thy/kEG4RDTQKYn2DroruVgAj0qxfcMmKMEK7uT+FI69gT8/\nBLMe+0iyMKWDmrlcMCprEaJnrtgXtA9jQtnGvTXE9wdVFmzKbRbLqnBh+BtuRwJ+\ndbjbCbX9W+plhZ+YYIrmIwyRkc6bt8pt0xrIWQd4dOBMnhsT7hR4NSWLRok1BMhM\nu/wlauQ83S0JyAUDhVOnw1eyY0tu/w2YzRZz2nEvb/Q5+EmHMn0gKQMaOFTLYB/q\nI09zWSsfIb52ubVq64GIw+/iWMNayAQvEW2u/Qp2nQkzURiNC0ZEkHI/XcEMwWsw\nP6dM2vQ7AgMBAAECggEAEG4/fHn3g2j6h+Dbgy6kjnQEgfXg7M40wPPguBgDjINP\n3amEr7mVqZURlvFAKB9tNZBmfdC0T+TaA7IqZ+uRqiaSfqSbtRe2VYZgjzs826mU\nbW6YOJX67OFDH1AqnY5F4sLE39Fg3IVc3nOagGzdwDed+jRjm1m/jTSawFwXCPo7\nIzNBF/1srIK+s8XgqfCaZoo7FiJJ8zh8+UCyWAVR9QdITe1px94OnaVdJy38NKQj\nW4po8qIexpLY+YZvSSoxZdr3e5vBfyPbgmqSqvb2aMrURGB61x1EhzFGBVcuKLs2\nobDatW1BGhMx74gsMF/mjElEjoBB4K98hbH1UttIoQKBgQDuwxuZN3Y7aPw33rEy\nDaLJIwjl0lx3Fr6Vxz2/U88k/T4QjmoJ4NiaHAELlZJjeV+LB4QOkWKxyQMehXbb\nQ+Bhunxuv0mzQw2VkmbfHylrg900bRaja8mj9OQGNU6tVLOLJ3vZsFMy9m8Z6O8y\nNMGLCi/aNU94JU9peVgyLGgoRQKBgQDrPXlQ/hTV+WLKuTa+45gOPwYxGTvaVTpL\nd6LFOzJ9Z52UzbCeBANjmif3ld8gJ62ykjx8qwS2z0kuW3KTNoRBXe97mfsXeJqX\nXk3NuAofLQqw4sqLPKzWdbyW6yayFx3lDrRvkpckGy7Ey2uDARJ/jCxj5D/rzUtY\ncldW1OOyfwKBgQCuYU9x2uD+SRIU2A+AqBbhYjYobDhePf1aNRdy+ooK0O6YdvsZ\nVd+8xoE47bfp8QaH6yhW33Y+tLoTe5SwVeW2WtZwqELyqyFrwW5ivUaqILfZh2cG\nWj3+Amjb4+kfjQJIusCo4DATw4qnWMoCWCeXHgyPCWqOLGnQdfClTGuSJQKBgQDL\n4Ruj9pJYYSweRygLiXXf4v+aziPxtqwvfCC2j/fSeFs6/Ip2aUQGrzS0gFBBriH9\nAoEqC46qYj0q0Fcc/8LgZGmK1omobf6N8k28XiVnn8IETIr+4jdqJ+CrbGK9NwvR\n2kzH5mTYBjcimKs1f1ho8zQF320HEYabwX2w5BH0QQKBgQDQuSr7cO8+5DOtxFWO\nXPkP/D/+1V18205P9a3vmRxTfRnrHClus7dUjVuPfNO2OJbdkEbqT04jdtbe2bIT\nPdHH/8NXbKw+tRZeD1hDqo1Mpt1uE4qyHkx+zr73pvqRQ6S3Qgx+b0dVkrdzUX2F\nWOk37zvO/LRuKkNl87oxYIkZJg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "visionapiserviceaccount@gotyobills.iam.gserviceaccount.com",
+  "client_id": "106353185167393559030",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/visionapiserviceaccount%40gotyobills.iam.gserviceaccount.com"
+
+
+non of the links lead anywhere useful.
+
+do you know if the bill detection was build from scratch? because from what i have it looks like it is google functions used to detect bills.
+
+Im still not sure where the real meat and potatos of the code is if it is all in that amazon web service or if there is more to this google service account.
+
+
+
+working on comaprison branches
+
+    what stats does it matter to compair agains smart thermostats?
+    

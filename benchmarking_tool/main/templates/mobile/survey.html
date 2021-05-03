@@ -1,0 +1,364 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<style>
+    body {
+        background-color: #4385f5;
+    }
+
+    .questionnaire-item {
+      min-height: 85vh;
+      /* vertical-align: middle; */
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .questionnaire-item * {
+      padding: 10px;
+    }
+
+    .questionnaire-item u {
+      padding: 0px;
+    }
+
+    #questionnaire .questionnaire-item:not(:first-of-type) {
+        display: none;
+    }
+
+    .q_footer, .q_buttons {
+      position: fixed;
+      bottom: 0;
+    }
+
+    .q_buttons button {
+      margin-bottom: 20px;
+    }
+
+    .q_next,
+    .q_prev {
+        /* transform: rotate(180deg); */
+        /* display: block; */
+        /* float: right; */
+        /* height: 25%; */
+        /* width: 25%; */
+        margin-bottom: 20px;
+    }
+
+    .occupant_field {
+      max-width: 25%;
+      border-radius: 6px;
+      text-align: right;
+    }
+
+    .occupant_row * {
+      display: inline-block;
+    }
+
+    .area_button {
+      padding: 10px;
+      margin: 5px 10px;
+      min-width: 115px;
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    .area_button.a_chosen {
+      box-sizing: border-box;
+      background-color: #5cb85c;
+      border: 1px solid white;
+    }
+
+    .photo_prompt {
+      display: block;
+      box-sizing: border-box;
+      border: 3px solid white;
+      border-radius: 10px;
+      height: 50%;
+      width: 50%;
+      margin: auto;
+      background-color: rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.36);
+    }
+
+</style>
+<form id="msform" method = "POST" form = form1 enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+
+<div id="questionnaire">
+
+  <!-- Welcome -->
+  <div class="questionnaire-item text-white">
+    <h1>Welcome!</h1>
+    <h3>Let's get started.</h3>
+    <div class="q_buttons">
+      <button type="button" class="q_next btn btn-light btn-outline-dark">Next Step</button>
+    </div>
+  </div>
+
+  <!-- questionnaire intro -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">We have a few questions about your home.</h2>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Occupants -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">How old are the occupants in your home?</h2>
+    <div class="w-75 p-2">
+      <div class="occupant_row">
+        <h3>0-17</h3>
+        <input type="text" class="occupant_field float-right" name="occupants_a" value="0" />
+      </div>
+      <div class="occupant_row">
+        <h3>18-35</h3>
+        <input type="text" class="occupant_field float-right" name="occupants_b" value="0" />
+      </div>
+      <div class="occupant_row">
+        <h3>36-60</h3>
+        <input type="text" class="occupant_field float-right" name="occupants_c" value="0" />
+      </div>
+      <div class="occupant_row">
+        <h3>60+</h3>
+        <input type="text" class="occupant_field float-right" name="occupants_d" value="0" />
+      </div>
+    </div>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Thermostat -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">What setting do you leave your thermostat during the coldest day of the year?</h2>
+    <div class="w-75 p-2">
+      <br>
+      <h2 class="text-muted">thermostat dial here</h2>
+    </div>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Smart Thermostat -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">Do you want to connect your Smart Thermostat?</h2>
+    <div class="w-75 p-2 text-center">
+      <br>
+      <input type="button" name="next" class="connect_button btn btn-lg btn-block btn-outline-light" value="Connect" />
+    </div>
+    <br>
+    <div class="q_buttons text-center">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Cold Areas -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">Have you noticed any cold areas in your house?</h2>
+    <div class="area_buttons text-center w-150 p-2 ">
+      <input type="button" name="livingroom" class="area_button btn" value="Living Room" />
+      <input type="button" name="bedroom" class="area_button btn" value="Bedroom" />
+      <input type="button" name="washroom" class="area_button btn" value="Washroom" />
+      <input type="button" name="kitchen" class="area_button btn" value="Kitchen" />
+      <!-- <input type="button" name="area_button" class="area_button btn" value="Area E" /> -->
+    </div>
+    <a href="#" class="text-white"><u>Not sure.</u></a>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- A/C -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">Do you have an A/C system?</h2>
+    <div class=" text-center w-100 p-2 ">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-info btn-lg btn-outline-light active ">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
+        </label>
+        <label class="btn btn-info btn-lg btn-outline-light">
+          <input type="radio" name="options" id="option2" autocomplete="off"> No
+        </label>
+      </div>
+    </div>
+    <a href="#" class="text-white"><u>Not sure.</u></a>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Heated garage -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">Do you have a heated garage?</h2>
+    <div class=" text-center w-100 p-2 ">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-info btn-lg btn-outline-light active ">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> Yes
+        </label>
+        <label class="btn btn-info btn-lg btn-outline-light">
+          <input type="radio" name="options" id="option2" autocomplete="off"> No
+        </label>
+      </div>
+    </div>
+    <a href="#" class="text-white"><u>Not sure.</u></a>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Halfway -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">You're halfway there!</h2>
+    <h6 class="text-center">You can go to your profile page later to update your answers.</h6>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Home assessment intro -->
+  <div class="questionnaire-item text-white">
+    <h1 class="text-center">Self Home Assessment</h1>
+    <h4 class="text-center">To complete our Energy Model, we need to know about some key components of your home.</h4>
+    <small class="text-center">If you are not home, you may do the assessment at a later time.</small>
+    <div class="q_buttons m-20">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+    <a href="#" class="text-white"><u>Skip</u></a>
+  </div>
+
+  <!-- Utilities intro -->
+  <div class="questionnaire-item text-white">
+    <h2 class="text-center">Let's go see your Utilities.</h2>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- DHW -->
+  <div class="questionnaire-item text-white text-center">
+    <h2>Hot Water Tank</h2>
+    <div class="image_prompt">
+      <input type="image" src="/static/white-noun_Camera.png"
+             class="photo_prompt"/>
+    </div>
+    <br>
+    <br>
+    <small style="max-width:65%;">Upload a photo of your
+                                  <u class="font-weight-bold">Domestic Hot Water (DHW)</u>
+                                  tank.</small>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- Home Heating -->
+  <div class="questionnaire-item text-white text-center">
+    <h2>Home Heating</h2>
+    <div class="image_prompt">
+      <input type="image" src="/static/white-noun_Camera.png"
+             class="photo_prompt"/>
+    </div>
+    <br>
+    <br>
+    <small style="max-width:65%;">Upload a photo of your
+                                  <u class="font-weight-bold">Furnace</u> or
+                                  <u class="font-weight-bold">Boiler</u>.</small>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="button" name="next" class="q_next btn btn-light btn-outline-dark" value="Next Step" />
+    </div>
+  </div>
+
+  <!-- questionnaire end -->
+  <div class="questionnaire-item text-white">
+    <br>
+    <h4 class="text-center">For even more accurate results, we can analyze your use of appliances when you go to your Home Inventory.</h4>
+    <br>
+    <div class="q_buttons">
+      <input type="button" name="next" class="q_prev btn btn-light btn-outline-dark" value="Previous" />
+      <input type="submit" name="next" class="q_nexts btn btn-light btn-outline-dark" value="Finish" />
+    </div>
+  </div>
+
+</div>
+</form>
+
+<script type="text/javascript">
+
+  function switchQuestions(q1,q2) {
+    q1.css('display', 'none');
+    q2.css('display', 'flex');
+
+    q1.animate(
+          { opacity: 0 },
+          {
+            step: function (now) {
+              // for making fielset appear animation
+              opacity = 1 - now;
+
+              q1.css({
+                display: "none",
+                position: "relative",
+              });
+              q2.css({ opacity: opacity });
+            },
+            duration: 600,
+          }
+        );
+  }
+
+  $(document).ready(function () {
+    var current_q, next_q, previous_q; //fieldsets
+    var opacity;
+
+    $('.q_next').click(function() {
+      // console.log("Hello from nexta");
+      current_q = $(this).parent().parent();
+      next_q = current_q.next();
+      switchQuestions(current_q, next_q);
+      // current_q.hide();
+      // next_q.show();
+
+    });
+
+    $('.q_prev').click(function() {
+      current_q = $(this).parent().parent();
+      prev_q = current_q.prev();
+      switchQuestions(current_q, prev_q);
+      // current_q.hide();
+      // next_q.show();
+    });
+
+    $('.area_button').click(function() {
+      console.log("hello from area button click");
+      $(this).toggleClass("a_chosen");
+    });
+  });
+
+</script>
+
+  {% endblock content %}

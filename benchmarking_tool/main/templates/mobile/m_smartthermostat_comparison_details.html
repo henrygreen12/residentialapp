@@ -1,0 +1,154 @@
+{% extends 'mobile_base2.html' %}
+{% block content %}
+
+<div class='page'>
+
+    <div style="visibility: hidden; position: absolute; width: 0px; height: 0px;">
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <symbol viewBox="0 0 24 24" id="expand-more">
+            <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/>
+          </symbol>
+          <symbol viewBox="0 0 24 24" id="close">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/>
+          </symbol>
+        </svg>
+      </div>
+    
+    
+    <h4>{{  comp_furnace[0] }}</h4>
+    <hr>
+    <div id="rcorners">
+        <div id=imgdiv style="width: 160px; height: 160px; padding: 13px;">
+            <img src="{{url_for('static', filename='/mobileimages/grayblock.png')}}" alt="">
+        </div>
+        <div class="container" style="text-align: left;">
+
+            <text style="text-align: left;">Price: <h5 style="text-align: left;"><b>${{ comp_furnace[3] }}</b></h5> </text>
+
+            <text style="text-align: left;">Efficiency <h5 style="text-align: left;"><b>{{ comp_furnace[1] }}%</b></h5> </text>
+        
+            <text style="text-align: left;">Potential Savings <h5 style="text-align: left;"><b>$ {{ savings }}</b></h5> </text>
+            
+        </div>
+    </div>
+    <hr>
+    <details>
+        <summary>
+            
+          <text style="text-align: left; padding: 5px; ">Initial Cost<br><b> ${{ comp_furnace[3] }}</b></text>
+          <text style="text-align: left; padding: 5px; ">Area average<br><b> ${{ init_cost_av }}</b></text>
+          <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+          <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+            
+        </summary>
+              <div class="box"> 
+                  <div class="graph">
+                      
+                      <div class="m"style="height: {{ init_cost[0] }}%; left: 1%;"></div>
+                      <div class="m"style="height: {{ init_cost[1] }}%; left: 7.69230769231%;"></div>
+                      <div class="m"style="height: {{ init_cost[2] }}%; left: 15.3846153846%;"></div>
+                      <div class="m"style="height: {{ init_cost[3] }}%; left: 23.07692308%;"></div>
+                      <div class="m"style="height: {{ init_cost[4] }}%; left: 30.76923077%;"></div>
+                      <div class="m"style="height: {{ init_cost[5] }}%; left: 38.46153846%;"></div>
+                      <div class="m"style="height: {{ init_cost[6] }}%; left: 46.15384615%;"></div>
+                      <div class="m"style="height: {{ init_cost[7] }}%; left: 53.84615384%;"></div>
+                      <div class="m"style="height: {{ init_cost[8] }}%; left: 61.53846153%;"></div>
+                      <div class="m"style="height: {{ init_cost[9] }}%; left: 69.23076922%;"></div>
+                      <div class="m"style="height: {{ init_cost[10] }}%; left: 76.92307691%;"></div>
+                      <div class="m"style="height: {{ init_cost[11] }}%; left: 84.6153846%;"></div>
+                      <div class="m"style="height: {{ init_cost[12] }}%; left: 92.30769229%;"></div>
+  
+                      <div class="av-text"style="height: {{ comp_init_cost[0] + 10}}%; left: {{ comp_init_cost[1] - 8 }}%;">{{ comp_furnace[0] }}</div>
+                      <div class="av"style="height: {{ comp_init_cost[0] }}%; left: {{ comp_init_cost[1] }}%"></div>
+                      
+                      <div class="yu"style="height: {{ user_init_cost[0] }}%; left: {{ user_init_cost[1] - 4 }}%;"></div>
+                      <div class="yu-text"style="height: {{ user_init_cost[0] + 10}}%; left: {{ user_init_cost[1] - 3 }}%;">You</div>
+                  </div>
+              </div>
+              
+       
+      </details>
+
+      <details>
+        <summary>
+          <text style="text-align: left; padding: 5px; ">Monthly Cost<br><b> ${{ comp_furnace[2] }}</b></text>
+          <text style="text-align: left; padding: 5px; ">Area average<br><b> ${{ monthly_cost_av }}</b></text>
+          <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+          <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+        </summary>
+              <div class="box"> 
+                  <div class="graph">
+                      
+                      <div class="m"style="height: {{ monthly_cost[0] }}%; left: 1%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[1] }}%; left: 7.69230769231%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[2] }}%; left: 15.3846153846%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[3] }}%; left: 23.07692308%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[4] }}%; left: 30.76923077%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[5] }}%; left: 38.46153846%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[6] }}%; left: 46.15384615%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[7] }}%; left: 53.84615384%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[8] }}%; left: 61.53846153%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[9] }}%; left: 69.23076922%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[10] }}%; left: 76.92307691%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[11] }}%; left: 84.6153846%;"></div>
+                      <div class="m"style="height: {{ monthly_cost[12] }}%; left: 92.30769229%;"></div>
+  
+                      <div class="av-text"style="height: {{ comp_month_cost[0] + 10 }}%; left: {{ comp_month_cost[1] - 8 }}%;">{{ comp_furnace[0] }}</div>
+                      <div class="av"style="height: {{ comp_month_cost[0] }}%; left: {{ comp_month_cost[1] }}%"></div>
+
+                      <div class="yu"style="height: {{ user_month_cost[0] }}%; left: {{ user_month_cost[1] - 4 }}%;"></div>
+                      <div class="yu-text"style="height: {{ user_month_cost[0] + 10}}%; left: {{ user_month_cost[1] - 3 }}%;">You</div>
+                  </div>
+              </div>
+              
+       
+      </details>
+
+      <details>
+        <summary>
+            
+          <text style="text-align: left; padding: 5px; ">Efficiency<br><b> {{ comp_furnace[1] }}%</b></text>
+          <text style="text-align: left; padding: 5px; ">Area average<br><b> {{ efficient_av }}%</b></text>
+          <svg class="control-icon control-icon-expand" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#expand-more" /></svg>
+          <svg class="control-icon control-icon-close" width="24" height="24" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close" /></svg>
+            
+        </summary>
+              <div class="box"> 
+                  <div class="graph">
+                      
+                      <div class="m"style="height: {{ efficient_thermostat[0] }}%; left: 1%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[1] }}%; left: 7.69230769231%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[2] }}%; left: 15.3846153846%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[3] }}%; left: 23.07692308%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[4] }}%; left: 30.76923077%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[5] }}%; left: 38.46153846%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[6] }}%; left: 46.15384615%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[7] }}%; left: 53.84615384%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[8] }}%; left: 61.53846153%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[9] }}%; left: 69.23076922%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[10] }}%; left: 76.92307691%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[11] }}%; left: 84.6153846%;"></div>
+                      <div class="m"style="height: {{ efficient_thermostat[12] }}%; left: 92.30769229%;"></div>
+  
+                      <div class="av-text"style="height: {{ comp_efficiency[0] + 10 }}%; left: {{ comp_efficiency[1] - 8 }}%;">{{ comp_furnace[0] }}</div>
+                      <div class="av"style="height: {{ comp_efficiency[0] }}%; left: {{ comp_efficiency[1] }}%"></div>
+                      
+                      <div class="yu"style="height: {{ user_efficiency[0] + 10 }}%; left: {{ user_efficiency[1] - 4 }}%;"></div>
+                      <div class="yu-text"style="height: {{ user_efficiency[0] + 18 }}%; left: {{ user_efficiency[1] - 3 }}%;">You</div>
+                  </div>
+              </div>
+              
+       
+      </details>
+
+      <div id="rcorners">
+        <div></div>
+        <text>Potential Savings <h5><b>${{ potential_savings }}</b></h5> </text>
+        <div></div>
+        
+    </div>
+  
+
+</div>
+
+{% endblock content %} 

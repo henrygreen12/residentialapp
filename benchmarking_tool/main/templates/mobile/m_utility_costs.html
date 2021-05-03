@@ -1,0 +1,85 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+<div class="mx-0 mb-3 px-3 pb-2 pt-4 bg-secondary">
+  <h3 class="my-0">Utility Rates</h3>
+  <h6>{{ city.capitalize() }}, {{ province.capitalize() }}</h6>
+</div>
+
+<div class="mx-3 my-4 shadow">
+
+  <ul class="nav nav-tabs justify-content-left px-1" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#electricity" role="tab" aria-controls="Electricity" aria-selected="true">Electric</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#gas" role="tab" aria-controls="Gas" aria-selected="false">Gas</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="electricity" role="tabpanel" aria-labelledby="electricity-tab">
+
+      <div class="card" style="width: 100%; height: 60vh; overflow-y: scroll;">
+        <ul class="list-group list-group-flush">
+          
+          <form id="rate_details" method="POST">
+
+            {% for rate in e_rates %}
+            <li class="list-group-item py-1 px-2">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                <div class="e_rate_card">
+                  <div class="rate_image">
+                    <img src="{{ rate.img_file }}" alt="provider">
+                  </div>
+
+                  <div class="content">
+                    <h6>{{ rate.pricing }}</h6>
+                    <div class="d-flex justify-content-between">
+                      <div class="">
+                        <small style="color: grey;">Total Rate: </small>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <h6 class="mb-0 mr-1">¢ {{ rate.effective_rate }}</h6>
+                        <div class="">
+                          <small style="color:grey;">/kWh</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input type="hidden" class="rate_id" name="rate_id" value="{{ rate.id }}">
+                </div>
+            </li>
+            {% endfor %}
+          
+            <input type="hidden" id="redirect_id" class="redirect_id" name="redirect_id" value="1">
+          </form>
+
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="gas" role="tabpanel" aria-labelledby="gas-tab">
+      <div class="card" style="width: 100%; height: 60vh; overflow-y: scroll;">
+        <ul class="list-group list-group-flush">
+
+          <div class="">
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+</script>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static',filename='m_utility_costs.js') }}"></script>
+{% endblock scripts %}

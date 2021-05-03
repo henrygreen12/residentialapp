@@ -1,0 +1,1034 @@
+/* screen - appliances-usage */
+
+.appliances-usage {
+  align-items: center;
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 812px;
+  justify-content: flex-start;
+  overflow: hidden;
+  overflow-x: hidden;
+  padding: 48px 0;
+  position: relative;
+  width: 375px;
+}
+.appliances-usage .alert-circle-JbRi5D {
+  align-self: center;
+  background-color: transparent;
+  background-image: url(../img/vector-102@2x.svg);
+  background-size: 100% 100%;
+  flex-shrink: 1;
+  height: 16px;
+  margin-bottom: 2.0px;
+  margin-left: 59px;
+  overflow: hidden;
+  position: relative;
+  width: 16px;
+}
+.appliances-usage .appliances-sZaceu {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  margin-left: 7px;
+  min-height: 18px;
+  min-width: 76px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .breakdown-table-C61RwL {
+  align-items: center;
+  background-color: var(--zircon);
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  height: 336px;
+  justify-content: flex-start;
+  margin-top: 70px;
+  padding: 20.0px 0;
+  position: relative;
+  width: 335px;
+  z-index: 1;
+}
+.appliances-usage .chevron-left-3ZX6kh {
+  align-items: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 16px;
+  justify-content: flex-start;
+  margin-bottom: 0.0px;
+  margin-left: 23px;
+  overflow: hidden;
+  padding: 3.0px 5.0px;
+  position: relative;
+  transform: rotate(180.00deg);
+  width: 16px;
+}
+.appliances-usage .chevron-left-9ObawI {
+  align-items: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 16px;
+  justify-content: flex-start;
+  margin-bottom: 0.0px;
+  margin-left: 23px;
+  overflow: hidden;
+  padding: 3.0px 5.0px;
+  position: relative;
+  transform: rotate(180.00deg);
+  width: 16px;
+}
+.appliances-usage .chevron-left-EvAMMD {
+  align-items: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 16px;
+  justify-content: flex-start;
+  margin-bottom: 0.0px;
+  margin-left: 22px;
+  overflow: hidden;
+  padding: 3.0px 5.0px;
+  position: relative;
+  transform: rotate(180.00deg);
+  width: 16px;
+}
+.appliances-usage .chevron-left-Ftdnsa {
+  align-items: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 16px;
+  justify-content: flex-start;
+  margin-bottom: 0.0px;
+  margin-left: 28px;
+  overflow: hidden;
+  padding: 3.0px 5.0px;
+  position: relative;
+  transform: rotate(180.00deg);
+  width: 16px;
+}
+.appliances-usage .chevron-left-WwVqOe {
+  align-items: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 16px;
+  justify-content: flex-start;
+  margin-bottom: 0.0px;
+  margin-left: 24px;
+  overflow: hidden;
+  padding: 3.0px 5.0px;
+  position: relative;
+  transform: rotate(180.00deg);
+  width: 16px;
+}
+.appliances-usage .chevron-left-ht0xwR {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 5.0px 8px;
+  position: relative;
+  width: 24px;
+}
+.appliances-usage .ellipse-10-ZRvEhx {
+  background-color: transparent;
+  height: 56px;
+  left: 34px;
+  position: absolute;
+  top: -0px;
+  width: 139px;
+}
+.appliances-usage .ellipse-11-ZRvEhx {
+  background-color: transparent;
+  height: 91px;
+  left: 3px;
+  position: absolute;
+  top: 124px;
+  width: 209px;
+}
+.appliances-usage .ellipse-12-ZRvEhx {
+  background-color: transparent;
+  height: 80px;
+  left: -0px;
+  position: absolute;
+  top: 25px;
+  width: 63px;
+}
+.appliances-usage .ellipse-13-ZRvEhx {
+  background-color: transparent;
+  height: 35px;
+  left: -0px;
+  position: absolute;
+  top: 99px;
+  width: 40px;
+}
+.appliances-usage .ellipse-30-Sw7S1u {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .ellipse-30-bZnebx {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .ellipse-30-kHsh2t {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .ellipse-30-sZaceu {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .ellipse-30-z6MbP0 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 8px;
+  margin-top: 2.0px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .ellipse-9-ZRvEhx {
+  background-color: transparent;
+  height: 133px;
+  left: 136px;
+  position: absolute;
+  top: 14px;
+  width: 79px;
+}
+.appliances-usage .energy-breakdown-C61RwL {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 215px;
+  justify-content: flex-start;
+  margin-left: 46.88px;
+  margin-top: 60px;
+  min-width: 262px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .energy-cost-pSjHhw {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  min-height: 20px;
+  min-width: 104px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .flex-row-nYPY0E {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 22px;
+  justify-content: flex-start;
+  min-width: 295px;
+  position: relative;
+  width: auto;
+  z-index: 2;
+}
+.appliances-usage .good-JbRi5D {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 22px;
+  margin-left: 52px;
+  position: relative;
+  width: 64px;
+}
+.appliances-usage .group-22-JbRi5D {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 20px;
+  justify-content: flex-start;
+  min-width: 104px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-23-6A2kha {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 43px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-23-9AWi0X {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 38px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-23-NUsvn9 {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 43px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-23-as77gx {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 42px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-23-qFeAkZ {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 44px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-43-GCw1nF {
+  background-color: transparent;
+  height: 215px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 215px;
+}
+.appliances-usage .group-4339-50139l {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 72px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4339-PrJxfu {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 89px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4339-SKax1P {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 85px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4339-Ufo1kh {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 91px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4339-p35oVJ {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 70px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4340-3ZX6kh {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 231px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4340-9ObawI {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 231px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4340-EvAMMD {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 232px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4340-Ftdnsa {
+  align-items: flex-start;
+  align-self: flex-end;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 226px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4340-WwVqOe {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  min-width: 230px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-4345-ZRvEhx {
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  left: 145px;
+  min-height: 43px;
+  position: absolute;
+  top: 155px;
+  width: 76px;
+}
+.appliances-usage .group-51-l5QAzx {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 215px;
+  position: relative;
+  width: 262px;
+}
+.appliances-usage .group-6878-nYPY0E {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  min-width: 295px;
+  padding: 0 10.0px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-6879-nYPY0E {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  min-width: 295px;
+  padding: 0 10.0px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-6880-nYPY0E {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  min-width: 295px;
+  padding: 0 10.0px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-6881-nYPY0E {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  min-width: 295px;
+  padding: 0 10.0px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-6882-nYPY0E {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 40px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  min-width: 295px;
+  padding: 11.0px 10.0px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .group-6883-C61RwL {
+  align-items: center;
+  align-self: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 24px;
+  justify-content: flex-start;
+  margin-left: 21px;
+  min-width: 252px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .heating-kHsh2t {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  margin-left: 7px;
+  min-height: 18px;
+  min-width: 55px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .hot-water-z6MbP0 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  margin-left: 7px;
+  min-height: 18px;
+  min-width: 70px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .legend-items-50139l {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 118px;
+  min-width: 40px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .legend-items-PrJxfu {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 101px;
+  min-width: 36px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .legend-items-SKax1P {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 105px;
+  min-width: 41px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .legend-items-Ufo1kh {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 99px;
+  min-width: 41px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .legend-items-p35oVJ {
+  align-items: flex-start;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  height: 18px;
+  justify-content: flex-start;
+  margin-left: 120px;
+  min-width: 42px;
+  position: relative;
+  width: auto;
+}
+.appliances-usage .lighting-bZnebx {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  margin-left: 7px;
+  min-height: 18px;
+  min-width: 57px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .pricing-GCw1nF {
+  background-color: transparent;
+  height: 32px;
+  left: 206px;
+  position: absolute;
+  top: 35px;
+  width: 58px;
+}
+.appliances-usage .rectangle-15-nYPY0E {
+  background-color: var(--gulf-blue);
+  flex-shrink: 1;
+  height: 1px;
+  margin-top: 13px;
+  opacity: 0.06;
+  position: relative;
+  width: 295px;
+}
+.appliances-usage .total-copy-Yj9nBx {
+  background-color: transparent;
+  color: var(--gulf-blue);
+  flex-shrink: 1;
+  font-family: 'Averta CY-Semibold', Helvetica;
+  font-size: 15.2px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 15.2px;
+  margin-right: 3.26px;
+  min-height: 15px;
+  opacity: 0.4;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 37px;
+}
+.appliances-usage .union-GXoyz0 {
+  background-color: transparent;
+  height: 32px;
+  left: -0px;
+  position: absolute;
+  top: -0px;
+  width: 56px;
+}
+.appliances-usage .usage-breakdown-ht0xwR {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 20px;
+  margin-left: 58px;
+  min-height: 20px;
+  min-width: 170px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .vector-9xRfar {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 10px;
+  position: relative;
+  width: 6px;
+}
+.appliances-usage .vector-DxLbh3 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 14px;
+  position: relative;
+  width: 8px;
+}
+.appliances-usage .vector-EZfZ8H {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 10px;
+  position: relative;
+  width: 6px;
+}
+.appliances-usage .vector-INI6Nx {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 10px;
+  position: relative;
+  width: 6px;
+}
+.appliances-usage .vector-b6CpT4 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 10px;
+  position: relative;
+  width: 6px;
+}
+.appliances-usage .vector-glGyIS {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: 10px;
+  position: relative;
+  width: 6px;
+}
+.appliances-usage .ventilation-Sw7S1u {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  margin-left: 7px;
+  min-height: 18px;
+  min-width: 74px;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .x1458-G5PRTL {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  min-height: 18px;
+  min-width: 44px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .x1632-GXoyz0 {
+  background-color: transparent;
+  color: var(--white);
+  font-family: 'Averta CY-Bold', Helvetica;
+  font-size: 12.6px;
+  font-style: normal;
+  font-weight: 700;
+  height: auto;
+  left: 13px;
+  letter-spacing: 0.00px;
+  line-height: 12.6px;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  white-space: nowrap;
+  width: 39px;
+}
+.appliances-usage .x1632-OsTt9j {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  min-height: 18px;
+  min-width: 43px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .x1632-yvBNG5 {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  min-height: 18px;
+  min-width: 43px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .x2321-Z8MCjc {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  min-height: 18px;
+  min-width: 42px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+.appliances-usage .x2597-Yj9nBx {
+  background-color: transparent;
+  color: var(--gulf-blue);
+  flex-shrink: 1;
+  font-family: 'Averta CY-Semibold', Helvetica;
+  font-size: 22.8px;
+  font-style: normal;
+  font-weight: 400;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 22.8px;
+  margin-right: 2.0px;
+  margin-top: 5px;
+  min-height: 23px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 74px;
+}
+.appliances-usage .x699-J4QGqX {
+  background-color: transparent;
+  flex-shrink: 1;
+  height: auto;
+  letter-spacing: 0.00px;
+  line-height: 18px;
+  min-height: 18px;
+  min-width: 38px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: auto;
+}
+
+/* The icon */
+.help-tip{
+  position: absolute;
+  
+  left: 270px;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #444;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  cursor: default;
+}
+
+.help-tip:before{
+    content:'i';
+    font-family: monokai;
+    font-weight: normal;
+    color:#444;
+}
+
+.help-tip:hover p{
+    display:block;
+    transform-origin: 100% 0%;
+    -webkit-animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease;
+}
+
+/* The tooltip */
+.help-tip p {    
+  display: none;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  background-color: black;
+  padding: 12px 16px;
+  width: 330px;
+  height: auto;
+  position: absolute;
+  top: -100px;
+  left: -300px;
+  border-radius: 0.5rem;
+/*  border: 1px solid #E0E0E0; */
+  box-shadow: 0 0px 20px 0 rgba(0,0,0,0.1);
+  color: white;
+  font-size: 16px;
+  line-height: 18px;
+  z-index: 99;
+}
+
+/* The pointer of the tooltip */
+.help-tip p:before { 
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: black;
+  top: 58px;
+  left: 300px;
+  transform: rotate(180.00deg);
+}
+
+ /* Prevents the tooltip from being hidden */
+.help-tip p:after {
+  width: 10px;
+  height: 40px;
+  content:'';
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+/* CSS animation */
+@-webkit-keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}

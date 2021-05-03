@@ -1,0 +1,43 @@
+{% extends 'mobile_base.html' %}
+{% block content %}
+
+
+
+
+<div class="wrapper main_info mt-2">
+    <div class="mx-2 pt-2">
+        <div class="pb-0 border-bottom border-secondary">
+            <h4>{{ data["title"] }}</h4>
+        </div>
+        <div>
+            <div class="text-right mr-2">
+                <small>Savings</small>
+                <h5>$ {{ data["savings"] }}</h5>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white border-top border-bottom border-dark px-3 pt-2">
+        <p>{{ data["desc"] }}</p>
+    </div>
+    <a href="/articles/{{ data['upgrade_category'] }}">
+        <div class='bg-white text-center border-bottom border-dark'>
+            <small>Learn more</small>
+        </div>
+    </a>
+</div>
+
+<div class="todo-checklist mt-4 px-0">
+    <h6 class="d-inline border border-dark p-2 ml-3 bg-white">How to do it</h6>
+    <div class="checklist_container bg-white border border-dark">
+        <form id="_checklist">
+            {% for list_item in data["todo_list"] %}
+            <div class="my-1">
+                <input type="checkbox" class="mr-2" name="cb{{ loop.index }}" id="cb{{ loop.index }}">
+                <label for="cb{{ loop.index }}">{{ list_item }}</label>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
