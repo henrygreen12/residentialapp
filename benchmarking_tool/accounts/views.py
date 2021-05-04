@@ -3,8 +3,8 @@ from pathlib import Path
 import secrets
 from flask import Blueprint,request,render_template,redirect,flash,url_for,current_app
 from flask_login import login_user, current_user, logout_user, login_required
-from .forms import *
-from .helper import *
+from forms import *
+from helper import *
 from flask_bcrypt import Bcrypt
 from flask_mail import Mail, Message
 from benchmarking_tool import app
