@@ -1,10 +1,10 @@
 import math
 from flask import Blueprint,render_template,request,redirect,url_for,flash
 from flask_login import login_user, current_user, logout_user, login_required
-from ..models import *
+from .models import *
 from flask_bcrypt import Bcrypt
 import requests
-from ..helper import *
+from .helper import *
 from benchmarking_tool.forms import *
 from benchmarking_tool.decorators import *
 from benchmarking_tool.methods import *
