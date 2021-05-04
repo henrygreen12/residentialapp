@@ -1,16 +1,16 @@
 import os
 from flask_seeder import FlaskSeeder
-from .app import create_app
+from app import create_app
 from flask import Flask
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
-from .accounts.views import accounts
-from .main.views import main 
+from accounts.views import accounts
+from main.views import main 
 from dotenv import load_dotenv
-from .admin import *
-from .models import base
+from admin import *
+from models import base
 from flask_wtf.csrf import CSRFProtect
 # from flask_login_multi.login_manager import LoginManager
 
