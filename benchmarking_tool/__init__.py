@@ -38,10 +38,6 @@ app=create_app()
 
 mobile = Mobility(app)
 
-with app.test_request_context():
-    db.init_app(app),
-    db.create_all()
-
 
 
 
