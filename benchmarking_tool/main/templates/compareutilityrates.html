@@ -75,6 +75,9 @@
              {% endfor %}
              {% else %}
              no appliances
+              <a href = "{{url_for('main.appliancedetails', id = appliance.id)}}"><div class="frame-4321-CxIaGc">
+                  <div class="compare-86PrIQ avertacy-normal-white-14px">Details</div>
+                </div></a>
              {% endif %}
             </div>
           </div>
