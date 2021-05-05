@@ -24,12 +24,6 @@ load_dotenv()
 
 
 app=create_app()
-
-with app.test_request_context():
-    db.init_app(app),
-    db.create_all()
-
-
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'accounts.login'
@@ -43,6 +37,12 @@ seeder.init_app(app, db)
 CSRFProtect(app)
 
 mobile = Mobility(app)
+
+with app.test_request_context():
+    db.init_app(app),
+    db.create_all()
+
+
 
 
 
