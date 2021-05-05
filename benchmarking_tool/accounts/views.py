@@ -258,7 +258,7 @@ def send_reset_email(user):
     msg.body = f''' To reset your password, visit the following link :
 {url_for('accounts.reset_token',token=token,_external=True)}
     If you didn't make the request, please ignore this email
-    '''
+    '
     mail.send(msg)
 
 
