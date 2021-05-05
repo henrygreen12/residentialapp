@@ -20,10 +20,6 @@ from flask_mobility import Mobility
 
 load_dotenv() 
 
-
-
-
-app=create_app()
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'accounts.login'
@@ -35,6 +31,10 @@ migrate = Migrate(app, db)
 seeder = FlaskSeeder()
 seeder.init_app(app, db)
 CSRFProtect(app)
+
+
+app=create_app()
+
 
 mobile = Mobility(app)
 
