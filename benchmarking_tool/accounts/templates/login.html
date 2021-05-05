@@ -193,7 +193,6 @@
         --font-size-m: 14px;
       }
     </style>
-    <meta name="author" content="AnimaApp.com - Design to code, Automated." />
   </head>
   <body style="margin: 0; background: rgba(255, 255, 255, 1)">
     <input type="hidden" id="anPageName" name="page" value="login" />
@@ -235,8 +234,8 @@
           <div class="group-6945-C61RwL">
             <div class="group-2613-sdswyJ">
 
-              <img class="polygon-1-LUu7gt" src="{{ url_for('static',filename='img/polygon-1@2x.svg')}}" />
-              <div class="create-an-account-LUu7gt">Create an account</div>
+              <a href= "{{url_for('accounts.register')}}'><img class="polygon-1-LUu7gt" src="{{ url_for('static',filename='img/polygon-1@2x.svg')}}" />
+                                                                                                                                                    <div class="create-an-account-LUu7gt">Create an account</div></a>
             </div>
             <button class="button-sdswyJ" type = "Submit">
                 <img class="back-QE7ndr" src="{{ url_for('static',filename='img/back@2x.svg')}}" />
