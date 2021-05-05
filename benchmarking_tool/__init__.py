@@ -23,6 +23,12 @@ load_dotenv()
 
 
 
+app=create_app()
+
+with app.test_request_context():
+    db.init_app(app),
+    db.create_all()
+
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -43,9 +49,3 @@ mobile = Mobility(app)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-app=create_app()
-
-with app.test_request_context():
-    db.init_app(app),
-    db.create_all()
