@@ -8,7 +8,6 @@
   flex-direction: column;
   height: 812px;
   justify-content: flex-start;
-  overflow: hidden;
   overflow-x: hidden;
   padding: 48px 21px;
   position: relative;
@@ -199,7 +198,7 @@
   flex-shrink: 1;
   height: 134px;
   margin-right: 1.0px;
-  margin-top: 12px;
+  margin-bottom: 100px;
   position: relative;
   width: 134px;
 }
@@ -357,4 +356,9 @@
   position: relative;
   transform: rotate(90deg);
   width: 12px;
+}
+
+button{
+  background: transparent;
+  border: transparent;
 }
