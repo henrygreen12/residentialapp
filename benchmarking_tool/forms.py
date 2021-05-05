@@ -3,7 +3,7 @@ from wtforms import SubmitField
 from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import Form, StringField, PasswordField, BooleanField, IntegerField ,SelectField, FieldList, FormField, HiddenField, DateField, FloatField, TextAreaField
 from wtforms.validators import DataRequired, Length, EqualTo, ValidationError
-from models import *
+from .models import *
 from flask_login import current_user
 
 ##################################################################
